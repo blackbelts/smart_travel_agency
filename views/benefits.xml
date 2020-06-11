@@ -1,0 +1,44 @@
+<odoo>
+
+    <!-- Add a custom form view -->
+    <record id="benefits_view_form" model="ir.ui.view">
+		<field name="name">Benefits Form</field>
+		<field name="model">travel.benefits</field>
+		<field name="arch" type="xml">
+			<form>
+                <sheet>
+                    <group>
+                        <field name="cover"/>
+                        <field name="limit"/>
+                    </group>
+                    <group>
+                        <field name="ar_cover"/>
+                        <field name="ar_limit"/>
+                    </group>
+                </sheet>
+			</form>
+		</field>
+	</record>
+    <!-- Add a custom Tree (List) view -->
+    <record id="benefits_view_tree" model="ir.ui.view">
+		<field name="name">Benefits List</field>
+		<field name="model">travel.benefits</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="cover"/>
+				<field name="limit"/>
+                <field name="ar_cover"/>
+                <field name="ar_limit"/>
+			</tree>
+		</field>
+	</record>
+    <record model="ir.actions.act_window" id="benefits_action">
+            <field name="name">Benefits</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">travel.benefits</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_id" ref="benefits_view_tree"/>
+            <field name="view_mode">form,tree</field>
+    </record>
+
+</odoo>

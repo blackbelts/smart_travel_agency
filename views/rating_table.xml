@@ -1,0 +1,373 @@
+<odoo>
+    <record model="ir.ui.view" id="tree_rating_table">
+        <field name="name">tree.rating.table</field>
+        <field name="model">rating.table</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree string="Rating Table">
+                <field name="geographical_coverage" readonly="1"/>
+                <field name="traveler_age" readonly="1"/>
+                <field name="coverage_period" readonly="1"/>
+                <field name="net_premium" readonly="1"/>
+                <field name="proportional_stamp" readonly="1"/>
+                <field name="dimensional_stamp" readonly="1"/>
+                <field name="supervisory_stamp" readonly="1"/>
+                <field name="issue_fees" readonly="1"/>
+                <field name="gross_premium" readonly="1"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="form_rating_table">
+        <field name="name">form.rating.table</field>
+        <field name="model">rating.table</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <form string="Rating Table">
+                <sheet>
+                    <group>
+                        <field name="geographical_coverage" readonly="1"/>
+                        <field name="traveler_age" readonly="1"/>
+                        <field name="coverage_period" readonly="1"/>
+                        <field name="net_premium" readonly="1"/>
+                        <field name="proportional_stamp" readonly="1"/>
+                        <field name="dimensional_stamp" readonly="1"/>
+                        <field name="supervisory_stamp" readonly="1"/>
+                        <field name="issue_fees" readonly="1"/>
+                        <field name="gross_premium" readonly="1"/>
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="rating_table_action">
+        <field name="name">Rating/Charges Table</field>
+        <field name="res_model">rating.table</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'create': True,'edit':True}</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Rating Table
+            </p>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="tree_travel_agency">
+        <field name="name">tree.travel.agency</field>
+        <field name="model">travel.agency</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree string="Travel Agency">
+                <field name="name"/>
+                <field name="address"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="mobile"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="form_travel_agency">
+        <field name="name">form.travel.agency</field>
+        <field name="model">travel.agency</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <form string="Travel Agency">
+                <header>
+                    <button name="create_agency_user" string="Create User" type="object"
+                            class="oe_highlight" attrs="{'invisible': [('user', '=', True)]}"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="toggle_active" type="object"
+                                class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"
+                                   options='{"terminology": "archive"}'/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1>
+                            <label for="name"/>
+                        </h1>
+                        <div class="o_row">
+                            <h1>
+                                <field name="name" placeholder="e.g. Agency Name." required="1"/>
+                            </h1>
+                        </div>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="contract_from" required="1"/>
+                            <field name="contract_to" required="1"/>
+                            <field name="agency_code" />
+                            <field name="user" invisible="1" />
+                            <field name="outstanding" readonly="1"/>
+                            <field name="max_outst"  required=""/>
+
+                        </group>
+                        <group>
+                            <field name="attachment" filename="file_name" string="Upload Files"
+                                   widget="many2many_binary"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="address"/>
+                            <field name="email" required="1"/>
+                            <field name="web_site"/>
+                            <field name="phone" />
+                            <field name="mobile"/>
+                        </group>
+                        <group>
+                            <field name="contact_name" required="1"/>
+                            <field name="contact_number" required="1"/>
+                            <field name="contract_source" required=""/>
+                            <field name="broker_name" attrs="{'invisible': [('contract_source', '=', 'Direct')]}"/>
+                            <field name="broker_code" attrs="{'invisible': [('contract_source', '=', 'Direct')]}"/>
+                            <field name="broker_valid_from" attrs="{'invisible': [('contract_source', '=', 'Direct')]}"/>
+                            <field name="broker_valid_to" attrs="{'invisible': [('contract_source', '=', 'Direct')]}"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Agency Branches">
+                            <field name="branch_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="address"/>
+                                    <field name="email"/>
+                                    <field name="phone"/>
+                                    <field name="mobile"/>
+                                    <button name="create_branch_user" type="object"
+                                            string="Create User" class="oe_highlight"/>
+                                    <field name="users" widget="many2many_tags"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Agency Commission">
+                            <field name="agency_comm">
+                                <tree editable="bottom">
+                                    <field name="valid_from"/>
+                                    <field name="valid_to"/>
+                                    <field name="commission"/>
+                                </tree>
+                            </field>
+                        </page>
+
+                        <page string="Agency Targets / Bonus">
+                            <field name="target_bonus_ids">
+                                <tree editable="bottom">
+                                    <field name="bonus_from"/>
+                                    <field name="bonus_to"/>
+                                    <field name="up_target"/>
+                                    <field name="target_count"/>
+                                    <field name="target_ach"/>
+                                    <field name="bonus"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Agency Settlements">
+                            <field name="settle_ids">
+                                <tree editable="bottom">
+                                    <field name="settle_date"/>
+                                    <field name="amount"/>
+                                    <field name="attachment" widget="many2many_binary"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="travel_agency_action">
+        <field name="name">Travel Agency</field>
+        <field name="res_model">travel.agency</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Your Travel Agency
+            </p>
+        </field>
+    </record>
+    <record id="seq_agency" model="ir.sequence">
+        <field name="name">Agency</field>
+        <field name="code">agn</field>
+        <field name="prefix">Ag /</field>
+        <field name="padding">4</field>
+        <!--<field name="company_id" eval="False"/>-->
+    </record>
+
+    <record model="ir.ui.view" id="tree_agency_branch">
+        <field name="name">tree.agency.branch</field>
+        <field name="model">agency.branch</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree string="Travel Agency Branch">
+                <field name="name"/>
+                <field name="travel_agency"/>
+                <field name="address"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="mobile"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="form_agency_branch">
+        <field name="name">form.agency.branch</field>
+        <field name="model">agency.branch</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <form string="Travel Agency Branch">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="travel_agency"/>
+                        <field name="address"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="mobile"/>
+<!--                        <field name="users" widget="many2many_tags" />-->
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="agency_branch_action">
+        <field name="name">Travel Agency Branch</field>
+        <field name="res_model">agency.branch</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Your Travel Agency Branch
+            </p>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="tree_certificate_booklet">
+        <field name="name">tree.certificate.booklet</field>
+        <field name="model">certificate.booklet</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree string="Certificate Booklet">
+                <field name="travel_agency"/>
+                <field name="travel_agency_branch"/>
+                <field name="booklet_num"/>
+                <field name="serial_from"/>
+                <field name="serial_to"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="form_certificate_booklet">
+        <field name="name">form.certificate.booklet</field>
+        <field name="model">certificate.booklet</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <form string="Certificate Booklet">
+                <sheet>
+                    <group>
+                        <field name="travel_agency"/>
+                        <field name="travel_agency_branch"/>
+                        <field name="booklet_num"/>
+                        <field name="serial_from"/>
+                        <field name="serial_to"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="certificate_booklet_action">
+        <field name="name">Certificate Booklet</field>
+        <field name="res_model">certificate.booklet</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Your Booklet
+            </p>
+        </field>
+    </record>
+
+    <!-- settlement-->
+    <record model="ir.ui.view" id="tree_settlement">
+        <field name="name">tree.settlement</field>
+        <field name="model">agency.settle</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree editable="bottom" string="Settlements">
+                <field name="agency_id" readonly="1"/>
+                <field name="settle_date"/>
+                <field name="amount"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="agency_settle_action">
+        <field name="name">Travel Agency Settlement</field>
+        <field name="res_model">agency.settle</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Your Travel Agency Settlement
+            </p>
+        </field>
+    </record>
+
+
+    <record id="new_user_tree_view" model="ir.ui.view">
+        <field name="name">tree.res.users</field>
+        <field name="model">res.users</field>
+<!--        <field name="priority" eval="16"/>-->
+        <field name="inherit_id" ref="base.view_users_tree"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='login']" position="after">
+
+                    <field name="travel_agency_branch"/>
+                    <field name="travel_agency"/>
+
+            </xpath>
+            <!--            <xpath expr="//sheet/notebook" position="attrs">-->
+            <!--                <attribute name="attrs">{'invisible': [('user_id','!=',True)]}</attribute>>-->
+
+
+            <!--            </xpath>-->
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="tree_travel_commission">
+        <field name="name">tree.travel.commission</field>
+        <field name="model">travel.commission</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree string="Travel Commission">
+                <field name="travel_agency"/>
+                <field name="valid_from"/>
+                <field name="valid_to"/>
+                <field name="commission"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="form_travel_commission">
+        <field name="name">form.travel.commission</field>
+        <field name="model">travel.commission</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <form string="Travel Commission">
+                <sheet>
+                    <group>
+                        <field name="travel_agency"/>
+                        <field name="valid_from"/>
+                        <field name="valid_to"/>
+                        <field name="commission"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="travel_commission_action">
+        <field name="name">Travel Commission</field>
+        <field name="res_model">travel.commission</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Your Travel Commission
+            </p>
+        </field>
+    </record>
+
+
+</odoo>

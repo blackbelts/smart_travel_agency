@@ -1,0 +1,48 @@
+
+<odoo>
+    <data noupdate="0">
+
+        <!--Email template -->
+        <record id="email_template" model="mail.template">
+            <field name="name">Example e-mail template</field>
+            <field name="email_from">${object.user_id.id and object.user_id.login/ or ''}</field>
+            <field name="subject">Arope Travel Insurance</field>
+            <!--<field name="email_to">${object.user_id.partner_id.email}</field>-->
+            <field name="lang">${object.lang}</field>
+            <field name="report_template" ref="smart_travel_agency.travel_policy_report"/>
+            <field name="model_id" ref="smart_travel_agency.model_policy_travel"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html">
+                <![CDATA[
+ AROPE Egypt Travel Insurance
+ <br>
+${object.insured}
+عميلنا العزيز
+<br>
+${object.policy_num}
+وثيقة تأمين سفر رقم
+<br>
+<p>
+شكرا لثقتكم الغالية في برامج التأمين المقدمة من شركة أروب مصر لتأمينات
+الممتلكات و المسئوليات ..
+<br>
+أنت اﻷن مغطى تأمينيا في خلال سفرك للخارج كما هو موضح في جدول المزايا و
+شروط و أحكام الوثيقة
+
+مرفق
+جدول الوثيقة و
+
+رابط الشروط و اﻷحكام
+<br>
+
+مع تحيات
+شركة أروب مصر لتأمينات الممتلكات و المسئوليات
+<br>
+الخط الساخن   19243
+<br>
+http://207.154.195.214/TravelWording.pdf
+	    ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

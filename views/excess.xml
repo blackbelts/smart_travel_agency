@@ -1,0 +1,42 @@
+<odoo>
+
+    <!-- Add a custom form view -->
+    <record id="excess_view_form" model="ir.ui.view">
+		<field name="name">Excess Form</field>
+		<field name="model">travel.excess</field>
+		<field name="arch" type="xml">
+			<form>
+                <sheet>
+                    <group>
+                        <h5>1. Medical expenses and hospitalization abroad:</h5>
+                        <field name="rule"/>
+                        <field name="ar_rule"/>
+                        <field name="amount"/>
+                    </group>
+                </sheet>
+			</form>
+		</field>
+	</record>
+    <!-- Add a custom Tree (List) view -->
+    <record id="excess_view_tree" model="ir.ui.view">
+		<field name="name">Excess List</field>
+		<field name="model">travel.excess</field>
+		<field name="arch" type="xml">
+
+            <tree>
+				<field name="rule"/>
+                <field name="ar_rule"/>
+				<field name="amount"/>
+			</tree>
+		</field>
+	</record>
+    <record model="ir.actions.act_window" id="excess_action">
+            <field name="name">Excess</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">travel.excess</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_id" ref="excess_view_tree"/>
+            <field name="view_mode">form,tree</field>
+    </record>
+
+</odoo>

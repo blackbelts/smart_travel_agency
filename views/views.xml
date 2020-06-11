@@ -1,0 +1,41 @@
+<odoo>
+<!--    <data>-->
+        <record model="ir.ui.view" id="form_serial_available">
+            <field name="name">form.serial.available</field>
+            <field name="model">serial.available</field>
+            <field name="arch" type="xml">
+                <form string="Serial Numbers Not Used">
+                    <group>
+                        <field name="travel_agency"/>
+                        <field name="travel_agency_branch"/>
+                        <field name="numbers"/>
+                    </group>
+                  <button string="Get Serials " name="get_not_used_serial" type="object" class="btn-primary"
+                            default_focus="1"/>
+
+                </form>
+            </field>
+        </record>
+<!--        <record id="serial_action" model="ir.actions.act_window">-->
+<!--            <field name="name">Serial Available</field>-->
+<!--            <field name="res_model">serial.available</field>-->
+<!--            <field name="view_mode">form</field>-->
+<!--            &lt;!&ndash;<field name="context">{"search_default_active":1}</field>&ndash;&gt;-->
+<!--            <field name="view_type">form</field>-->
+<!--            <field name="target">new</field>-->
+<!--        </record>-->
+<!--    <record id="action_cancel" model="ir.actions.act_window">-->
+<!--        <field name="name">Policy Cancel</field>-->
+<!--        <field name="res_model">travel.front</field>-->
+<!--        <field name="view_mode">form</field>-->
+<!--&lt;!&ndash;        <field name="view_id" ref="import_image_view_form"/>&ndash;&gt;-->
+<!--        <field name="target">new</field>-->
+<!--        <field name="binding_model_id" ref="smart_travel_agency.model_policy_travel" />-->
+<!--    </record>-->
+<!--      <act_window id="serial_action"-->
+<!--                multi="True"-->
+<!--                key2="client_action_multi" name="Serial Numbers Not Used"-->
+<!--                res_model="serial.available"-->
+<!--                view_mode="form" target="new" view_type="form" />-->
+<!--    </data>-->
+</odoo>

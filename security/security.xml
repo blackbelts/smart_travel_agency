@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--<record id="policy_user_see_only_group" model="res.groups">-->
+        <!--<field name="name">User: See Documents Only</field>-->
+        <!--<field name="category_id" ref="base.module_category_policy"/>-->
+        <!--<field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>-->
+        <!--<field name="comment">the user can only see all the Policy Application.</field>-->
+        <!--</record>-->
+        <record id="branch_group" model="res.groups">
+            <field name="name">User: Own Documents</field>
+            <field name="category_id" ref="base.module_category_travel"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="comment">the user will have access to his Documents</field>
+        </record>
+             <record id="agency_group" model="res.groups">
+            <field name="name">User: All Agency Documents</field>
+            <field name="category_id" ref="base.module_category_travel"/>
+            <field name="implied_ids" eval="[(4, ref('branch_group'))]"/>
+            <field name="comment">the user will have access to all of the agency documents.
+            </field>
+        </record>
+
+        <record id="all_agencies_group" model="res.groups">
+            <field name="name">Travel Manager Group</field>
+            <field name="comment">the user will have an access to All Documents.</field>
+            <field name="category_id" ref="base.module_category_travel"/>
+            <field name="implied_ids" eval="[(4, ref('agency_group'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+
+
+
+        <record id="branch_rule" model="ir.rule">
+            <field name="name">Branch Users</field>
+            <field ref="model_policy_travel" name="model_id"/>
+            <field name="domain_force">[('create_uid', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('smart_travel_agency.branch_group'))]"/>
+            <field eval="1" name="perm_unlink"/>
+            <field eval="1" name="perm_write"/>
+            <field eval="1" name="perm_read"/>
+            <field eval="1" name="perm_create"/>
+        </record>
+
+        <record id="agency_rule" model="ir.rule">
+            <field name="name">Agency Manager</field>
+            <field ref="model_policy_travel" name="model_id"/>
+            <field name="domain_force">[('travel_agency', '=', user.travel_agency_branch.travel_agency.id )]</field>
+            <field name="groups" eval="[(4, ref('smart_travel_agency.agency_group'))]"/>
+            <field eval="1" name="perm_unlink"/>
+            <field eval="1" name="perm_write"/>
+            <field eval="1" name="perm_read"/>
+            <field eval="1" name="perm_create"/>
+        </record>
+
+        <record id="general_manager" model="ir.rule">
+            <field name="name">Travel Agency Manager</field>
+            <field ref="model_policy_travel" name="model_id"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('smart_travel_agency.all_agencies_group'))]"/>
+            <field eval="1" name="perm_unlink"/>
+            <field eval="1" name="perm_write"/>
+            <field eval="1" name="perm_read"/>
+            <field eval="1" name="perm_create"/>
+        </record>
+
+    </data>
+</odoo>

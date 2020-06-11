@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+        <menuitem id="travel_menu" name="Smart Travel"
+                  groups="smart_travel_agency.branch_group,smart_travel_agency.agency_group,smart_travel_agency.all_agencies_group"
+                  web_icon="smart_travel_agency,static/description/icon.png"/>
+        <menuitem id="travel_policy_view_menu2" name="Travel Policy"
+                  web_icon="smart_travel_agency,static/description/travel.jpeg"/>
+         <menuitem id="travel_policy_view" name="Travel Policy"
+                parent="travel_policy_view_menu2"  />
+        <menuitem id="travel_policy_view_menu" name="Travel Policy" parent="travel_policy_view"
+                  action="travel_policy_action" sequence="0"/>
+        <menuitem id="insured_traveler_view_menu" name="Insured Travelers" parent="travel_policy_view"
+                  action="insured_traveler_action" sequence="1"/>
+        <menuitem id="insured_trips_view_menu" name="Insured Trips" parent="travel_policy_view"
+                  action="insured_trips_action" sequence="2"/>
+        <menuitem id="billing_view_menu" name="Billing" parent="travel_policy_view"
+                  action="billing_action" sequence="3"/>
+        <menuitem id="comm_view_menu" name="Agent Commission" parent="travel_policy_view"
+                  action="comm_action" sequence="4"/>
+        <menuitem id="settle_view_menu" name="Settlements" parent="travel_policy_view"
+                  action="agency_settle_action" sequence="5" groups="smart_travel_agency.agency_group"/>
+
+
+        <menuitem id="configuration_view_menu2" name="Configuration"
+                  groups="smart_travel_agency.all_agencies_group"
+                  web_icon="smart_travel_agency,static/description/conf.png" parent="travel_policy_view_menu2" />
+
+        <menuitem id="benefits_menu" name="Benefits" parent="configuration_view_menu2"
+                  action="benefits_action" sequence="0"/>
+
+        <menuitem id="excess_menu" name="Excess" parent="configuration_view_menu2"
+                  action="excess_action" sequence="1"/>
+
+        <menuitem id="price_menu" name="Price Table" parent="configuration_view_menu2"
+                  action="price_action" sequence="2"/>
+         <menuitem id="price_menu_family" name="Family Package" parent="configuration_view_menu2"
+                  action="price_action_family" sequence="3"/>
+         <menuitem id="group_menu" name="Group Discount" parent="configuration_view_menu2"
+                  action="group_action" sequence="4"/>
+
+
+
+        <menuitem id="travel_agency_view_menu" name="Travel Agency" parent="configuration_view_menu2"
+                  action="travel_agency_action" sequence="5"/>
+        <menuitem id="agency_branch_view_menu" name="Travel Agency Branch" parent="configuration_view_menu2"
+                  action="agency_branch_action" sequence="6"/>
+        <menuitem id="certificate_booklet_view_menu" name="Certificate Booklet" parent="configuration_view_menu2"
+                  action="certificate_booklet_action" sequence="7"/>
+<!--        <menuitem id="available_serial_view_menu" name="Available Serial Numbers" parent="configuration_view_menu2"-->
+<!--                  action="serial_action" sequence="8"/>-->
+        <menuitem id="travel_commission_view_menu" name="Travel Commission" parent="configuration_view_menu2"
+                  action="travel_commission_action" sequence="9"/>
+        <menuitem id="travel_user" name="Users" parent="configuration_view_menu2"
+                  action="base.action_res_users" sequence="10"/>
+        <menuitem id="travel_company_assist_view_menu" name="Assistance Information" parent="configuration_view_menu2"
+                  action="travel_company_assist_action" sequence="11"/>
+        <menuitem id="rating_table_view_menu" name="Rating/Charges Table" parent="configuration_view_menu2"
+                  action="rating_table_action" sequence="8"/>
+    </data>
+</odoo>

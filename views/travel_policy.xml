@@ -1,0 +1,378 @@
+<odoo>
+    <record model="ir.ui.view" id="tree_policy_travel">
+        <field name="name">tree.policy.travel</field>
+        <field name="model">policy.travel</field>
+        <field name="priority" eval="0"/>
+        <field name="arch" type="xml">
+            <tree decoration-warning="state == 'pending'" decoration-danger="state == 'canceled'"
+                  string="Travel Policy">
+                <field name="package"/>
+                <field name="policy_num"/>
+                <field name="serial_no"/>
+                <field name="issue_date"/>
+                <field name="insured"/>
+                <field name="DOB"/>
+                <field name="net_premium"/>
+                <field name="gross_premium"/>
+                <field name="travel_agency"/>
+                <field name="agent_commission"/>
+                <field name="net_to_insurer"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_policy_search" model="ir.ui.view">
+        <field name="name">policy.travel.search</field>
+        <field name="model">policy.travel</field>
+        <!--<field name="context">{"search_default_active":1}</field>-->
+        <field name="arch" type="xml">
+            <search>
+                <field name="policy_num"/>
+                <field name="serial_no"/>
+                <filter string="Pending" name="pending" domain="[('state','=','pending')]"/>
+                <filter string="Approved" name="approved" domain="[('state','=','approved')]"/>
+                <filter string="Canceled" name="approved" domain="[('state','=','canceled')]"/>
+
+                <group expand="0" string="Group By" >
+                    <!--                    <filter string="Assigned to" name="Responsible" context="{'group_by':'user_id'}" />-->
+                    <filter string="Agency"  name='group_agency' context="{'group_by':'travel_agency'}" />
+                    <filter string="Issue Date" name='group_issue' context="{'group_by':'issue_date'}" />
+                </group>
+            </search>
+        </field>
+    </record>
+    <record id="seq_travel" model="ir.sequence">
+        <field name="name">Policy</field>
+        <field name="code">policy</field>
+        <!--        <field name="prefix">POL/</field>-->
+        <field name="padding">4</field>
+        <!--<field name="company_id" eval="False"/>-->
+    </record>
+    <record model="ir.ui.view" id="form_policy_travel">
+        <field name="name">form.policy.travel</field>
+        <field name="model">policy.travel</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <form string="Travel Policy">
+                <header>
+
+                    <field name="state" widget="statusbar" statusbar_visible="pending,approved"/>
+                    <button name="confirm_policy" string="approved" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('state', '=', 'approved'),('state', '=', 'canceled')]}"/>
+                    <!--                    <button name="send_mail_template" string="send" type="object"-->
+                    <!--                    class="oe_highlight"-->
+                    <!--                    />-->
+                    <button name="get_financial_data" string="Get Price" type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible': ['|',('state', '=', 'approved'),('state', '=', 'canceled')]}"/>
+                    <!--                     <button name="get_financial" string="TEST" type="object"-->
+                    <!--                            class="oe_highlight"/>-->
+                    <button name="test" string="Send Mail" type="object"
+                            class="oe_highlight"/>
+
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="policy_num"/>
+                        <h1>
+                            <field name="policy_num"/>
+                        </h1>
+                    </div>
+                    <h3>Policy Information</h3>
+                    <group>
+                        <group>
+                            <field name="insured" attrs="{'readonly': [('state', '=','approved')]}"/>
+                            <field name="address" attrs="{'readonly': [('state', '=','approved')]}"/>
+                            <field name="phone" attrs="{'readonly': [('state', '=','approved')]}"/>
+                            <field name="national_id" attrs="{'readonly': [('state', '=','approved')]}"/>
+                            <field name="passport_num" attrs="{'readonly': [('state', '=','approved')]}"/>
+                        </group>
+                        <group>
+                            <field name="package" attrs="{'readonly': [('state', '=','approved')]}"/>
+                            <field name="type"/>
+                            <field name="issue_date" readonly="1" force_save="1"/>
+                            <!--<field name="serial_no" attrs="{'readonly': [('state', '=','approved')]}"/>-->
+                        </group>
+                        <group>
+
+                            <field name="coverage_from" attrs="{'readonly': [('state', '=','approved')]}"/>
+                            <field name="duration" attrs="{'readonly': [('state', '=','approved')]}" force_save="1"/>
+
+
+                            <field name="coverage_to" readonly="1" force_save="1"/>
+                            <field name="days" invisible="1"/>
+                            <field name="geographical_coverage" attrs="{'readonly': [('state', '=','approved')]}"/>
+
+
+                        </group>
+                        <group>
+                            <field name="user_id" invisible="1"  force_save="1" />
+                            <field name="travel_agency" readonly="1" force_save="1" />
+                            <field name="travel_agency_branch" invisible="1"  force_save="1"/>
+                            <field name="DOB" attrs="{'readonly': [('state', '=','approved')]}"/>
+                            <field name="age"/>
+                            <field name="gender" attrs="{'readonly': [('state', '=','approved')]}"/>
+                        </group>
+                    </group>
+                    <!--                    <group>-->
+                    <!--                        &lt;!&ndash;<field name="trip_from" attrs="{'readonly': [('state', '=','approved')]}" options='{"no_create": True}'/>&ndash;&gt;-->
+                    <!--                        &lt;!&ndash;<field name="trip_to" attrs="{'readonly': [('state', '=','approved')]}" options='{"no_create": True}'/>&ndash;&gt;-->
+                    <!--                       -->
+                    <!--                    </group>-->
+                    <!--<group>-->
+                    <!--<group>-->
+                    <!---->
+                    <!--</group>-->
+                    <!--</group>-->
+
+                    <group>
+                        <field name="cancel_reason" attrs="{'invisible': [('state', '!=','canceled')]}"/>
+
+                    </group>
+                    <notebook>
+                        <page string="Billing Info">
+                            <h3>Billing Information</h3>
+
+                            <group>
+
+                                <group>
+                                    <field name="price_details"/>
+                                    <field name="currency_id"/>
+                                    <field name="net_premium"/>
+                                    <field name="gross_premium"/>
+                                    <field name="travel_agency_comm"/>
+                                    <field name="bonus_commission"/>
+                                    <field name="net_to_insurer"/>
+
+                                </group>
+                                <group>
+                                    <field name="supervisory_stamp"/>
+                                    <field name="issue_fees"/>
+                                    <field name="proportional_stamp"/>
+                                    <field name="dimensional_stamp"/>
+                                    <field name="admin_fees"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <page string="Family Ages" attrs="{'invisible': [('package', '=', 'individual')]}">
+
+                            <field name="family_age">
+                                <tree editable="1">
+                                    <field name="issue_date"/>
+                                    <field name="name"/>
+                                    <field name="type"/>
+                                    <field name="gender"/>
+                                    <field name="DOB"/>
+                                    <field name="age"/>
+                                    <field name="pass_num"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="travel_policy_action">
+        <field name="name">Travel Policy</field>
+        <field name="res_model">policy.travel</field>
+        <!--        <field name="view_type">form</field>-->
+        <field name="view_mode">tree,form,pivot,graph</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">Your Travel Commission
+            </p>
+        </field>
+    </record>
+
+    <record id="cancel_view" model="ir.ui.view">
+        <field name="name">Cancel Policy</field>
+        <field name="model">cancel.policy</field>
+        <field name="arch" type="xml">
+            <form>
+                <div>
+                    <label for="cancel_reason"/>
+                    <field name="cancel_reason"/>
+
+                </div>
+                <button string="Confirm" name="cancel_policy" type="object" default_focus="1" class="btn-primary"/>
+                <footer>
+                    <!--                        <button string="Print Authorization" name="print_authorization" type="object" />-->
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+
+        </field>
+    </record>
+
+    <!--    <act_window id="action_cancel"-->
+    <!--                multi="True"-->
+    <!--                key2="client_action_multi" name="Cancel Policy"-->
+    <!--                res_model="cancel.policy" src_model="policy.travel"-->
+    <!--                view_mode="form" target="new" view_type="form"/>-->
+
+    <record id="front_view" model="ir.ui.view">
+        <field name="name">Cancel Policy</field>
+        <field name="model">travel.front</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <button string="Confirm" name="create_test" type="object" default_focus="1" class="btn-primary"/>
+                <footer>
+                    <!--                        <button string="Print Authorization" name="print_authorization" type="object" />-->
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+
+        </field>
+    </record>
+    <record id="action_cancel" model="ir.actions.act_window">
+        <field name="name">Policy Cancel</field>
+        <field name="res_model">travel.front</field>
+        <field name="view_mode">form</field>
+<!--        <field name="view_id" ref="import_image_view_form"/>-->
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="smart_travel_agency.model_policy_travel" />
+    </record>
+
+    <!--    <act_window id="action_cancel"-->
+    <!--                 name="front Policy"-->
+    <!--                res_model="travel.front" src_model="policy.travel"-->
+    <!--                view_mode="form" target="new" />-->
+
+    <record model="ir.ui.view" id="insured_traveler_tree_view">
+        <field name="name">tree.policy.travel</field>
+        <field name="model">policy.travel</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree string="Insured Travelers">
+                <field name="policy_num"/>
+                <field name="type"/>
+                <field name="issue_date"/>
+                <field name="serial_no"/>
+                <field name="insured"/>
+                <field name="address"/>
+                <field name="passport_num"/>
+                <field name="DOB"/>
+                <field name="age"/>
+                <field name="gender"/>
+                <!--                <field name="state"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="insured_traveler_action">
+        <field name="name">Insured Travelers</field>
+        <field name="res_model">policy.travel</field>
+        <!--        <field name="view_type">tree</field>-->
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="insured_traveler_tree_view"/>
+
+    </record>
+
+    <record model="ir.ui.view" id="insured_trips_tree_view">
+        <field name="name">tree.policy.travel</field>
+        <field name="model">policy.travel</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree string="Insured Trips">
+                <field name="policy_num"/>
+                <field name="type"/>
+                <field name="issue_date"/>
+                <field name="serial_no"/>
+                <field name="trip_from"/>
+                <field name="trip_to"/>
+                <field name="coverage_from"/>
+                <field name="coverage_to"/>
+                <field name="days"/>
+                <field name="geographical_coverage"/>
+                <!--                <field name="state"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="insured_trips_action">
+        <field name="name">Insured Trips</field>
+        <field name="res_model">policy.travel</field>
+        <!--        <field name="view_type">tree</field>-->
+        <field name="view_mode">tree,form,pivot,graph</field>
+        <field name="view_id" ref="insured_trips_tree_view"/>
+
+    </record>
+
+    <record model="ir.ui.view" id="billing_tree_view">
+        <field name="name">tree.policy.travel</field>
+        <field name="model">policy.travel</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree string="Billing">
+                <field name="policy_num"/>
+                <field name="type"/>
+                <field name="issue_date"/>
+                <field name="serial_no"/>
+                <field name="net_premium"/>
+                <field name="proportional_stamp"/>
+                <field name="dimensional_stamp"/>
+                <field name="supervisory_stamp"/>
+                <field name="issue_fees"/>
+                <field name="gross_premium"/>
+                <field name="travel_agency"/>
+                <field name="travel_agency_branch"/>
+                <field name="user_id"/>
+                <field name="travel_agency_comm"/>
+                <field name="net_to_insurer"/>
+                <!--                <field name="state"/>-->
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="billing_action">
+        <field name="name">Billing</field>
+        <field name="res_model">policy.travel</field>
+        <!--        <field name="view_type">tree</field>-->
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="billing_tree_view"/>
+
+    </record>
+    <record model="ir.ui.view" id="agent_tree_view">
+        <field name="name">tree.policy.travel</field>
+        <field name="model">policy.travel</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree string="Agent Commission">
+                <field name="policy_num"/>
+                <field name="type"/>
+                <field name="issue_date"/>
+                <field name="serial_no"/>
+                <field name="user_id"/>
+                <field name="net_premium"/>
+                <field name="travel_agency"/>
+                <field name="travel_agency_branch"/>
+                <field name="travel_agency_comm"/>
+                <field name="agent_commission"/>
+                <field name="net_to_insurer"/>
+                <!--                <field name="state"/>-->
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="comm_action">
+        <field name="name">Agent Commission</field>
+        <field name="res_model">policy.travel</field>
+        <!--        <field name="view_type">tree</field>-->
+        <field name="view_mode">tree,form,pivot,graph</field>
+        <field name="view_id" ref="agent_tree_view"/>
+        <field name="context">{'create':False,'edit':False}</field>
+        <field name='domain'>[('travel_agency','!=',False)]</field>
+
+
+    </record>
+    <template id="assets_backend" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/smart_travel_agency/static/src/css/travel.css"/>
+        </xpath>
+    </template>
+
+</odoo>
