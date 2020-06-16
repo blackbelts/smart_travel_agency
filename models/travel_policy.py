@@ -387,11 +387,18 @@ class TravelPolicy(models.Model):
         if self.age <= 0:
                 raise exceptions.ValidationError('You Must Enter Correct Birth Date')
 
+    # @api.constrains('age')
+    def _check_contract_period(self):
+        if self.travel_agency:
+            if self.travel_agency.contract_to <= self.issue_date:
+               raise exceptions.ValidationError('Contract Period Invalid')
+
 
     # @api.multi
     def confirm_policy(self):
         if self.address and self.insured and self.passport_num and self.DOB and self.gender and self.geographical_coverage and self.days:
             self.get_financial_data()
+            self._check_contract_period()
             self.state = 'approved'
             self.travel_agency.outstanding+=self.net_to_insurer
             bonus = self.env['target.bonus'].search(
