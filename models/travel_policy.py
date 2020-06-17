@@ -37,6 +37,7 @@ class TravelPolicy(models.Model):
     serial_no = fields.Integer('Serial Number')
     insured = fields.Char('Traveller Name')
     phone = fields.Char('Traveller Phone')
+    order_id = fields.Many2one('orders', 'Order ID', readonly=True)
 
     address = fields.Char('Traveller Address')
     passport_num = fields.Char('Passport Number')
@@ -390,7 +391,7 @@ class TravelPolicy(models.Model):
     # @api.constrains('age')
     def _check_contract_period(self):
         if self.travel_agency:
-            if self.travel_agency.contract_to <= self.issue_date:
+            if self.travel_agency.contract_to <= self.issue_date.date():
                raise exceptions.ValidationError('Contract Period Invalid')
 
 
@@ -545,3 +546,11 @@ class TravelCompanyAssist(models.Model):
     email = fields.Char('Email')
     fb_messenger = fields.Char('FB Messenger')
     logo_url = fields.Char('Logo Url')
+
+
+class TrackOrders(models.Model):
+    _name = 'orders'
+    _rec_name = 'order_id'
+
+    order_id = fields.Char(string='Order ID', required=True, copy=False, index=True,
+                             default=lambda self: self.env['ir.sequence'].next_by_code('order'), readonly=True)

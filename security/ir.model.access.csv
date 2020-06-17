@@ -18,7 +18,7 @@ access_policy15,policy.policy15,model_target_bonus,base.group_user,1,1,1,1
 access_policy16,policy.policy16,model_agency_settle,base.group_user,1,1,1,1
 access_policy17,policy.policy17,model_travel_company_assist,base.group_user,1,1,1,1
 access_policy18,policy.policy18,model_agent_user_wizard,base.group_user,1,1,1,1
-
+access_policy20,policy.policy20,model_orders,base.group_user,1,1,1,1
 
 
 
