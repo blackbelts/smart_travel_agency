@@ -508,6 +508,7 @@ class FamilyAge(models.Model):
                            ('parent', 'parent'),
                            ('grandparents', 'grandparents'),
                            ],default='spouse')
+    relationship = fields.Many2one('family.members', 'Relationship')
 
     gender = fields.Selection([('M', 'Male'), ('F', 'Female')])
     age=fields.Float('age')
@@ -554,3 +555,17 @@ class TrackOrders(models.Model):
 
     order_id = fields.Char(string='Order ID', required=True, copy=False, index=True,
                              default=lambda self: self.env['ir.sequence'].next_by_code('order'), readonly=True)
+
+class FamilyMembersAgeSetyp(models.Model):
+    _name = 'family.members'
+    _rec_name = 'relationship'
+    relationship = fields.Char('Relationship')
+    from_age = fields.Integer('From Age')
+    to_age = fields.Integer('To Age')
+
+    @api.model
+    def get_family_members(self):
+        result = []
+        for rec in self.env['family.members'].search([]):
+            result.append({'type': rec.relationship, 'from_age': rec.from_age, 'to_age': rec.to_age})
+        return result
