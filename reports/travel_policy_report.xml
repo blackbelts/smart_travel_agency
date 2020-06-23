@@ -119,7 +119,7 @@
                                             </tr>
                                             <tr>
                                                 <th scope="col">Issue Date</th>
-                                                <td><t t-esc="o.issue_date"/></td>
+                                                <td><t t-esc="o.issue_date.strftime('%d/%m/%Y')"/></td>
                                             </tr>
                                         
                                     </table>
@@ -132,7 +132,7 @@
 
                                         <tr>
                                             <th style="width:50% !important;" scope="col">From</th>
-                                            <td><t t-esc="o.coverage_from"/></td>
+                                            <td><t t-esc="o.coverage_from.strftime('%d/%m/%Y')"/></td>
                                         </tr>
                                     </table>
                                 </div>
@@ -141,7 +141,7 @@
 
                                         <tr>
                                             <th style="width:50% !important;" scope="col">To</th>
-                                            <td><t t-esc="o.coverage_to"  /></td>
+                                            <td><t t-esc="o.coverage_to.strftime('%d/%m/%Y')"  /></td>
 
                                         </tr>
                                     </table>
