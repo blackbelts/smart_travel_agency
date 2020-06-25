@@ -149,7 +149,7 @@
                                 <div style="width: 25% !important; float:left !important; padding-right:10px; margin-top:-8px !important;">
                                     <table class="table table-hover">
                                         <tr>
-                                            <th style="width:50% !important;" scope="col">Policy Period</th>
+                                            <th style="width:30% !important;" scope="col">Policy Period</th>
                                             <td><t t-esc="o.days"/> day(s)</td>
                                         </tr>
                                     </table>
@@ -157,7 +157,7 @@
                                 <div style="width: 25% !important; float:right !important; margin-top:-8px !important;">
                                     <table class="table table-hover">
                                         <tr>
-                                            <th style="width:50% !important;" scope="col">Coverage Zone</th>
+                                            <th style="width:70% !important;" scope="col">Coverage Zone</th>
                                             <td><span t-field="o.geographical_coverage" /></td>
                                         </tr>
                                     </table>
