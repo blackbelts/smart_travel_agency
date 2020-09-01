@@ -313,7 +313,7 @@
                                                     </t>
                                                 </tr>
                                             </t>
-                                            <tr>
+                                            <tr t-if="o.get_special_benefits()">
                                                 <td style="border: none !important; font-weight:bolder !important; font-size:13px !important; color: #073e89;">Special Covers</td>
                                                 <td></td>
                                             </tr>
