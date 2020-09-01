@@ -447,7 +447,10 @@ class TravelPolicy(models.Model):
 
     # @api.multi
     def get_benefits(self):
-        return self.env['travel.benefits'].search([])
+        return self.env['travel.benefits'].search([('special_covers', '=', False)])
+
+    def get_special_benefits(self):
+        return self.env['travel.benefits'].search([('special_covers', '=', True)])
 
     # @api.multi
     def get_assistance_information(self):
