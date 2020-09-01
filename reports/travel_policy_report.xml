@@ -119,7 +119,7 @@
                                             </tr>
                                             <tr>
                                                 <th scope="col">Issue Date</th>
-                                                <td><t t-esc="o.issue_date" t-field-options='{"format": "MM dd y h:mm"}'/></td>
+                                                <td><t t-esc="context_timestamp(o.issue_date).strftime('%d-%m-%Y %H:%M:%S')"/></td>
                                             </tr>
                                         
                                     </table>
