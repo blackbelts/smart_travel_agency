@@ -38,12 +38,12 @@ class Travelapi(models.Model):
     def get_periods(self,data):
         x = data
         options = []
-        data = self.env['travel.price.line'].search([('price_id.package', '=', 'individual'),('price_id.zone', '=', 'zone 1'),('price_id.from_age', '=', 0.00)])
+        # data = self.env['travel.price.line'].search([('price_id.package', '=', 'individual'),
+        #                                              ('price_id.zone', '=', 'zone 1'),
+        #                                              ('price_id.from_age', '=', 0.00)])
+        data = self.env['travel.price.line'].search([])
         for option in data:
             options.append(option.period)
+        options = list(dict.fromkeys(options))
         print(options)
         return options
-
-
-
-
