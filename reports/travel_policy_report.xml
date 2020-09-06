@@ -313,25 +313,26 @@
                                                     </t>
                                                 </tr>
                                             </t>
-                                            <tr t-if="o.get_special_benefits()">
-                                                <td style="border: none !important; font-weight:bolder !important; font-size:13px !important; color: #073e89;">Special Covers</td>
-                                                <td></td>
-                                            </tr>
-                                            <t t-foreach="o.get_special_benefits()" t-as="sben">
-                                                <tr>
-                                                    <t t-if="o.package == 'individual'">
-                                                            <td style="font-size: 12px !important;"><t t-esc="sben.cover" /></td>
-                                                            <td style="font-size: 12px !important;"><t t-esc="sben.limit" /></td>
-                                                    </t>
-                                                    <t t-if="o.package == 'family'">
-                                                        <td style="font-size: 9px !important;"><t t-esc="sben.cover" /></td>
-                                                        <td style="font-size: 9px !important;"><t t-esc="sben.limit" /></td>
-                                                    </t>
-                                                </tr>
-                                            </t>
+
 					                    </tbody>
                                     </table>
                                 </div>
+<!--                                            <tr t-if="o.get_special_benefits()">-->
+<!--                                                <td style="border: none !important; font-weight:bolder !important; font-size:13px !important; color: #073e89;">Special Covers</td>-->
+<!--                                                <td></td>-->
+<!--                                            </tr>-->
+<!--                                            <t t-foreach="o.get_special_benefits()" t-as="sben">-->
+<!--                                                <tr>-->
+<!--                                                    <t t-if="o.package == 'individual'">-->
+<!--                                                            <td style="font-size: 12px !important;"><t t-esc="sben.cover" /></td>-->
+<!--                                                            <td style="font-size: 12px !important;"><t t-esc="sben.limit" /></td>-->
+<!--                                                    </t>-->
+<!--                                                    <t t-if="o.package == 'family'">-->
+<!--                                                        <td style="font-size: 9px !important;"><t t-esc="sben.cover" /></td>-->
+<!--                                                        <td style="font-size: 9px !important;"><t t-esc="sben.limit" /></td>-->
+<!--                                                    </t>-->
+<!--                                                </tr>-->
+<!--                                            </t>-->
                                 <div style="width: 50% !important; margin-top:-15px !important; float: left; white-space: nowrap !important;">
                                     <t t-if="o.package == 'individual'">
                                         <ul style="padding-left:15px;font-size: 11px;">
@@ -368,6 +369,34 @@
                                         <p style="text-align:end; font-size: 10px;">Source : <t t-esc="o.travel_agency.agency_code" /></p>
                                     </t>
 
+                                </div>
+                                <div t-if="o.get_special_benefits()" class="" style="width: 100% !important; margin-top:-8px !important; float: left;">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Special Covers</th>
+                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;"></th>
+                                            </tr>
+                                            <tr>
+                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Cover</th>
+                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Limit</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-foreach="o.get_special_benefits()" t-as="sben">
+                                                <tr>
+                                                    <t t-if="o.package == 'individual'">
+                                                            <td style="font-size: 12px !important;"><t t-esc="sben.cover" /></td>
+                                                            <td style="font-size: 12px !important;"><t t-esc="sben.limit" /></td>
+                                                    </t>
+                                                    <t t-if="o.package == 'family'">
+                                                        <td style="font-size: 9px !important;"><t t-esc="sben.cover" /></td>
+                                                        <td style="font-size: 9px !important;"><t t-esc="sben.limit" /></td>
+                                                    </t>
+                                                </tr>
+                                            </t>
+					                    </tbody>
+                                    </table>
                                 </div>
                                 <t t-if="o.package == 'individual'">
                                     <div style="margin-top:-4px !important;">
