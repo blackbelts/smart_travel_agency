@@ -46,12 +46,12 @@ class TravelPolicy(models.Model):
     source = fields.Selection([('online', 'Online'),
                                ('Agency', 'Agency'),
                                ], default='Agency')
-    DOB = fields.Date('Date Of Birth', default=datetime.today())
+    DOB = fields.Date('Date Of Birth', default=lambda self:fields.datetime.today())
     age = fields.Integer('Age', compute='compute_age',store=True)
     gender = fields.Selection([('M', 'Male'), ('F', 'Female')])
     trip_from = fields.Many2one('res.country', 'Trip From')
     trip_to = fields.Many2one('res.country', 'Trip To')
-    coverage_from = fields.Date('From', default=datetime.today())
+    coverage_from = fields.Date('From', default=lambda self:fields.datetime.today())
     coverage_to = fields.Date('To')
     days = fields.Integer('Day(s)',compute='compute_days',store='True')
     geographical_coverage = fields.Selection([('zone 1', 'Europe'),
@@ -69,7 +69,6 @@ class TravelPolicy(models.Model):
     policy_approval_fees = fields.Float('Policy approval fees', readonly=True, compute='get_financial_data', store=True)
     policy_holder_fees = fields.Float('Policyholder’s protection fees', readonly=True, compute='get_financial_data', store=True)
     admin_fees = fields.Float('Admin Fees', )
-
     issue_fees = fields.Float('Issue Fees', readonly=True, compute='get_financial_data',store=True)
     gross_premium = fields.Float('Gross Premium', readonly=True, compute='get_financial_data',store=True)
     travel_agency = fields.Many2one('travel.agency', 'Travel Agency', related='travel_agency_branch.travel_agency',store=True
@@ -94,6 +93,7 @@ class TravelPolicy(models.Model):
         self.send_mail_template('AhmedNourElhalaby@gmail.com')
         
     def _get_periods(self):
+        #you Must Change
         options = []
         data = self.env['travel.price.line'].search(
             [('price_id.package', '=', 'individual'), ('price_id.zone', '=', 'zone 1'),
@@ -155,6 +155,10 @@ class TravelPolicy(models.Model):
 
     # @api.one
     # @api.model
+    # @api.multi
+    def print_report_xml(self):
+        # data = {'start_date': self.start_date, 'end_date': self.end_date}
+        return self.env.ref('smart_travel_agency.travel_xml_report').report_action(self)
     def get_financial_data(self):
         if self.age and self.geographical_coverage and self.days:
             # data = self.env['travel.price'].search(
@@ -387,6 +391,15 @@ class TravelPolicy(models.Model):
     def _check_age_limit(self):
         if self.age <= 0:
                 raise exceptions.ValidationError('You Must Enter Correct Birth Date')
+
+    @api.constrains('national_id')
+    @api.onchange('national_id')
+
+    def _check_national(self):
+        if self.national_id[1:3] != str(self.DOB).split('-')[0][-2:] or self.national_id[3:5] != str(self.DOB).split('-')[1] or self.national_id[5:7] != str(self.DOB).split('-')[2]:
+            raise exceptions.ValidationError('National id not Matching Date of Birth')
+        if len(str(self.national_id))!=14:
+            raise exceptions.ValidationError('Invalid Must Be 14 Characters')
 
     # @api.constrains('age')
     def _check_contract_period(self):

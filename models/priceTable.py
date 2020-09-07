@@ -32,3 +32,5 @@ class PriceTable(models.Model):
     supervisory_stamp = fields.Float('Supervisory Stamp')
     gross_premium = fields.Float('Gross Premium')
     price_id=fields.Many2one('travel.price', ondelete='cascade')
+
+    #you Must Delete Gross Prem or make it computed

@@ -428,5 +428,26 @@
                 </t>
             </t>
         </template>
+           <report id="travel_xml_report"
+           string="travel_xml_report"
+           model="policy.travel"
+           report_type="qweb-xml"
+           name="smart_travel_agency.report_travel_docs"/>
+        <template id="report_travel_docs">
+
+                <t t-foreach="docs" t-as="o">
+       <MAINHEADER>
+           <POLICY >
+                   <IssueDate t-esc="o.issue_date"/>
+
+           </POLICY>
+<!--           <SALEDETAILS t-foreach="dat" t-as="sales">-->
+<!--               <NUMBER t-esc="sales['sale_sequence']"/>-->
+<!--               <AMOUNT t-esc="sales['total_amount']"/>-->
+<!--               <SALESPERSON t-esc="sales['sales_person_name']"/>-->
+<!--           </SALEDETAILS>-->
+       </MAINHEADER>
+             </t>
+   </template>
     </data>
 </odoo>

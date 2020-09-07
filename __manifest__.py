@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','mail','helpdesk_inherit'],
+    'depends': ['base','mail','helpdesk_inherit','report_xml'],
 
     # always loaded
     'data': [
@@ -35,6 +35,7 @@
         'views/travel_policy.xml',
         'views/benefits.xml',
         'views/excess.xml',
+        'views/ticket.xml',
         'views/priceTable.xml',
         'views/companyAssist.xml',
         'views/menu_item.xml',

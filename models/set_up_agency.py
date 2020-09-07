@@ -9,7 +9,7 @@ from odoo import api, fields, models
 class RatingTable(models.Model):
     _name = 'rating.table'
     _description = 'Set up Rating tables'
-
+#where used????
 
     geographical_coverage = fields.Selection([('all_countries', 'WorldWide + USA&CANADA'),
                                               ('not_all_countries', 'WorldWide - USA&CANADA'), ],
@@ -89,8 +89,6 @@ class TravelAgency(models.Model):
                             'default_username': self.name,'default_travel_agency':self.id}
 
             }
-
-
 
 class AgencyBranch(models.Model):
     _name = 'agency.branch'

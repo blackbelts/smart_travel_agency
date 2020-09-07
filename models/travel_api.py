@@ -4,6 +4,17 @@ from dateutil.relativedelta import relativedelta
 from odoo.exceptions import UserError
 from odoo.exceptions import ValidationError
 from odoo import api, fields, models
+
+class HelpDesk(models.Model):
+    _inherit = 'helpdesk_lite.ticket'
+    group=fields.One2many('group.ticket','group_id',string='Group')
+
+class HelpGroup(models.Model):
+        _name = 'group.ticket'
+        range = fields.Char('Range')
+        size = fields.Float('Size')
+        group_id = fields.Many2one('helpdesk_lite.ticket', string='ticket')
+
 class Travelapi(models.Model):
     _name='travel.front'
 
@@ -17,13 +28,13 @@ class Travelapi(models.Model):
         when = datetime.strptime(data.get('p_from'), '%Y-%m-%d').date()
         to = datetime.strptime(data.get('p_to'), '%Y-%m-%d').date()
         policy_id = self.env['policy.travel'].create(
-            {'package': data.get('package'), 'insured': data.get('c_name'), 'address': data.get('add'),
+            {'package': data.   get('package'), 'insured': data.get('c_name'), 'address': data.get('add'),
              'gender': data.get('gender'), 'source': data.get('source'), 'passport_num': data.get('pass'),
              'national_id': data.get('id'), 'phone': data.get('phone'),
              'DOB': DOB, 'geographical_coverage': data.get('zone'), 'coverage_from': when, 'coverage_to': to,
              'state': 'approved'})
         if data.get('family'):
-            for rec in data.get('family'):
+            for rec  in data.get('family'):
                f= self.env['policy.family.age'].create(
                     {'pass_num': rec['passport_num'], 'name': rec['name'], 'DOB': rec['dob'], 'type': rec['type'],
                      'gender': rec['gender'], 'policy_id': policy_id.id})
@@ -36,6 +47,7 @@ class Travelapi(models.Model):
 
     @api.model
     def get_periods(self,data):
+        # You Must Change it very soon
         x = data
         options = []
         data = self.env['travel.price.line'].search([('price_id.package', '=', 'individual'),('price_id.zone', '=', 'zone 1'),('price_id.from_age', '=', 0.00)])
@@ -43,6 +55,19 @@ class Travelapi(models.Model):
             options.append(option.period)
         print(options)
         return options
+
+    @api.model
+    def create_travel_ticket(self, data):
+        name = 'Travel Group Ticket'
+        group_dict = {5: '0-10', 15: '11-18', 25: '19-70'}
+        ticket_id = self.env['helpdesk_lite.ticket'].create(
+            {'name': name, 'contact_name': data.get('name'), 'job': data.get('job'), 'phone': data.get('phone'),
+             'email_from': data.get('mail'), 'ticket_type':'travel'})
+        if data.get('group'):
+            for rec in data.get('group'):
+                self.env['group.ticket'].create(
+                    {'size': rec['size'], 'range': group_dict.get(rec['age']), 'group_id': ticket_id.id})
+
 
 
 

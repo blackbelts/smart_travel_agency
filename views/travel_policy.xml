@@ -69,7 +69,7 @@
                             attrs="{'invisible': ['|',('state', '=', 'approved'),('state', '=', 'canceled')]}"/>
                     <!--                     <button name="get_financial" string="TEST" type="object"-->
                     <!--                            class="oe_highlight"/>-->
-                    <button name="test" string="Send Mail" type="object"
+                    <button name="print_report_xml" string="XML" type="object"
                             class="oe_highlight"/>
 
                 </header>
