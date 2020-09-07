@@ -52,5 +52,41 @@
             <field name="view_id" ref="travel_company_assist_view_tree"/>
             <field name="view_mode">form,tree</field>
     </record>
+    <!-- Add a custom form view -->
+    <record id="family_members_form" model="ir.ui.view">
+		<field name="name">Family Members Age Setup</field>
+		<field name="model">family.members</field>
+		<field name="arch" type="xml">
+			<form>
+                <sheet>
+                    <group>
+                        <field name="relationship"/>
+                        <field name="from_age"/>
+                        <field name="to_age"/>
+                    </group>
+                </sheet>
+			</form>
+		</field>
+	</record>
+    <!-- Add a custom Tree (List) view -->
+    <record id="family_members_view_tree" model="ir.ui.view">
+		<field name="name">Family Members Age Setup</field>
+		<field name="model">family.members</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="relationship"/>
+                <field name="from_age"/>
+                <field name="to_age"/>
+			</tree>
+		</field>
+	</record>
+    <record model="ir.actions.act_window" id="family_members_action">
+            <field name="name">Family Members Age Setup</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">family.members</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="view_id" ref="family_members_view_tree"/>
+            <field name="view_mode">form,tree</field>
+    </record>
 
 </odoo>

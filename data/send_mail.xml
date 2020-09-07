@@ -40,7 +40,7 @@ ${object.policy_num}
 <br>
 الخط الساخن   19243
 <br>
-http://207.154.195.214/TravelWording.pdf
+http://arp-alb-773417538.eu-west-1.elb.amazonaws.com/TravelWording_General_Conditions.pdf
 	    ]]>
             </field>
         </record>

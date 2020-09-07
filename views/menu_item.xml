@@ -55,7 +55,9 @@
         <menuitem id="travel_user" name="Users" parent="configuration_view_menu2"
                   action="base.action_res_users" sequence="10"/>
         <menuitem id="travel_company_assist_view_menu" name="Assistance Information" parent="configuration_view_menu2"
-                  action="travel_company_assist_action" sequence="11"/>
+                  action="travel_company_assist_action" sequence="12"/>
+        <menuitem id="family_members_age_view_menu" name="Family Members Age Setup" parent="configuration_view_menu2"
+                  action="family_members_action" sequence="11"/>
         <menuitem id="rating_table_view_menu" name="Rating/Charges Table" parent="configuration_view_menu2"
                   action="rating_table_action" sequence="8"/>
     </data>

@@ -50,9 +50,13 @@ class Travelapi(models.Model):
         # You Must Change it very soon
         x = data
         options = []
-        data = self.env['travel.price.line'].search([('price_id.package', '=', 'individual'),('price_id.zone', '=', 'zone 1'),('price_id.from_age', '=', 0.00)])
+        # data = self.env['travel.price.line'].search([('price_id.package', '=', 'individual'),
+        #                                              ('price_id.zone', '=', 'zone 1'),
+        #                                              ('price_id.from_age', '=', 0.00)])
+        data = self.env['travel.price.line'].search([])
         for option in data:
             options.append(option.period)
+        options = list(dict.fromkeys(options))
         print(options)
         return options
 
@@ -67,6 +71,7 @@ class Travelapi(models.Model):
             for rec in data.get('group'):
                 self.env['group.ticket'].create(
                     {'size': rec['size'], 'range': group_dict.get(rec['age']), 'group_id': ticket_id.id})
+
 
 
 

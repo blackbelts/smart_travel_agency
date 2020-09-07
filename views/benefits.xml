@@ -15,6 +15,9 @@
                         <field name="ar_cover"/>
                         <field name="ar_limit"/>
                     </group>
+                    <group>
+                        <field name="special_covers"/>
+                    </group>
                 </sheet>
 			</form>
 		</field>
@@ -29,6 +32,7 @@
 				<field name="limit"/>
                 <field name="ar_cover"/>
                 <field name="ar_limit"/>
+                <field name="special_covers"/>
 			</tree>
 		</field>
 	</record>
