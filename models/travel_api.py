@@ -65,7 +65,7 @@ class Travelapi(models.Model):
         name = 'Travel Group Ticket'
         group_dict = {5: '0-10', 15: '11-18', 25: '19-70'}
         ticket_id = self.env['helpdesk_lite.ticket'].create(
-            {'name': name, 'contact_name': data.get('name'), 'job': data.get('job'), 'phone': data.get('phone'),
+            {'name': name, 'contact_name': data.get('name'), 'phone': data.get('phone'),
              'email_from': data.get('mail'), 'ticket_type':'travel'})
         if data.get('group'):
             for rec in data.get('group'):
