@@ -9,6 +9,8 @@
                   parent="travel_policy_view_menu2"
                   groups="smart_travel_agency.branch_group,smart_travel_agency.agency_group,smart_travel_agency.all_agencies_group"
         />
+          <menuitem id="rates_edit" name="Currency" parent="travel_policy_view_menu2"
+                  action="base.act_view_currency_rates" />
         <menuitem id="travel_policy_view_menu" name="Travel Policy" parent="travel_policy_view"
                   action="travel_policy_action" sequence="0"/>
         <menuitem id="insured_traveler_view_menu" name="Insured Travelers" parent="travel_policy_view"
@@ -60,5 +62,6 @@
                   action="family_members_action" sequence="11"/>
         <menuitem id="rating_table_view_menu" name="Rating/Charges Table" parent="configuration_view_menu2"
                   action="rating_table_action" sequence="8"/>
+
     </data>
 </odoo>
