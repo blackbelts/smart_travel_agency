@@ -72,6 +72,8 @@ class Travelapi(models.Model):
                 self.env['group.ticket'].create(
                     {'size': rec['size'], 'range': group_dict.get(rec['age']), 'group_id': ticket_id.id})
 
+        return ticket_id.id
+
 
 
 
