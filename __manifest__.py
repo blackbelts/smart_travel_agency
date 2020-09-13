@@ -22,6 +22,7 @@
     # any module necessary for this one to work correctly
     'depends': ['base','mail','helpdesk_inherit','report_xml'],
 
+
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
