@@ -533,9 +533,10 @@ class FamilyAge(models.Model):
     # @api.one
     @api.constrains('age')
     def _check_age(self):
-        if self.age:
-            if self.age>18 and self.type=='kid':
-                raise exceptions.ValidationError('Kid Age Must  Be  Less Than 18')
+        for rec in self:
+            if rec.age:
+                if rec.age>18 and rec.type=='kid':
+                    raise exceptions.ValidationError('Kid Age Must  Be  Less Than 18')
     policy_id = fields.Many2one('policy.travel', ondelete='cascade')
     @api.model
     @api.onchange('DOB')

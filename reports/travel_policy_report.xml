@@ -96,7 +96,7 @@
                                         
                                             <tr>
                                                 <th scope="col">Policy Number</th>
-                                                <td><t t-esc="o.policy_num[4:]" /></td>
+                                                <td><t t-esc="o.policy_num" /></td>
                                             </tr>
 <!--                                            <tr>-->
 <!--                                                <th scope="col">gross policy premiums</th>-->
@@ -265,7 +265,7 @@
                                                 <th scope="col">Gender</th>
                                                 <th scope="col">Date Of Birth</th>
                                                 <th scope="col">Passport</th>
-                                                <th t-if="o.package == 'family'" scope="col">Relationship</th>
+<!--                                                <th t-if="o.package == 'family'" scope="col">Relationship</th>-->
 
                                             </tr>
                                         </thead>
@@ -275,20 +275,20 @@
                                                 <td><t t-esc="o.gender " /></td>
                                                 <td><t t-esc="o.DOB" /></td>
                                                 <td><t t-esc="o.passport_num " /></td>
-                                                <td t-if="o.package == 'family'"></td>
+<!--                                                <td t-if="o.package == 'family'"></td>-->
 
                                             </tr>
 
-					                        <t t-if="o.family_age !=False" >
-                                                <tr t-foreach='o.family_age' t-as="f">
-                                                    <td style="text-transform: uppercase !important;"><t t-esc="f.name"/></td>
-                                                    <td><t t-esc="f.gender"/></td>
-                                                    <td><t t-esc="f.DOB"/></td>
-                                                    <td><t t-esc="f.pass_num"/></td>
-                                                    <td><t t-esc="f.type" /></td>
+<!--					                        <t t-if="o.family_age !=False" >-->
+<!--                                                <tr t-foreach='o.family_age' t-as="f">-->
+<!--                                                    <td style="text-transform: uppercase !important;"><t t-esc="f.name"/></td>-->
+<!--                                                    <td><t t-esc="f.gender"/></td>-->
+<!--                                                    <td><t t-esc="f.DOB"/></td>-->
+<!--                                                    <td><t t-esc="f.pass_num"/></td>-->
+<!--                                                    <td><t t-esc="f.type" /></td>-->
 
-                                                </tr>
-		                                    </t>
+<!--                                                </tr>-->
+<!--		                                    </t>-->
                                         </tbody>
                                     </table>
                                 </div>
@@ -303,14 +303,14 @@
                                         <tbody>
                                             <t t-foreach="o.get_benefits() " t-as="ben">
                                                 <tr>
-                                                    <t t-if="o.package == 'individual'">
-                                                        <td style="font-size: 12px !important;"><t t-esc="ben.cover" /></td>
-                                                        <td style="font-size: 12px !important;"><t t-esc="ben.limit" /></td>
-                                                    </t>
-                                                    <t t-if="o.package == 'family'">
-                                                        <td style="font-size: 9px !important;"><t t-esc="ben.cover" /></td>
-                                                        <td style="font-size: 9px !important;"><t t-esc="ben.limit" /></td>
-                                                    </t>
+<!--                                                    <t t-if="o.package == 'individual'">-->
+                                                    <td style="font-size: 12px !important;"><t t-esc="ben.cover" /></td>
+                                                    <td style="font-size: 12px !important;"><t t-esc="ben.limit" /></td>
+<!--                                                    </t>-->
+<!--                                                    <t t-if="o.package == 'family'">-->
+<!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.cover" /></td>-->
+<!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.limit" /></td>-->
+<!--                                                    </t>-->
                                                 </tr>
                                             </t>
 
@@ -334,23 +334,23 @@
 <!--                                                </tr>-->
 <!--                                            </t>-->
                                 <div style="width: 50% !important; margin-top:-15px !important; float: left; white-space: nowrap !important;">
-                                    <t t-if="o.package == 'individual'">
-                                        <ul style="padding-left:15px;font-size: 11px;">
-                                            <li>The above is subject to policy terms and conditions as attached.</li>
-                                            <li>Policy issued online doesn't need insured signature.</li>
-                                            <li>(*) Excess applies.</li>
-                                            <li>(**) Actual expenses should not exceed the maximum policy limit.</li>
-                                        </ul>
-                                    </t>
+<!--                                    <t t-if="o.package == 'individual'">-->
+                                    <ul style="padding-left:15px;font-size: 11px;">
+                                        <li>The above is subject to policy terms and conditions as attached.</li>
+                                        <li>Policy issued online doesn't need insured signature.</li>
+                                        <li>(*) Excess applies.</li>
+                                        <li>(**) Actual expenses should not exceed the maximum policy limit.</li>
+                                    </ul>
+<!--                                    </t>-->
 
-                                    <t t-if="o.package == 'family'">
-                                        <ul style="padding-left:15px;font-size: 10px;">
-                                            <li>The above is subject to policy terms and conditions as attached.</li>
-                                            <li>Policy issued online doesn't need insured signature.</li>
-                                            <li>(*) Excess applies.</li>
-                                            <li>(**) Actual expenses should not exceed the maximum policy limit.</li>
-                                        </ul>
-                                    </t>
+<!--                                    <t t-if="o.package == 'family'">-->
+<!--                                        <ul style="padding-left:15px;font-size: 10px;">-->
+<!--                                            <li>The above is subject to policy terms and conditions as attached.</li>-->
+<!--                                            <li>Policy issued online doesn't need insured signature.</li>-->
+<!--                                            <li>(*) Excess applies.</li>-->
+<!--                                            <li>(**) Actual expenses should not exceed the maximum policy limit.</li>-->
+<!--                                        </ul>-->
+<!--                                    </t>-->
 <!--                                    <p style="font-size: 10px;"></p>-->
 <!--                                    <p style="font-size: 10px; margin-top:-10px !important;"></p>-->
 <!--                                    <p style="font-size: 10px;"></p>-->
@@ -385,29 +385,29 @@
                                         <tbody>
                                             <t t-foreach="o.get_special_benefits()" t-as="sben">
                                                 <tr>
-                                                    <t t-if="o.package == 'individual'">
-                                                            <td style="font-size: 12px !important;"><t t-esc="sben.cover" /></td>
-                                                            <td style="font-size: 12px !important;"><t t-esc="sben.limit" /></td>
-                                                    </t>
-                                                    <t t-if="o.package == 'family'">
-                                                        <td style="font-size: 9px !important;"><t t-esc="sben.cover" /></td>
-                                                        <td style="font-size: 9px !important;"><t t-esc="sben.limit" /></td>
-                                                    </t>
+<!--                                                    <t t-if="o.package == 'individual'">-->
+                                                    <td style="font-size: 12px !important;"><t t-esc="sben.cover" /></td>
+                                                    <td style="font-size: 12px !important;"><t t-esc="sben.limit" /></td>
+<!--                                                    </t>-->
+<!--                                                    <t t-if="o.package == 'family'">-->
+<!--                                                        <td style="font-size: 9px !important;"><t t-esc="sben.cover" /></td>-->
+<!--                                                        <td style="font-size: 9px !important;"><t t-esc="sben.limit" /></td>-->
+<!--                                                    </t>-->
                                                 </tr>
                                             </t>
 					                    </tbody>
                                     </table>
                                 </div>
-                                <t t-if="o.package == 'individual'">
-                                    <div style="margin-top:-4px !important;">
-                                        <h4 style="color: #073e89; width: 100% !important; margin-top:-4px !important; float: left; text-align:center !important;">Assistance Information</h4>
-                                    </div>
-                                </t>
-                                <t t-if="o.package == 'family'">
-                                    <div style="margin-top:-8px !important;">
-                                        <h4 style="color: #073e89; width: 100% !important; margin-top:-8px !important; float: left; text-align:center !important;">Assistance Information</h4>
-                                    </div>
-                                </t>
+<!--                                <t>-->
+                                <div style="margin-top:-4px !important;">
+                                    <h4 style="color: #073e89; width: 100% !important; margin-top:-4px !important; float: left; text-align:center !important;">Assistance Information</h4>
+                                </div>
+<!--                                </t>-->
+<!--                                <t t-if="o.package == 'family'">-->
+<!--                                    <div style="margin-top:-8px !important;">-->
+<!--                                        <h4 style="color: #073e89; width: 100% !important; margin-top:-8px !important; float: left; text-align:center !important;">Assistance Information</h4>-->
+<!--                                    </div>-->
+<!--                                </t>-->
                                 <div style="width: 100% !important; margin-top:0px !important; float: left; border: 1px solid #ddd !important;">
                                     <div style="width: 25% !important; float: left; border: none !important;">
 
@@ -464,12 +464,42 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                            <div class="page" t-if="o.package == 'family'">
+                                <div  style="padding-left: 25px !important; padding-right: 25px !important; padding-top:1px !important;">
+                                    <div  style="width: 100% !important; float:left !important;">
+                                        <h4 style="color: #073e89; text-align:center; margin-top:5px !important;">Family Members</h4>
+                                        <table class="table table-hover" style="border: double #073e89 !important; margin-top:1px !important;">
+                                            <thead>
+                                                <tr style="background-color: #eee;">
+                                                    <th scope="col">Name</th>
+                                                    <th scope="col">Gender</th>
+                                                    <th scope="col">Date Of Birth</th>
+                                                    <th scope="col">Passport</th>
+                                                    <th scope="col">Relationship</th>
 
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <t t-if="o.family_age !=False" >
+                                                    <tr t-foreach='o.family_age' t-as="f">
+                                                        <td style="text-transform: uppercase !important;"><t t-esc="f.name"/></td>
+                                                        <td><t t-esc="f.gender"/></td>
+                                                        <td><t t-esc="f.DOB"/></td>
+                                                        <td><t t-esc="f.pass_num"/></td>
+                                                        <td><t t-esc="f.type" /></td>
 
-                            <div class="footer" style="float:left; width:100px;">
+                                                    </tr>
+                                                </t>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <div class="footer" style="float:left; width:100px;">
                                 <img style="width:100% !important;" class="img img-responsive" src="/smart_travel_agency/static/img/1.png"/>
                                 <span style="font-size: 10px !important; white-space: nowrap !important; overflow: hidden !important;">AROPE PROPERTIES &amp; LIABILITIES INSURANCE EGYPT - S.A.E</span>
-                            </div>
                         </div>
                     </t>
                 </t>
