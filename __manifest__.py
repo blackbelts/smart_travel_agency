@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','mail','helpdesk_inherit','report_xml'],
+    'depends': ['base','mail','helpdesk_inherit'],
 
 
     # always loaded

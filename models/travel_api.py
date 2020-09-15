@@ -6,7 +6,7 @@ from odoo.exceptions import ValidationError
 from odoo import api, fields, models
 
 class HelpDesk(models.Model):
-    _inherit = 'helpdesk_lite.ticket'
+    _inherit = 'quoate'
     group=fields.One2many('group.ticket','group_id',string='Group')
 
 class HelpGroup(models.Model):
@@ -64,7 +64,7 @@ class Travelapi(models.Model):
     def create_travel_ticket(self, data):
         name = 'Travel Group Ticket'
         group_dict = {5: '0-10', 15: '11-18', 25: '19-70'}
-        ticket_id = self.env['helpdesk_lite.ticket'].create(
+        ticket_id = self.env['quoate'].create(
             {'name': name, 'contact_name': data.get('name'), 'phone': data.get('phone'),
              'email_from': data.get('mail'), 'ticket_type':'travel'})
         if data.get('group'):
