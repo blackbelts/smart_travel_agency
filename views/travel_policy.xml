@@ -380,8 +380,8 @@
         <field name="code">order</field>
         <field name="prefix">ORDER</field>
         <field name="padding">6</field>
-        <field name="number_next">1</field>
-        <field name="number_increment">1</field>
+<!--        <field name="number_next">1</field>-->
+<!--        <field name="number_increment">1</field>-->
     </record>
     <record model="ir.ui.view" id="orders_tree_view">
         <field name="name">orders</field>
