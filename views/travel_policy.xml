@@ -378,10 +378,28 @@
     <record id="sequence_orders" model="ir.sequence">
         <field name="name">Order</field>
         <field name="code">order</field>
-        <field name="prefix">ORDER</field>
+        <field name="prefix">ORDER_</field>
         <field name="padding">6</field>
-        <field name="number_next">1</field>
-        <field name="number_increment">1</field>
+<!--        <field name="number_next">1</field>-->
+<!--        <field name="number_increment">1</field>-->
+    </record>
+    <record model="ir.ui.view" id="orders_tree_view">
+        <field name="name">orders</field>
+        <field name="model">orders</field>
+        <field name="priority" eval="16"/>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="order_id"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="orders_action">
+        <field name="name">orders</field>
+        <field name="res_model">orders</field>
+        <field name="view_mode">tree,form,pivot,graph</field>
+        <field name="view_id" ref="orders_tree_view"/>
+
+
     </record>
 
 </odoo>

@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1de2da9d-a355-4bb7-8a84-4167db973d93" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/travel_policy.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/travel_policy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/travel_policy_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/reports/travel_policy_report.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/travel_policy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/travel_policy.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +20,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../personal_acciedent/models/personal_policy.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -41,9 +37,13 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1599988672357">
+    <state x="499" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1599994240741">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="499" y="154" width="424" height="484" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1599988672357" />
+    <state x="499" y="154" width="424" height="484" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1599994240741" />
+    <state x="407" y="135" width="618" height="522" key="find.popup" timestamp="1600851429429">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="407" y="135" width="618" height="522" key="find.popup/67.27.1299.741@67.27.1299.741" timestamp="1600851429429" />
   </component>
 </project>

@@ -31,6 +31,8 @@
 
         <menuitem id="benefits_menu" name="Benefits" parent="configuration_view_menu2"
                   action="benefits_action" sequence="0"/>
+        <menuitem id="orders_menu" name="Orders" parent="configuration_view_menu2"
+                  action="orders_action" sequence="20"/>
 
         <menuitem id="excess_menu" name="Excess" parent="configuration_view_menu2"
                   action="excess_action" sequence="1"/>
