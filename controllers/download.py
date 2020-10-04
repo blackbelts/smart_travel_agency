@@ -52,6 +52,7 @@ import urllib.request
 
 
 class CrmBlackBelts(http.Controller):
+
     @http.route('/report/<int:recid>', auth='public',cors='*')
     def reportdwoan(self, **kw):
         env = request.env(context=dict(request.env.context, show_address=True, no_tag_br=True))
