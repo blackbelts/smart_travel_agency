@@ -75,7 +75,7 @@ class TravelPolicy(models.Model):
                                     )
     travel_agency_branch = fields.Many2one('agency.branch', 'Agency Branch',
                                            domain="[('travel_agency','=',travel_agency)]",
-                                           related='user_id.travel_agency_branch', readonly=True)
+                                            readonly=True)
     user_id = fields.Many2one('res.users', 'User Name', index=True, track_visibility='onchange',
                               default=lambda self: self.env.user, readonly=True)
     duration=fields.Selection('_get_periods',string='Duration',store=True)

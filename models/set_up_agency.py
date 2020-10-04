@@ -111,13 +111,14 @@ class AgencyBranch(models.Model):
             'name': ('Users'),
             'view_type': 'form',
             'view_mode': 'form',
-            'res_model': 'agent.user.wizard',
+            'res_model': 'person.user.wizard',
             # 'view_id': [(self.env.ref('smart_claim.tree_insurance_claim').id), 'tree'],
             'views': [(form.id, 'form')],
             'type': 'ir.actions.act_window',
             'target': 'new',
 
-            'context': {'default_branch': True,'default_travel_agency_branch':self.id,'default_travel_agency':self.travel_agency.id}
+            'context': {'default_branch': True,'default_travel_agency_branch':self.id,'default_travel_agency':self.travel_agency.id,
+                        'user_type':'agency'}
 
         }
 
@@ -142,9 +143,7 @@ class Users(models.Model):
     travel_agency = fields.Many2one('travel.agency', 'Travel Agency')
     travel_agency_branch = fields.Many2one('agency.branch', 'Agency Branch')
 
-    address = fields.Char('Address')
-    phone = fields.Char('Phone Number')
-    mobile = fields.Char('Mobile Number')
+
 
 
 class TravelAgencyCommission(models.Model):

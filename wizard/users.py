@@ -6,11 +6,7 @@ from odoo.exceptions import ValidationError
 from odoo import api, fields, models
 
 class AgentUsersWizard(models.TransientModel):
-    _name = 'agent.user.wizard'
-
-    name = fields.Char('Name')
-    username = fields.Char('User Name')
-    password = fields.Char('Password')
+    _inherit = 'person.user.wizard'
     branch=fields.Boolean(default=False)
     travel_agency = fields.Many2one('travel.agency', 'Travel Agency')
     travel_agency_branch = fields.Many2one('agency.branch', 'Agency Branch')

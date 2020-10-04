@@ -1,55 +1,55 @@
 <odoo>
-    <record model="ir.ui.view" id="tree_rating_table">
-        <field name="name">tree.rating.table</field>
-        <field name="model">rating.table</field>
-        <field name="priority" eval="16"/>
-        <field name="arch" type="xml">
-            <tree string="Rating Table">
-                <field name="geographical_coverage" readonly="1"/>
-                <field name="traveler_age" readonly="1"/>
-                <field name="coverage_period" readonly="1"/>
-                <field name="net_premium" readonly="1"/>
-                <field name="proportional_stamp" readonly="1"/>
-                <field name="dimensional_stamp" readonly="1"/>
-                <field name="supervisory_stamp" readonly="1"/>
-                <field name="issue_fees" readonly="1"/>
-                <field name="gross_premium" readonly="1"/>
-            </tree>
-        </field>
-    </record>
-    <record model="ir.ui.view" id="form_rating_table">
-        <field name="name">form.rating.table</field>
-        <field name="model">rating.table</field>
-        <field name="priority" eval="16"/>
-        <field name="arch" type="xml">
-            <form string="Rating Table">
-                <sheet>
-                    <group>
-                        <field name="geographical_coverage" readonly="1"/>
-                        <field name="traveler_age" readonly="1"/>
-                        <field name="coverage_period" readonly="1"/>
-                        <field name="net_premium" readonly="1"/>
-                        <field name="proportional_stamp" readonly="1"/>
-                        <field name="dimensional_stamp" readonly="1"/>
-                        <field name="supervisory_stamp" readonly="1"/>
-                        <field name="issue_fees" readonly="1"/>
-                        <field name="gross_premium" readonly="1"/>
+<!--    <record model="ir.ui.view" id="tree_rating_table">-->
+<!--        <field name="name">tree.rating.table</field>-->
+<!--        <field name="model">rating.table</field>-->
+<!--        <field name="priority" eval="16"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Rating Table">-->
+<!--                <field name="geographical_coverage" readonly="1"/>-->
+<!--                <field name="traveler_age" readonly="1"/>-->
+<!--                <field name="coverage_period" readonly="1"/>-->
+<!--                <field name="net_premium" readonly="1"/>-->
+<!--                <field name="proportional_stamp" readonly="1"/>-->
+<!--                <field name="dimensional_stamp" readonly="1"/>-->
+<!--                <field name="supervisory_stamp" readonly="1"/>-->
+<!--                <field name="issue_fees" readonly="1"/>-->
+<!--                <field name="gross_premium" readonly="1"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    <record model="ir.ui.view" id="form_rating_table">-->
+<!--        <field name="name">form.rating.table</field>-->
+<!--        <field name="model">rating.table</field>-->
+<!--        <field name="priority" eval="16"/>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form string="Rating Table">-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                        <field name="geographical_coverage" readonly="1"/>-->
+<!--                        <field name="traveler_age" readonly="1"/>-->
+<!--                        <field name="coverage_period" readonly="1"/>-->
+<!--                        <field name="net_premium" readonly="1"/>-->
+<!--                        <field name="proportional_stamp" readonly="1"/>-->
+<!--                        <field name="dimensional_stamp" readonly="1"/>-->
+<!--                        <field name="supervisory_stamp" readonly="1"/>-->
+<!--                        <field name="issue_fees" readonly="1"/>-->
+<!--                        <field name="gross_premium" readonly="1"/>-->
 
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
-    <record model="ir.actions.act_window" id="rating_table_action">
-        <field name="name">Rating/Charges Table</field>
-        <field name="res_model">rating.table</field>
-        <field name="view_mode">tree,form</field>
-        <field name="context">{'create': True,'edit':True}</field>
-        <field name="help" type="html">
-            <p class="oe_view_nocontent_create">Rating Table
-            </p>
-        </field>
-    </record>
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+<!--    <record model="ir.actions.act_window" id="rating_table_action">-->
+<!--        <field name="name">Rating/Charges Table</field>-->
+<!--        <field name="res_model">rating.table</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--        <field name="context">{'create': True,'edit':True}</field>-->
+<!--        <field name="help" type="html">-->
+<!--            <p class="oe_view_nocontent_create">Rating Table-->
+<!--            </p>-->
+<!--        </field>-->
+<!--    </record>-->
 
     <record model="ir.ui.view" id="tree_travel_agency">
         <field name="name">tree.travel.agency</field>

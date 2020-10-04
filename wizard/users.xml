@@ -1,30 +1,26 @@
 <odoo>
 <!--    <data>-->
         <record model="ir.ui.view" id="agents_user_wizard">
-            <field name="name">agent.user.wizard</field>
-            <field name="model">agent.user.wizard</field>
-            <field name="arch" type="xml">
-                <form>
-                    <group>
-                        <group string="Agent Users">
-                            <field name="name"  required="1"/>
-                            <field name="username" required="1" />
-                            <field name="password" required="1"/>
+        <field name="name">person.user.wizard</field>
+        <field name="model">person.user.wizard</field>
+        <field name="inherit_id" ref="arope-conf.persons_user_wizard"/>
+        <field name="arch" type="xml">
+                  <xpath expr="//field[@name='password']" position="after">
+
                             <field name="travel_agency_branch" readonly="1" force_save="1" attrs="{'invisible': [('branch', '!=', True)]}"/>
                             <field name="travel_agency" readonly="1" force_save="1"/>
                             <field name="branch" invisible="1"/>
+                  </xpath>
+            <xpath expr="//footer" position="inside">
 
-                        </group>
-                    </group>
-                    <footer>
                         <button name="generate_users" type="object"
-                                string="Create" class="oe_highlight" attrs="{'invisible': [('branch', '=', True)]}"/>
+                                string="Create" class="oe_highlight" attrs="{'invisible': ['&amp;',('branch', '=', True),('user_type', '=', 'person')]}"/>
                             <button name="generate_branch_users" type="object"
-                                string="Create Branch User" class="oe_highlight" attrs="{'invisible': [('branch', '!=', True)]}"/>
-                        or
-                        <button special="cancel" string="Cancel"/>
-                    </footer>
-                </form>
+                                string="Create Branch User" class="oe_highlight" attrs="{'invisible': ['&amp;',('branch', '!=', True),('user_type', '=', 'person')]}"/>
+
+
+            </xpath>
+
             </field>
         </record>
 <!--    </data>-->
