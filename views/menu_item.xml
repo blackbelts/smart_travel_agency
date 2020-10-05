@@ -39,11 +39,11 @@
         <menuitem id="travel_menu_id" name="Travel "
                    parent="arope-conf.conf_menu"/>
         <menuitem id="price_menu" name="Price Table" parent="travel_menu_id"
-                  action="arope-conf.price_action" sequence="2"/>
+                  action="price_action" sequence="2"/>
         <menuitem id="price_menu_family" name="Family Package" parent="travel_menu_id"
-                  action="arope-conf.price_action_family" sequence="3"/>
+                  action="price_action_family" sequence="3"/>
         <menuitem id="group_menu" name="Group Discount" parent="travel_menu_id"
-                  action="arope-conf.group_action" sequence="4"/>
+                  action="group_action" sequence="4"/>
 
 
 

@@ -37,7 +37,7 @@
         'views/benefits.xml',
         'views/excess.xml',
         'views/ticket.xml',
-        # 'views/priceTable.xml',
+        'views/priceTable.xml',
         'views/companyAssist.xml',
         'views/menu_item.xml',
         'wizard/users.xml',
