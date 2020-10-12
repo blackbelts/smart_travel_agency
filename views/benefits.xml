@@ -9,6 +9,8 @@
                 <sheet>
                     <group>
                         <field name="cover"/>
+                        <field name="cover_rate" attrs="{'invisible': [('special_covers', '=',True)]}"/>
+                        <field name="active_online" attrs="{'invisible': [('special_covers', '=',True)]}"/>
                         <field name="limit"/>
                     </group>
                     <group>
