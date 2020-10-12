@@ -20,6 +20,8 @@ access_policy7,policy.policy7,model_travel_commission,base.group_user,1,1,1,1
 access_policy14,policy.policy14,model_group_discount,base.group_user,1,1,1,1
 access_policy15,policy.policy15,model_target_bonus,base.group_user,1,1,1,1
 access_policy16,policy.policy16,model_agency_settle,base.group_user,1,1,1,1
+access_policy16,policy.policy16,model_travel_company_assist,base.group_user,1,1,1,1
+
 
 
 
