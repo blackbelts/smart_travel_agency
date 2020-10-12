@@ -370,34 +370,60 @@
                                     </t>
 
                                 </div>
-                                <div t-if="o.get_special_benefits()" class="" style="width: 100% !important; margin-top:-8px !important; float: left;">
+                                 <div class="" style="width: 100% !important; margin-top:-8px !important; float: left;">
                                     <table class="table table-hover">
                                         <thead>
                                             <tr>
-                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Special Covers</th>
-                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;"></th>
-                                            </tr>
-                                            <tr>
-                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Cover</th>
-                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Limit</th>
+                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Insurance Broker Name</th>
+                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">FRA Licence No</th>
+                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Due Basic Commission before tax</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <t t-foreach="o.get_special_benefits()" t-as="sben">
+
                                                 <tr>
 <!--                                                    <t t-if="o.package == 'individual'">-->
-                                                    <td style="font-size: 12px !important;"><t t-esc="sben.cover" /></td>
-                                                    <td style="font-size: 12px !important;"><t t-esc="sben.limit" /></td>
+                                                    <td style="font-size: 12px !important;">Arope</td>
+                                                    <td style="font-size: 12px !important;">test</td>
+                                                    <td style="font-size: 12px !important;">test</td>
 <!--                                                    </t>-->
 <!--                                                    <t t-if="o.package == 'family'">-->
-<!--                                                        <td style="font-size: 9px !important;"><t t-esc="sben.cover" /></td>-->
-<!--                                                        <td style="font-size: 9px !important;"><t t-esc="sben.limit" /></td>-->
+<!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.cover" /></td>-->
+<!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.limit" /></td>-->
 <!--                                                    </t>-->
                                                 </tr>
-                                            </t>
+
 					                    </tbody>
                                     </table>
                                 </div>
+<!--                                <div t-if="o.get_special_benefits()" class="" style="width: 100% !important; margin-top:-8px !important; float: left;">-->
+<!--                                    <table class="table table-hover">-->
+<!--                                        <thead>-->
+<!--                                            <tr>-->
+<!--                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Special Covers</th>-->
+<!--                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;"></th>-->
+<!--                                            </tr>-->
+<!--                                            <tr>-->
+<!--                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Cover</th>-->
+<!--                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Limit</th>-->
+<!--                                            </tr>-->
+<!--                                        </thead>-->
+<!--                                        <tbody>-->
+<!--                                            <t t-foreach="o.get_special_benefits()" t-as="sben">-->
+<!--                                                <tr>-->
+<!--&lt;!&ndash;                                                    <t t-if="o.package == 'individual'">&ndash;&gt;-->
+<!--                                                    <td style="font-size: 12px !important;"><t t-esc="sben.cover" /></td>-->
+<!--                                                    <td style="font-size: 12px !important;"><t t-esc="sben.limit" /></td>-->
+<!--&lt;!&ndash;                                                    </t>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    <t t-if="o.package == 'family'">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                        <td style="font-size: 9px !important;"><t t-esc="sben.cover" /></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                        <td style="font-size: 9px !important;"><t t-esc="sben.limit" /></td>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    </t>&ndash;&gt;-->
+<!--                                                </tr>-->
+<!--                                            </t>-->
+<!--					                    </tbody>-->
+<!--                                    </table>-->
+<!--                                </div>-->
 <!--                                <t>-->
                                 <div style="margin-top:-4px !important;">
                                     <h4 style="color: #073e89; width: 100% !important; margin-top:-4px !important; float: left; text-align:center !important;">Assistance Information</h4>
