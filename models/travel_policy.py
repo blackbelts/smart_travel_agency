@@ -244,12 +244,12 @@ class TravelPolicy(models.Model):
                                     result['supervisory_stamp'] = rec.supervisory_stamp *(record.currency_id.rate)
                                     # self.issue_fees = record.issue_fees
                                     fra,result['gross'] = math.modf(rec.gross_premium *(record.currency_id.rate))
-                                    result['oldgross']=result['gross']
+                                    # result['oldgross']=result['gross']
                                     if s_coverSum !=0.0:
                                         fra, result['gross'] = math.modf(result['gross']+(result['gross'] * s_coverSum))
                                     result['issue_fees'] = (rec.issue_fees *(record.currency_id.rate))+(1-fra)
-                                    result['s_coverSum']=s_coverSum
-                                    result['s_covers']=s_covers
+                                    # result['s_coverSum']=s_coverSum
+                                    # result['s_covers']=s_covers
                                     print("fraction")
                                     print (fra)
 
@@ -258,6 +258,12 @@ class TravelPolicy(models.Model):
     @api.model
     def get_family(self,data):
         if data.get('z') and data.get('p_from') and data.get('p_to'):
+            s_coverSum = 0
+            if data.get("s_covers"):
+                s_covers = data.get('s_covers')
+                s_coversList = self.env['travel.benefits'].search([("id", "in", s_covers)])
+                for cover in s_coversList:
+                    s_coverSum += cover.cover_rate
             geographical_coverage = data.get('z')
             coverage_from = data.get('p_from')
             coverage_to = data.get('p_to')
@@ -298,7 +304,9 @@ class TravelPolicy(models.Model):
                             # self.issue_fees = record.issue_fees
                             fra,result['gross'] = math.modf(record.gross_premium *(rec.currency_id.rate))
                             result['issue_fees'] = (record.issue_fees * (rec.currency_id.rate)) + (1 - fra)
-
+                            result['oldgross']=result['gross']
+                            if s_coverSum != 0.0:
+                                fra, result['gross'] = math.modf(result['gross'] + (result['gross'] * s_coverSum))
                             print("fraction")
                             print(fra)
                     print(result)
@@ -319,6 +327,12 @@ class TravelPolicy(models.Model):
     @api.model
     def get_group(self,data):
         if data.get('zone') and data.get('p_from') and data.get('p_to'):
+            s_coverSum = 0
+            if data.get("s_covers"):
+                s_covers = data.get('s_covers')
+                s_coversList = self.env['travel.benefits'].search([("id", "in", s_covers)])
+                for cover in s_coversList:
+                    s_coverSum += cover.cover_rate
             days=self.calculate_period(data.get('p_from'),data.get('p_to'))
             result={'net':0.0,'pro_stamp':0.0,'dimensional_stamp':0.0,'supervisory_stamp':0.0,'gross':0.0,'issue_fees':0.0}
             discount=0.0
@@ -346,9 +360,12 @@ class TravelPolicy(models.Model):
                                    result['dimensional_stamp'] += rec.dimensional_stamp * (record.currency_id.rate)*group.get('size')*(1-(discount/100))
                                    result['supervisory_stamp'] += rec.supervisory_stamp * (record.currency_id.rate)*group.get('size')*(1-(discount/100))
                                    result['issue_fees'] += rec.issue_fees * (record.currency_id.rate)*group.get('size')*(1-(discount/100))
-
                                    # self.issue_fees = record.issue_fees
                                    result['gross'] += rec.gross_premium * (record.currency_id.rate)*group.get('size')*(1-(discount/100))
+                                   # result['oldgross']=result['gross']
+                                   if s_coverSum != 0.0:
+                                       fra, result['gross'] = math.modf(
+                                           result['gross'] + (result['gross'] * s_coverSum))
 
             return result
 
