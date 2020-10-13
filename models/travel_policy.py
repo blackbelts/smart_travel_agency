@@ -362,10 +362,9 @@ class TravelPolicy(models.Model):
                                    result['issue_fees'] += rec.issue_fees * (record.currency_id.rate)*group.get('size')*(1-(discount/100))
                                    # self.issue_fees = record.issue_fees
                                    result['gross'] += rec.gross_premium * (record.currency_id.rate)*group.get('size')*(1-(discount/100))
-                                   # result['oldgross']=result['gross']
+                                   result['oldgross']=result['gross']
                                    if s_coverSum != 0.0:
-                                       fra, result['gross'] = math.modf(
-                                           result['gross'] + (result['gross'] * s_coverSum))
+                                       fra, result['gross'] = math.modf(result['gross'] + (result['gross'] * s_coverSum))
 
             return result
 
