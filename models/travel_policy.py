@@ -209,8 +209,12 @@ class TravelPolicy(models.Model):
     def get_individual(self,data):
         if data.get('z') and data.get('d') and data.get('p_from') and data.get('p_to'):
             result = {}
-
-
+            s_coverSum = 0
+            if data.get("s_cover"):
+                s_covers = data.get('s_covers')
+                s_coversList = self.env['travel.benefits'].serach([("id", "in", s_covers)])
+                for cover in s_coversList:
+                    s_coverSum += cover.cover_rate
             geographical_coverage=data.get('z')
             DOB=data.get('d')
             coverage_from=data.get('p_from')
@@ -239,6 +243,8 @@ class TravelPolicy(models.Model):
                                     result['supervisory_stamp'] = rec.supervisory_stamp *(record.currency_id.rate)
                                     # self.issue_fees = record.issue_fees
                                     fra,result['gross'] = math.modf(rec.gross_premium *(record.currency_id.rate))
+                                    if s_coverSum !=0.0:
+                                        fra, result['gross'] = math.modf(rec.gross_premium * s_coverSum)
                                     result['issue_fees'] = (rec.issue_fees *(record.currency_id.rate))+(1-fra)
 
                                     print("fraction")
