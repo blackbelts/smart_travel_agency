@@ -244,6 +244,7 @@ class TravelPolicy(models.Model):
                                     result['supervisory_stamp'] = rec.supervisory_stamp *(record.currency_id.rate)
                                     # self.issue_fees = record.issue_fees
                                     fra,result['gross'] = math.modf(rec.gross_premium *(record.currency_id.rate))
+                                    result['oldgross']=result['gross']
                                     if s_coverSum !=0.0:
                                         fra, result['gross'] = math.modf(result['gross']+(result['gross'] * s_coverSum))
                                     result['issue_fees'] = (rec.issue_fees *(record.currency_id.rate))+(1-fra)
