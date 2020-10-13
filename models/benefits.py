@@ -7,8 +7,8 @@ class TravelBenefits(models.Model):
     limit = fields.Char('Limit (USD)')
     ar_limit = fields.Char('Arabic Limit (USD)')
     special_covers = fields.Boolean('Special Covers')
-    cover_rate = fields.Float('Special Covers')
-    active_online = fields.Boolean('Special Covers')
+    cover_rate = fields.Float('Cover Rate')
+    active_online = fields.Boolean('Active Online')
 
 
 class TravelAgencySettlement(models.Model):
