@@ -213,7 +213,7 @@ class TravelPolicy(models.Model):
             s_covers=[]
             if data.get("s_covers"):
                 s_covers = data.get('s_covers')
-                s_coversList = self.env['travel.benefits'].serach([("id", "in", s_covers)])
+                s_coversList = self.env['travel.benefits'].search([("id", "in", s_covers)])
                 for cover in s_coversList:
                     s_coverSum += cover.cover_rate
             geographical_coverage=data.get('z')
