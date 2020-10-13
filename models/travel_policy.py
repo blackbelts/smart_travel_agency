@@ -211,7 +211,7 @@ class TravelPolicy(models.Model):
             result = {}
             s_coverSum = 0
             s_covers=[]
-            if data.get("s_cover"):
+            if data.get("s_covers"):
                 s_covers = data.get('s_covers')
                 s_coversList = self.env['travel.benefits'].serach([("id", "in", s_covers)])
                 for cover in s_coversList:
