@@ -210,6 +210,7 @@ class TravelPolicy(models.Model):
         if data.get('z') and data.get('d') and data.get('p_from') and data.get('p_to'):
             result = {}
             s_coverSum = 0
+            s_covers=[]
             if data.get("s_cover"):
                 s_covers = data.get('s_covers')
                 s_coversList = self.env['travel.benefits'].serach([("id", "in", s_covers)])
@@ -244,9 +245,10 @@ class TravelPolicy(models.Model):
                                     # self.issue_fees = record.issue_fees
                                     fra,result['gross'] = math.modf(rec.gross_premium *(record.currency_id.rate))
                                     if s_coverSum !=0.0:
-                                        fra, result['gross'] = math.modf(rec.gross_premium * s_coverSum)
+                                        fra, result['gross'] = math.modf(result['gross']+(result['gross'] * s_coverSum))
                                     result['issue_fees'] = (rec.issue_fees *(record.currency_id.rate))+(1-fra)
-
+                                    result['s_coverSum']=s_coverSum
+                                    result['s_covers']=s_covers
                                     print("fraction")
                                     print (fra)
 
