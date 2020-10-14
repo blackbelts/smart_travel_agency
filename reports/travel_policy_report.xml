@@ -383,9 +383,9 @@
 
                                                 <tr>
 <!--                                                    <t t-if="o.package == 'individual'">-->
-                                                    <td style="font-size: 12px !important;"></td>
-                                                    <td style="font-size: 12px !important;"></td>
-                                                    <td style="font-size: 12px !important;"></td>
+                                                    <td style="font-size: 12px !important; height:20px !important;"></td>
+                                                    <td style="font-size: 12px !important;height:20px !important;"></td>
+                                                    <td style="font-size: 12px !important;height:20px !important;"></td>
 <!--                                                    </t>-->
 <!--                                                    <t t-if="o.package == 'family'">-->
 <!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.cover" /></td>-->
@@ -491,7 +491,8 @@
                                 </div>
                             </div>
                         </div>
-                            <div class="page" t-if="o.package == 'family'">
+                        <div style="page-break-before: always;"></div>
+                        <div class="page" t-if="o.package == 'family'">
                                 <div  style="padding-left: 25px !important; padding-right: 25px !important; padding-top:1px !important;">
                                     <div  style="width: 100% !important; float:left !important;">
                                         <h4 style="color: #073e89; text-align:center; margin-top:5px !important;">Family Members</h4>
@@ -522,7 +523,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         <div class="footer" style="float:left; width:100px;">
                                 <img style="width:100% !important;" class="img img-responsive" src="/smart_travel_agency/static/img/1.png"/>
                                 <span style="font-size: 10px !important; white-space: nowrap !important; overflow: hidden !important;">AROPE PROPERTIES &amp; LIABILITIES INSURANCE EGYPT - S.A.E</span>
