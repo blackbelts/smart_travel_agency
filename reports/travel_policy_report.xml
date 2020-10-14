@@ -385,7 +385,7 @@
 <!--                                                    <t t-if="o.package == 'individual'">-->
                                                     <td style="font-size: 12px !important; min-height=15px;"></td>
                                                     <td style="font-size: 12px !important;min-height=15px;"></td>
-                                                    <td style="font-size: 12px !important;min-height=15px;"></td>
+                                                    <td style="font-size: 12px !important;min-height=15px;">0.0</td>
 
 <!--                                                    </t>-->
 <!--                                                    <t t-if="o.package == 'family'">-->
