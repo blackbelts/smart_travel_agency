@@ -494,9 +494,8 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="page" style="unicode-bidi: bidi-override !important; direction: unset !important;" t-if="o.package == 'family'">
-                             <div style="page-break-after: always !important;"/>
+                             <div style="page-break-before: always !important;"/>
                             <div  style="padding-left: 25px !important; padding-right: 25px !important; padding-top:1px !important;">
                                 <div  style="width: 100% !important; float:left !important;">
                                     <h4 style="color: #073e89; text-align:center; margin-top:5px !important;">Family Members</h4>
