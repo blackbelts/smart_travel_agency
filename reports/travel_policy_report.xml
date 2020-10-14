@@ -383,9 +383,9 @@
 
                                                 <tr>
 <!--                                                    <t t-if="o.package == 'individual'">-->
-                                                    <td style="font-size: 12px !important;">Arope</td>
-                                                    <td style="font-size: 12px !important;">test</td>
-                                                    <td style="font-size: 12px !important;">test</td>
+                                                    <td style="font-size: 12px !important; min-height=15px;">Arope</td>
+                                                    <td style="font-size: 12px !important;min-height=15px;">test</td>
+                                                    <td style="font-size: 12px !important;min-height=15px;">test</td>
 <!--                                                    </t>-->
 <!--                                                    <t t-if="o.package == 'family'">-->
 <!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.cover" /></td>-->
