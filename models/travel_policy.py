@@ -87,6 +87,8 @@ class TravelPolicy(models.Model):
     net_to_insurer = fields.Float('Net To Insurer', compute='get_financial_data',store=True)
     is_canceled = fields.Boolean(default=False)
     family_age = fields.One2many('policy.family.age','policy_id', ondelete='cascade', string='Family Age')
+    special_beneifts = fields.Many2many('travel.benefits',string='Special Benefits',domain="[('special_covers', '=', True)]")
+
     price_details = fields.Boolean('Show Price Details In Policy', default=False)
 
     def test(self):
