@@ -486,13 +486,14 @@
                                             </t>
                                         </table>
                                     </div>
+                                    <br/>
+                                    <br/>
+                                    <br/>
                                     <div style="width: 35% !important; float: right !important; border: none !important; margin-top: 17px !important;">
                                         <img class="img img-responsive" style="height: 80px; float: right !important;" src="/smart_travel_agency/static/img/v.gif"/>
                                     </div>
                                 </div>
                             </div>
-                            <br/>
-                            <br/>
                         </div>
 
                         <div class="page" t-if="o.package == 'family'">
