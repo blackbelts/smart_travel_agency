@@ -314,7 +314,7 @@
                                                     <!--                                                    </t>-->
                                                 </tr>
                                             </t>
-                                            <t t-foreach="o.get_special_benefits()" t-as="sben">
+                                            <t  t-foreach="o.special_beneifts"  t-as="sben">
                                                 <tr>
                                                     <td style="font-size: 12px !important;"><t t-esc="sben.cover" /></td>
                                                     <td style="font-size: 12px !important;"><t t-esc="sben.limit" /></td>

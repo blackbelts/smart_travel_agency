@@ -2,6 +2,7 @@ from odoo import models, tools, fields, api
 
 class TravelBenefits(models.Model):
     _name = 'travel.benefits'
+    _rec_name='cover'
     cover = fields.Char(string="Cover")
     ar_cover = fields.Char(string="Arabic Cover")
     limit = fields.Char('Limit (USD)')
