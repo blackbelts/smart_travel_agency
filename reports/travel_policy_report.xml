@@ -224,6 +224,7 @@
                                             <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.gross_premium,2)" /> EGP</td>-->
                                             <!--                                        </tr>-->
                                         </table>
+                                        <br/>
                                     </div>
                                 </t>
                                 <t t-if="o.price_details !=False" >
@@ -290,7 +291,8 @@
                                             <!--                                                </tr>-->
                                             <!--		                                    </t>-->
                                         </tbody>
-                                    </table>
+                                    </table><br/>
+
                                 </div>
                                 <div class="" style="width: 100% !important; margin-top:-8px !important; float: left;">
                                     <table class="table table-hover">
@@ -396,6 +398,7 @@
 
                                         </tbody>
                                     </table>
+                                    <br/>
                                 </div>
                                 <!--                                <div t-if="o.get_special_benefits()" class="" style="width: 100% !important; margin-top:-8px !important; float: left;">-->
                                 <!--                                    <table class="table table-hover">-->
@@ -485,10 +488,9 @@
                                                 </tr>
                                             </t>
                                         </table>
+
                                     </div>
-                                    <br/>
-                                    <br/>
-                                    <br/>
+
                                     <div style="width: 35% !important; float: right !important; border: none !important; margin-top: 17px !important;">
                                         <img class="img img-responsive" style="height: 80px; float: right !important;" src="/smart_travel_agency/static/img/v.gif"/>
                                     </div>
