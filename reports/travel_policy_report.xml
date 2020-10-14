@@ -68,7 +68,7 @@
                             <img class="img"  style="width: 100%;" src="/smart_travel_agency/static/img/3.jpg"/>
                             <h4 style="color: #073e89; text-align:center;">Travel Assistance Services (TAS)</h4>
                         </div>
-                        <div class="page">
+                        <div class="page" style="unicode-bidi: bidi-override !important; direction: unset !important;">
                             <div  style="padding-left: 25px !important; padding-right: 25px !important; padding-top:1px !important;">
                                 <div  style="width: 50% !important; float:left !important; padding-right:10px;">
                                     <table class="table table-hover">
@@ -495,7 +495,7 @@
                             </div>
                         </div>
 
-                        <div class="page" t-if="o.package == 'family'">
+                        <div class="page" style="unicode-bidi: bidi-override !important; direction: unset !important;" t-if="o.package == 'family'">
                              <div style="page-break-after: always !important;"/>
                             <div  style="padding-left: 25px !important; padding-right: 25px !important; padding-top:1px !important;">
                                 <div  style="width: 100% !important; float:left !important;">
