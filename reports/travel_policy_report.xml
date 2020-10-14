@@ -68,7 +68,7 @@
                             <img class="img"  style="width: 100%;" src="/smart_travel_agency/static/img/3.jpg"/>
                             <h4 style="color: #073e89; text-align:center;">Travel Assistance Services (TAS)</h4>
                         </div>
-                        <div class="page">
+                        <div class="page" style="unicode-bidi: bidi-override !important; direction: unset !important;">
                             <div  style="padding-left: 25px !important; padding-right: 25px !important; padding-top:1px !important;">
                                 <div  style="width: 50% !important; float:left !important; padding-right:10px;">
                                     <table class="table table-hover">
@@ -224,7 +224,6 @@
                                             <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.gross_premium,2)" /> EGP</td>-->
                                             <!--                                        </tr>-->
                                         </table>
-                                        <br/>
                                     </div>
                                 </t>
                                 <t t-if="o.price_details !=False" >
@@ -291,7 +290,7 @@
                                             <!--                                                </tr>-->
                                             <!--		                                    </t>-->
                                         </tbody>
-                                    </table><br/>
+                                    </table>
 
                                 </div>
                                 <div class="" style="width: 100% !important; margin-top:-8px !important; float: left;">
@@ -389,18 +388,17 @@
                                         </thead>
                                         <tbody>
 
-                                            <tr>
-                                                <!--                                                    <t t-if="o.package == 'individual'">-->
-                                                <td style="font-size: 12px !important; min-height=15px;"></td>
-                                                <td style="font-size: 12px !important;min-height=15px;"></td>
-                                                <td style="font-size: 12px !important;min-height=15px;">0.0</td>
-
-                                                <!--                                                    </t>-->
-                                                <!--                                                    <t t-if="o.package == 'family'">-->
-                                                <!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.cover" /></td>-->
-                                                <!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.limit" /></td>-->
-                                                <!--                                                    </t>-->
-                                            </tr>
+                                                <tr>
+<!--                                                    <t t-if="o.package == 'individual'">-->
+                                                    <td style="font-size: 12px !important; height:20px !important;"></td>
+                                                    <td style="font-size: 12px !important;height:20px !important;"></td>
+                                                    <td style="font-size: 12px !important;height:20px !important;"></td>
+<!--                                                    </t>-->
+<!--                                                    <t t-if="o.package == 'family'">-->
+<!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.cover" /></td>-->
+<!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.limit" /></td>-->
+<!--                                                    </t>-->
+                                                </tr>
 
                                         </tbody>
                                     </table>
@@ -501,9 +499,9 @@
                                     </div>
                                 </div>
                             </div>
+                             <div style="page-break-after: always !important;"/>
                         </div>
-
-                        <div class="page" t-if="o.package == 'family'">
+                        <div class="page" style="unicode-bidi: bidi-override !important; direction: unset !important;" t-if="o.package == 'family'">
                             <div  style="padding-left: 25px !important; padding-right: 25px !important; padding-top:1px !important;">
                                 <div  style="width: 100% !important; float:left !important;">
                                     <h4 style="color: #073e89; text-align:center; margin-top:5px !important;">Family Members</h4>
@@ -533,6 +531,7 @@
                                     </table>
                                 </div>
                             </div>
+
                         </div>
 
                         <div class="footer" style="float:left; width:100px;">
