@@ -87,7 +87,7 @@
                             <field name="address" attrs="{'readonly': [('state', '=','approved')]}"/>
                             <field name="phone" attrs="{'readonly': [('state', '=','approved')]}"/>
                             <field name="national_id" attrs="{'readonly': [('state', '=','approved')]}"/>
-                            <field name="passport_num" attrs="{'readonly': [('state', '=','approved')]}"/>
+                            <field name="passport_num" attrs="{'readonly': [('state', '=','approved')]}" required="1"/>
                         </group>
                         <group>
                             <field name="package" attrs="{'readonly': [('state', '=','approved')]}"/>
