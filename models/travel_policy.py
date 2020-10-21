@@ -75,7 +75,7 @@ class TravelPolicy(models.Model):
                                     )
     travel_agency_branch = fields.Many2one('agency.branch', 'Agency Branch',
                                            domain="[('travel_agency','=',travel_agency)]",
-                                           related='user_id.travel_agency_branch', readonly=True)
+                                            readonly=True)
     user_id = fields.Many2one('res.users', 'User Name', index=True, track_visibility='onchange',
                               default=lambda self: self.env.user, readonly=True)
     duration=fields.Selection('_get_periods',string='Duration',store=True)
@@ -95,13 +95,14 @@ class TravelPolicy(models.Model):
     def _get_periods(self):
         #you Must Change
         options = []
-        data = self.env['travel.price.line'].search(
-            [('price_id.package', '=', 'individual'), ('price_id.zone', '=', 'zone 1'),
-             ('price_id.from_age', '=', 0.00)],)
+        options_dict = []
+        data = self.env['travel.price.line'].search([])
         for option in data:
-            options.append((str(option.period),str(option.period)+' Days'))
-        print(options)
-        return options
+            options.append(option.period)
+        options = list(dict.fromkeys(options))
+        for option in options:
+                options_dict.append((str(option),str(option)+' Days'))
+        return options_dict
     # @api.onchange('admin_fees','gross_premium')
     # def get_new_gross(self):
     #     if self.admin_fees :
@@ -396,10 +397,11 @@ class TravelPolicy(models.Model):
     @api.onchange('national_id')
 
     def _check_national(self):
-        if self.national_id[1:3] != str(self.DOB).split('-')[0][-2:] or self.national_id[3:5] != str(self.DOB).split('-')[1] or self.national_id[5:7] != str(self.DOB).split('-')[2]:
-            raise exceptions.ValidationError('National id not Matching Date of Birth')
-        if len(str(self.national_id))!=14:
-            raise exceptions.ValidationError('Invalid Must Be 14 Characters')
+        if self.national_id:
+            if self.national_id[1:3] != str(self.DOB).split('-')[0][-2:] or self.national_id[3:5] != str(self.DOB).split('-')[1] or self.national_id[5:7] != str(self.DOB).split('-')[2]:
+                raise exceptions.ValidationError('National id not Matching Date of Birth')
+            if len(str(self.national_id))!=14:
+                raise exceptions.ValidationError('Invalid Must Be 14 Characters')
 
     # @api.constrains('age')
     def _check_contract_period(self):

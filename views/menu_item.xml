@@ -9,7 +9,7 @@
                   parent="travel_policy_view_menu2"
                   groups="smart_travel_agency.branch_group,smart_travel_agency.agency_group,smart_travel_agency.all_agencies_group"
         />
-          <menuitem id="rates_edit" name="Currency" parent="travel_policy_view_menu2"
+        <menuitem id="rates_edit" name="Currency" parent="travel_policy_view_menu2"
                   action="base.action_currency_form" />
         <menuitem id="travel_policy_view_menu" name="Travel Policy" parent="travel_policy_view"
                   action="travel_policy_action" sequence="0"/>
@@ -21,8 +21,8 @@
                   action="billing_action" sequence="3" groups="smart_travel_agency.agency_group,smart_travel_agency.all_agencies_group"/>
         <menuitem id="comm_view_menu" name="Agent Commission" parent="travel_policy_view"
                   action="comm_action" sequence="4" groups="smart_travel_agency.agency_group,smart_travel_agency.all_agencies_group"/>
-        <menuitem id="settle_view_menu" name="Settlements" parent="travel_policy_view"
-                  action="agency_settle_action" sequence="5" groups="smart_travel_agency.agency_group"/>
+        <!--        <menuitem id="settle_view_menu" name="Settlements" parent="travel_policy_view"-->
+        <!--                  action="agency_settle_action" sequence="5" groups="smart_travel_agency.agency_group"/>-->
 
 
         <menuitem id="configuration_view_menu2" name="Configuration"
@@ -36,13 +36,14 @@
 
         <menuitem id="excess_menu" name="Excess" parent="configuration_view_menu2"
                   action="excess_action" sequence="1"/>
-
-        <menuitem id="price_menu" name="Price Table" parent="configuration_view_menu2"
-                  action="price_action" sequence="2"/>
-        <menuitem id="price_menu_family" name="Family Package" parent="configuration_view_menu2"
-                  action="price_action_family" sequence="3"/>
-        <menuitem id="group_menu" name="Group Discount" parent="configuration_view_menu2"
-                  action="group_action" sequence="4"/>
+        <menuitem id="travel_menu_id" name="Travel "
+                   parent="arope-conf.conf_menu"/>
+        <menuitem id="price_menu" name="Price Table" parent="travel_menu_id"
+                  action="arope-conf.price_action" sequence="2"/>
+        <menuitem id="price_menu_family" name="Family Package" parent="travel_menu_id"
+                  action="arope-conf.price_action_family" sequence="3"/>
+        <menuitem id="group_menu" name="Group Discount" parent="travel_menu_id"
+                  action="arope-conf.group_action" sequence="4"/>
 
 
 
@@ -56,14 +57,13 @@
         <!--                  action="serial_action" sequence="8"/>-->
         <menuitem id="travel_commission_view_menu" name="Travel Commission" parent="configuration_view_menu2"
                   action="travel_commission_action" sequence="9"/>
-        <menuitem id="travel_user" name="Users" parent="configuration_view_menu2"
-                  action="base.action_res_users" sequence="10"/>
+        <!--        <menuitem id="travel_user" name="Users" parent="configuration_view_menu2"-->
+        <!--                  action="base.action_res_users" sequence="10"/>-->
         <menuitem id="travel_company_assist_view_menu" name="Assistance Information" parent="configuration_view_menu2"
                   action="travel_company_assist_action" sequence="12"/>
         <menuitem id="family_members_age_view_menu" name="Family Members Age Setup" parent="configuration_view_menu2"
                   action="family_members_action" sequence="11"/>
-        <menuitem id="rating_table_view_menu" name="Rating/Charges Table" parent="configuration_view_menu2"
-                  action="rating_table_action" sequence="8"/>
+
 
     </data>
 </odoo>

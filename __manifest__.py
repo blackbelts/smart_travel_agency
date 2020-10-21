@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','mail','helpdesk_inherit'],
+    'depends': ['base','mail','helpdesk_inherit','arope-conf'],
 
 
     # always loaded
@@ -31,13 +31,13 @@
         'data/send_mail.xml',
         'security/security.xml',
         'security/ir.model.access.csv',
-        'views/views.xml',
+        # 'views/views.xml',
         'views/rating_table.xml',
         'views/travel_policy.xml',
         'views/benefits.xml',
         'views/excess.xml',
         'views/ticket.xml',
-        'views/priceTable.xml',
+        # 'views/priceTable.xml',
         'views/companyAssist.xml',
         'views/menu_item.xml',
         'wizard/users.xml',

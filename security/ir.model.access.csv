@@ -1,28 +1,22 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_policy1,policy.policy1,model_policy_travel,base.group_user,1,1,1,1
 access_policy2,policy.policy2,model_cancel_policy,base.group_user,1,1,1,1
-access_policy3,policy.policy3,model_rating_table,base.group_user,1,1,1,1
-access_policy4,policy.policy4,model_travel_agency,base.group_user,1,1,1,1
-access_policy5,policy.policy5,model_agency_branch,base.group_user,1,1,1,1
-access_policy6,policy.policy6,model_certificate_booklet,base.group_user,1,1,1,1
-access_policy7,policy.policy7,model_travel_commission,base.group_user,1,1,1,1
 access_policy8,policy.policy8,model_travel_front,base.group_user,1,1,1,1
-access_policy9,policy.policy9,model_travel_price,base.group_user,1,1,1,1
 
 access_policy10,policy.policy10,model_travel_benefits,base.group_user,1,1,1,1
-access_policy11,policy.policy11,model_policy_family_age,base.group_user,1,1,1,1
 access_policy12,policy.policy12,model_travel_excess,base.group_user,1,1,1,1
-access_policy13,policy.policy13,model_travel_price_line,base.group_user,1,1,1,1
-access_policy14,policy.policy14,model_group_discount,base.group_user,1,1,1,1
-access_policy15,policy.policy15,model_target_bonus,base.group_user,1,1,1,1
-access_policy16,policy.policy16,model_agency_settle,base.group_user,1,1,1,1
-access_policy17,policy.policy17,model_travel_company_assist,base.group_user,1,1,1,1
-access_policy18,policy.policy18,model_agent_user_wizard,base.group_user,1,1,1,1
+access_policy11,policy.policy11,model_policy_family_age,base.group_user,1,1,1,1
+
 access_policy19,policy.policy19,model_family_members,base.group_user,1,1,1,1
 access_policy20,policy.policy20,model_orders,base.group_user,1,1,1,1
 access_policy103_p,policy.policy_p196,model_group_ticket,base.group_user,1,1,1,1
 
-
+access_policy4,policy.policy4,model_travel_agency,base.group_user,1,1,1,1
+access_policy5,policy.policy5,model_agency_branch,base.group_user,1,1,1,1
+access_policy7,policy.policy7,model_travel_commission,base.group_user,1,1,1,1
+access_policy14,policy.policy14,model_group_discount,base.group_user,1,1,1,1
+access_policy15,policy.policy15,model_target_bonus,base.group_user,1,1,1,1
+access_policy16,policy.policy16,model_agency_settle,base.group_user,1,1,1,1
 
 
 
