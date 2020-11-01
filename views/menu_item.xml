@@ -12,8 +12,8 @@
 
         <menuitem id="travel_policy_view_menu" name="Travel Policy" parent="travel_policy_view"
                   action="travel_policy_action" sequence="0"/>
-<!--        <menuitem id="travel_policy_view_menu" name="Travel Issue"-->
-<!--                  action="travel_policy_action_agent" sequence="1" groups="smart_travel_agency.branch_group"/>-->
+        <menuitem id="travel_policy_agent" name="Travel Issue"
+                  action="travel_policy_action_agent" sequence="1" groups="smart_travel_agency.branch_group"/>
         <menuitem id="insured_traveler_view_menu" name="Insured Travelers" parent="travel_policy_view"
                   action="insured_traveler_action" sequence="1" groups="smart_travel_agency.agency_group,smart_travel_agency.all_agencies_group"/>
         <menuitem id="insured_trips_view_menu" name="Insured Trips" parent="travel_policy_view"
