@@ -146,6 +146,10 @@ class TravelPolicy(models.Model):
         if self.coverage_from and self.duration:
             self.coverage_to=self.coverage_from+timedelta(days=int(self.duration))
 
+    @api.onchange('package','coverage_from','coverage_to','DOB')
+    def get_price_calculations(self):
+        self.get_financial_data()
+
     # @api.depends('age', 'geographical_coverage', 'days')
     # @api.one
     def get_bonus_data(self):
@@ -422,7 +426,6 @@ class TravelPolicy(models.Model):
 
     @api.constrains('national_id')
     @api.onchange('national_id')
-
     def _check_national(self):
         if self.national_id:
             if self.national_id[1:3] != str(self.DOB).split('-')[0][-2:] or self.national_id[3:5] != str(self.DOB).split('-')[1] or self.national_id[5:7] != str(self.DOB).split('-')[2]:
@@ -442,6 +445,7 @@ class TravelPolicy(models.Model):
         if self.address and self.insured and self.passport_num and self.DOB and self.gender and self.geographical_coverage and self.days:
             self.get_financial_data()
             self._check_contract_period()
+            self._check_national()
             self.state = 'approved'
             self.travel_agency.outstanding+=self.net_to_insurer
             bonus = self.env['target.bonus'].search(
