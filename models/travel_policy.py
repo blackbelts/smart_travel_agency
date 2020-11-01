@@ -619,3 +619,22 @@ class FamilyMembersAgeSetyp(models.Model):
         for rec in self.env['family.members'].search([]):
             result.append({'type': rec.relationship, 'from_age': rec.from_age, 'to_age': rec.to_age})
         return result
+class SaleOrderReportProforma(models.AbstractModel):
+    _name = 'report.sale.report_saleproforma'
+    _description = 'Proforma Report'
+
+
+    @api.multi
+    def _get_report_values(self, docids, data=None):
+        res = super(SaleOrderReportProforma, self)._get_report_values(self, docids, data=None)
+
+        docs = self.env['policy.travel'].browse(docids)
+        for doc in docs:
+            if doc.state != 'pending':
+
+                raise exceptions.ValidationError('Please approve the order to print the report.')
+
+            else:
+
+                return res
+
