@@ -5,7 +5,7 @@
         <field name="priority" eval="0"/>
         <field name="arch" type="xml">
             <tree decoration-warning="state == 'pending'" decoration-danger="state == 'canceled'"
-                  string="Travel Policy"  default_orde="id,issue_date desc">
+                  string="Travel Policy"  default_order="id,issue_date desc">
                 <field name="package"/>
                 <field name="policy_num"/>
                 <field name="serial_no"/>
@@ -69,8 +69,8 @@
                     <!--                            attrs="{'invisible': ['|',('state', '=', 'approved'),('state', '=', 'canceled')]}"/>-->
                     <!--                     <button name="get_financial" string="TEST" type="object"-->
                     <!--                            class="oe_highlight"/>-->
-<!--                    <button name="print_report_xml" string="XML" type="object"-->
-<!--                            class="oe_highlight"/>-->
+                    <!--                    <button name="print_report_xml" string="XML" type="object"-->
+                    <!--                            class="oe_highlight"/>-->
 
                 </header>
                 <sheet>
@@ -191,8 +191,8 @@
     <record model="ir.actions.act_window" id="travel_policy_action_agent">
         <field name="name">Travel Policy</field>
         <field name="res_model">policy.travel</field>
-        <field name="view_id" ref="form_policy_travel"/>
         <field name="view_mode">form</field>
+        <field name="view_id" ref="form_policy_travel"/>
     </record>
 
     <record id="cancel_view" model="ir.ui.view">
