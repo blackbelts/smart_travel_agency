@@ -5,7 +5,7 @@
         <field name="priority" eval="0"/>
         <field name="arch" type="xml">
             <tree decoration-warning="state == 'pending'" decoration-danger="state == 'canceled'"
-                  string="Travel Policy"  default_order="id,issue_date desc">
+                  string="Travel Policy"  default_order="id,issue_date">
                 <field name="package"/>
                 <field name="policy_num"/>
                 <field name="serial_no"/>
