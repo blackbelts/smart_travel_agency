@@ -5,7 +5,7 @@
                 model="policy.travel"
                 report_type="qweb-pdf"
                 name="smart_travel_agency.policy"
-                 menu="{'False':[('state', '=', 'pending')]}"
+                 menu="False"
         />
 
         <template id="policy">
