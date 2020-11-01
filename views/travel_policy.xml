@@ -5,7 +5,7 @@
         <field name="priority" eval="0"/>
         <field name="arch" type="xml">
             <tree decoration-warning="state == 'pending'" decoration-danger="state == 'canceled'"
-                  string="Travel Policy">
+                  string="Travel Policy"  default_orde="id,issue_date desc">
                 <field name="package"/>
                 <field name="policy_num"/>
                 <field name="serial_no"/>
@@ -109,6 +109,7 @@
                         </group>
                         <group>
                             <field name="user_id" invisible="1"  force_save="1" />
+                            <field name="broker" groups="smart_travel_agency.all_agencies_group" />
                             <field name="travel_agency" readonly="1" force_save="1" />
                             <field name="travel_agency_branch" invisible="1"  force_save="1"/>
                             <field name="DOB"  required="1" attrs="{'readonly': [('state', '=','approved')]}"/>
