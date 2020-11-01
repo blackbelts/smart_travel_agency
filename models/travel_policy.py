@@ -425,7 +425,6 @@ class TravelPolicy(models.Model):
                 raise exceptions.ValidationError('You Must Enter Correct Birth Date')
 
     @api.constrains('national_id')
-    @api.onchange('national_id')
     def _check_national(self):
         if self.national_id:
             if self.national_id[1:3] != str(self.DOB).split('-')[0][-2:] or self.national_id[3:5] != str(self.DOB).split('-')[1] or self.national_id[5:7] != str(self.DOB).split('-')[2]:
