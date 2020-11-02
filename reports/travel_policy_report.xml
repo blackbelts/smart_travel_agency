@@ -71,7 +71,9 @@
                             <h4 style="color: #073e89; text-align:center;">Travel Assistance Services (TAS)</h4>
                         </div>
                         <div class="page" style="unicode-bidi: bidi-override !important; direction: unset !important;">
-                            <div style="background-image:url('/smart_travel_agency/static/img/DRAFT-background.png');position: fixed;height: 100%;width: 100%;z-index: 9999;top: 0;left: 0;color:red;background-repeat: no-repeat;background-size: cover;">tets</div>
+                            <div class="watermark_logo" style="position: fixed;opacity:0.30;front-size:8em;width:100%;text-align:center;z-index: 2;height: 100%;">
+                                <img src="/smart_travel_agency/static/img/DRAFT-background.png" alt="Logo" style="height: 100%;width: 100%;"/>
+                            </div>
                             <div  style="padding-left: 25px !important; padding-right: 25px !important; padding-top:1px !important;">
                                 <div  style="width: 50% !important; float:left !important; padding-right:10px;">
                                     <table class="table table-hover">
@@ -536,9 +538,7 @@
                             </div>
 
                         </div>
-                        <div class="page" style="unicode-bidi: bidi-override !important; direction: unset !important;">
-                            <div style="background-image:url('/smart_travel_agency/static/img/DRAFT-background.png');position: fixed;height: 100%;width: 100%;z-index: 9999;top: 0;left: 0;color:red;background-repeat: no-repeat;background-size: cover;">tets</div>
-                        </div>
+
                         <div class="footer" style="float:left; width:100px;">
                             <img style="width:100% !important;" class="img img-responsive" src="/smart_travel_agency/static/img/1.png"/>
                             <span style="font-size: 10px !important; white-space: nowrap !important; overflow: hidden !important;">AROPE PROPERTIES &amp; LIABILITIES INSURANCE EGYPT - S.A.E</span>
