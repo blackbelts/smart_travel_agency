@@ -70,36 +70,9 @@
                             <img class="img"  style="width: 100%;" src="/smart_travel_agency/static/img/3.jpg"/>
                             <h4 style="color: #073e89; text-align:center;">Travel Assistance Services (TAS)</h4>
                         </div>
+
                         <div class="page" style="unicode-bidi: bidi-override !important; direction: unset !important;">
-                            <div style="
-    position: absolute;
-    font-size: 15rem;
-    left: 0;
-    top:20%;
 
-    text-transform: uppercase;
-    z-index: 9999;
-    -webkit-transform: rotateZ(45deg);
-     -moz-transform: rotateZ(45deg);
-    -ms-transform: rotateZ(45deg);
-     -o-transform: rotateZ(45deg);
-     transform: rotateZ(45deg);
-    color: gray;
-    opacity: 0.5;
-    
-    width: 100%;
-    text-align: center;
-    vertical-align: middle;
-    "><h1 style="
-    position: fixed;
-    font-size: 15rem;
-    text-transform: uppercase;
-    z-index: 9999;
-    color: gray;
-    vertical-align: middle;
-
-    ">draft</h1>
-    </div>
                             <div  style="padding-left: 25px !important; padding-right: 25px !important; padding-top:1px !important;">
                                 <div  style="width: 50% !important; float:left !important; padding-right:10px;">
                                     <table class="table table-hover">
@@ -121,7 +94,6 @@
                                         </tr>
                                     </table>
                                 </div>
-
                                 <div  style="width: 50% !important; float:right !important;">
                                     <table class="table table-hover">
 
@@ -156,8 +128,6 @@
                                     </table>
 
                                 </div>
-
-
                                 <div style="width: 21.6% !important; float:left !important; padding-right:10px; margin-top:-8px !important;">
                                     <table class="table table-hover">
 
@@ -188,6 +158,35 @@
                                     </table>
                                 </div>
                                 <div style="width: 35% !important; float:right !important; margin-top:-8px !important;">
+                                     <div style="
+    position: absolute;
+    font-size: 15rem;
+    left: 0;
+    top:20%;
+
+    text-transform: uppercase;
+    z-index: 9999;
+    -webkit-transform: rotateZ(45deg);
+     -moz-transform: rotateZ(45deg);
+    -ms-transform: rotateZ(45deg);
+     -o-transform: rotateZ(45deg);
+     transform: rotateZ(45deg);
+    color: gray;
+    opacity: 0.5;
+
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    "><h1 style="
+    position: fixed;
+    font-size: 15rem;
+    text-transform: uppercase;
+    z-index: 9999;
+    color: gray;
+    vertical-align: middle;
+
+    ">draft</h1>
+    </div>
                                     <table class="table table-hover">
                                         <tr>
                                             <th style="width:32% !important;" scope="col">Coverage Zone</th>
