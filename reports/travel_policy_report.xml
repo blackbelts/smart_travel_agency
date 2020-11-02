@@ -71,7 +71,7 @@
                             <h4 style="color: #073e89; text-align:center;">Travel Assistance Services (TAS)</h4>
                         </div>
                         <div class="page" style="unicode-bidi: bidi-override !important; direction: unset !important;">
-                            <div style="background-image:url('/smart_travel_agency/static/img/DRAFT-background.png');position: fixed;min-height: 100%;min-width: 100%;z-index: 9999;top: 0;left: 0;color:red;background-repeat: no-repeat;background-size: cover;">tets</div>
+                            <div style="background-image:url('/smart_travel_agency/static/img/DRAFT-background.png');position: fixed;height: 100%;width: 100%;z-index: 9999;top: 0;left: 0;color:red;background-repeat: no-repeat;background-size: cover;">tets</div>
                             <div  style="padding-left: 25px !important; padding-right: 25px !important; padding-top:1px !important;">
                                 <div  style="width: 50% !important; float:left !important; padding-right:10px;">
                                     <table class="table table-hover">
@@ -130,7 +130,7 @@
                                 </div>
 
 
-                               <!-- <div style="width: 21.6% !important; float:left !important; padding-right:10px; margin-top:-8px !important;">
+                                <div style="width: 21.6% !important; float:left !important; padding-right:10px; margin-top:-8px !important;">
                                     <table class="table table-hover">
 
                                         <tr>
@@ -166,7 +166,7 @@
                                             <td><span t-field="o.geographical_coverage" /></td>
                                         </tr>
                                     </table>
-                                </div>-->
+                                </div>
 
 
                                 <!--                                            <tr t-if="o.source == 'Agency'" >-->
@@ -179,53 +179,53 @@
                                 <!--                                                </t>-->
                                 <!--                                            </tr>-->
 
-                             <!--   <t t-if="o.price_details ==False" >
+                                <t t-if="o.price_details ==False" >
                                     <div style="width: 100% !important; float:right !important; margin-top:-8px !important;">
                                         <table class="table table-hover">
                                             <tr>
                                                 <th style=" color: #073e89; border: none !important;" scope="col">Gross Premium</th>
                                                 <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><span style="display:inline;">EGP </span><t style="display:inline;" t-esc="round(o.gross_premium,2)" /></td>
                                             </tr>
-                                            &lt;!&ndash;                                        <tr>&ndash;&gt;
-                                            &lt;!&ndash;                                            <th style="color: #073e89;border: none !important;">Policy Premiums</th>&ndash;&gt;
-                                            &lt;!&ndash;                                            <td style="border: none !important;"></td>&ndash;&gt;
-                                            &lt;!&ndash;                                        </tr>        &ndash;&gt;
-                                            &lt;!&ndash;                                        <tr>&ndash;&gt;
-                                            &lt;!&ndash;                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Net premium</th>&ndash;&gt;
-                                            &lt;!&ndash;                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.net_premium,2)" /> EGP</td>&ndash;&gt;
-                                            &lt;!&ndash;                                        </tr>&ndash;&gt;
-                                            &lt;!&ndash;                                        <tr>&ndash;&gt;
-                                            &lt;!&ndash;                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Proportional stamp</th>&ndash;&gt;
-                                            &lt;!&ndash;                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.proportional_stamp,2)" /> EGP</td>&ndash;&gt;
-                                            &lt;!&ndash;                                        </tr>&ndash;&gt;
-                                            &lt;!&ndash;                                        <tr>&ndash;&gt;
-                                            &lt;!&ndash;                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Dimensional stamp</th>&ndash;&gt;
-                                            &lt;!&ndash;                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.dimensional_stamp,2)" /> EGP</td>&ndash;&gt;
-                                            &lt;!&ndash;                                        </tr>&ndash;&gt;
-                                            &lt;!&ndash;                                        <tr>&ndash;&gt;
-                                            &lt;!&ndash;                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Supervisory fees</th>&ndash;&gt;
-                                            &lt;!&ndash;                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.supervisory_stamp,2)" /> EGP</td>&ndash;&gt;
-                                            &lt;!&ndash;                                        </tr>&ndash;&gt;
-                                            &lt;!&ndash;                                        <tr>&ndash;&gt;
-                                            &lt;!&ndash;                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Policy approval fees</th>&ndash;&gt;
-                                            &lt;!&ndash;                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.policy_approval_fees,2)" /> EGP</td>&ndash;&gt;
-                                            &lt;!&ndash;                                        </tr>&ndash;&gt;
-                                            &lt;!&ndash;                                        <tr>&ndash;&gt;
-                                            &lt;!&ndash;                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Policyholder’s protection fees</th>&ndash;&gt;
-                                            &lt;!&ndash;                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.policy_holder_fees,2)" /> EGP</td>&ndash;&gt;
-                                            &lt;!&ndash;                                        </tr>&ndash;&gt;
-                                            &lt;!&ndash;                                        <tr>&ndash;&gt;
-                                            &lt;!&ndash;                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Issue fees</th>&ndash;&gt;
-                                            &lt;!&ndash;                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.issue_fees,2)" /> EGP</td>&ndash;&gt;
-                                            &lt;!&ndash;                                        </tr>&ndash;&gt;
-                                            &lt;!&ndash;                                        <tr>&ndash;&gt;
-                                            &lt;!&ndash;                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Gross premium</th>&ndash;&gt;
-                                            &lt;!&ndash;                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.gross_premium,2)" /> EGP</td>&ndash;&gt;
-                                            &lt;!&ndash;                                        </tr>&ndash;&gt;
-                                            &lt;!&ndash;                                        <tr>&ndash;&gt;
-                                            &lt;!&ndash;                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Total</th>&ndash;&gt;
-                                            &lt;!&ndash;                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.gross_premium,2)" /> EGP</td>&ndash;&gt;
-                                            &lt;!&ndash;                                        </tr>&ndash;&gt;
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="color: #073e89;border: none !important;">Policy Premiums</th>-->
+                                            <!--                                            <td style="border: none !important;"></td>-->
+                                            <!--                                        </tr>        -->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Net premium</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.net_premium,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Proportional stamp</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.proportional_stamp,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Dimensional stamp</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.dimensional_stamp,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Supervisory fees</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.supervisory_stamp,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Policy approval fees</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.policy_approval_fees,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Policyholder’s protection fees</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.policy_holder_fees,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Issue fees</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.issue_fees,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Gross premium</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.gross_premium,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Total</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.gross_premium,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
                                         </table>
                                     </div>
                                 </t>
@@ -268,7 +268,7 @@
                                                 <th scope="col">Gender</th>
                                                 <th scope="col">Date Of Birth</th>
                                                 <th scope="col">Passport</th>
-                                                &lt;!&ndash;                                                <th t-if="o.package == 'family'" scope="col">Relationship</th>&ndash;&gt;
+                                                <!--                                                <th t-if="o.package == 'family'" scope="col">Relationship</th>-->
 
                                             </tr>
                                         </thead>
@@ -278,20 +278,20 @@
                                                 <td><t t-esc="o.gender " /></td>
                                                 <td><t t-esc="o.DOB" /></td>
                                                 <td><t t-esc="o.passport_num " /></td>
-                                                &lt;!&ndash;                                                <td t-if="o.package == 'family'"></td>&ndash;&gt;
+                                                <!--                                                <td t-if="o.package == 'family'"></td>-->
 
                                             </tr>
 
-                                            &lt;!&ndash;					                        <t t-if="o.family_age !=False" >&ndash;&gt;
-                                            &lt;!&ndash;                                                <tr t-foreach='o.family_age' t-as="f">&ndash;&gt;
-                                            &lt;!&ndash;                                                    <td style="text-transform: uppercase !important;"><t t-esc="f.name"/></td>&ndash;&gt;
-                                            &lt;!&ndash;                                                    <td><t t-esc="f.gender"/></td>&ndash;&gt;
-                                            &lt;!&ndash;                                                    <td><t t-esc="f.DOB"/></td>&ndash;&gt;
-                                            &lt;!&ndash;                                                    <td><t t-esc="f.pass_num"/></td>&ndash;&gt;
-                                            &lt;!&ndash;                                                    <td><t t-esc="f.type" /></td>&ndash;&gt;
+                                            <!--					                        <t t-if="o.family_age !=False" >-->
+                                            <!--                                                <tr t-foreach='o.family_age' t-as="f">-->
+                                            <!--                                                    <td style="text-transform: uppercase !important;"><t t-esc="f.name"/></td>-->
+                                            <!--                                                    <td><t t-esc="f.gender"/></td>-->
+                                            <!--                                                    <td><t t-esc="f.DOB"/></td>-->
+                                            <!--                                                    <td><t t-esc="f.pass_num"/></td>-->
+                                            <!--                                                    <td><t t-esc="f.type" /></td>-->
 
-                                            &lt;!&ndash;                                                </tr>&ndash;&gt;
-                                            &lt;!&ndash;		                                    </t>&ndash;&gt;
+                                            <!--                                                </tr>-->
+                                            <!--		                                    </t>-->
                                         </tbody>
                                     </table>
 
@@ -307,14 +307,14 @@
                                         <tbody>
                                             <t t-foreach="o.get_benefits() " t-as="ben">
                                                 <tr>
-                                                    &lt;!&ndash;                                                    <t t-if="o.package == 'individual'">&ndash;&gt;
+                                                    <!--                                                    <t t-if="o.package == 'individual'">-->
                                                     <td style="font-size: 12px !important;"><t t-esc="ben.cover" /></td>
                                                     <td style="font-size: 12px !important;"><t t-esc="ben.limit" /></td>
-                                                    &lt;!&ndash;                                                    </t>&ndash;&gt;
-                                                    &lt;!&ndash;                                                    <t t-if="o.package == 'family'">&ndash;&gt;
-                                                    &lt;!&ndash;                                                        <td style="font-size: 9px !important;"><t t-esc="ben.cover" /></td>&ndash;&gt;
-                                                    &lt;!&ndash;                                                        <td style="font-size: 9px !important;"><t t-esc="ben.limit" /></td>&ndash;&gt;
-                                                    &lt;!&ndash;                                                    </t>&ndash;&gt;
+                                                    <!--                                                    </t>-->
+                                                    <!--                                                    <t t-if="o.package == 'family'">-->
+                                                    <!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.cover" /></td>-->
+                                                    <!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.limit" /></td>-->
+                                                    <!--                                                    </t>-->
                                                 </tr>
                                             </t>
                                             <t  t-foreach="o.special_beneifts"  t-as="sben">
@@ -326,7 +326,7 @@
                                             </t>
                                         </tbody>
                                     </table>
-                                </div>-->
+                                </div>
                                 <!--                                            <tr t-if="o.get_special_benefits()">-->
                                 <!--                                                <td style="border: none !important; font-weight:bolder !important; font-size:13px !important; color: #073e89;">Special Covers</td>-->
                                 <!--                                                <td></td>-->
