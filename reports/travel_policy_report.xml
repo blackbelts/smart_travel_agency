@@ -158,12 +158,11 @@
                                     </table>
                                 </div>
                                 <div style="width: 35% !important; float:right !important; margin-top:-8px !important;">
-                                     <div style="
+                                     <div t-if="o.state =='pending'" style="
     position: absolute;
     font-size: 15rem;
-    left: 10%;
-    top:20%;
-
+    left: 0%;
+    top:40%;
     text-transform: uppercase;
     z-index: 9999;
     -webkit-transform: rotateZ(45deg);
@@ -172,7 +171,7 @@
      -o-transform: rotateZ(45deg);
      transform: rotateZ(45deg);
     color: gray;
-    opacity: 0.5;
+    opacity: 0.3;
 
     width: 100%;
     text-align: center;
