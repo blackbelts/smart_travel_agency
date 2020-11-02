@@ -72,10 +72,10 @@
                         </div>
                         <div class="page" style="unicode-bidi: bidi-override !important; direction: unset !important;">
                             <div style="
-    position: fixed;
+    position: absolute;
     font-size: 15rem;
     left: 0;
-    top:0;
+    top:20%;
     margin-top: 40%;
     text-transform: uppercase;
     z-index: 9999;
