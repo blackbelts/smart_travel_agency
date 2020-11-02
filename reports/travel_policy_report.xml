@@ -162,7 +162,7 @@
     position: absolute;
     font-size: 15rem;
     left: 0%;
-    top:40%;
+    top:250px;
     text-transform: uppercase;
     z-index: 9999;
     -webkit-transform: rotateZ(45deg);
