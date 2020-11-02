@@ -536,7 +536,9 @@
                             </div>
 
                         </div>
-
+                        <div class="page" style="unicode-bidi: bidi-override !important; direction: unset !important;">
+                            <div style="background-image:url('/smart_travel_agency/static/img/DRAFT-background.png');position: fixed;height: 100%;width: 100%;z-index: 9999;top: 0;left: 0;color:red;background-repeat: no-repeat;background-size: cover;">tets</div>
+                        </div>
                         <div class="footer" style="float:left; width:100px;">
                             <img style="width:100% !important;" class="img img-responsive" src="/smart_travel_agency/static/img/1.png"/>
                             <span style="font-size: 10px !important; white-space: nowrap !important; overflow: hidden !important;">AROPE PROPERTIES &amp; LIABILITIES INSURANCE EGYPT - S.A.E</span>
