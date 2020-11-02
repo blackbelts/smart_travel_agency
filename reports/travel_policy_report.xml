@@ -92,7 +92,7 @@
 
     text-transform: uppercase;
     z-index: 50;
-    transform: rotateZ(45);
+    transform: rotateZ(45deg);
     color: gray;
     opacity: 0.5;
     margin: auto 0;
