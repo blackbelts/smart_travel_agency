@@ -71,12 +71,38 @@
                             <h4 style="color: #073e89; text-align:center;">Travel Assistance Services (TAS)</h4>
                         </div>
                         <div class="page" style="unicode-bidi: bidi-override !important; direction: unset !important;">
+                            <div style="
+    position: fixed;
+    font-size: 15rem;
+    left: 0;
+    margin-top: 22%;
+    text-transform: uppercase;
+    z-index: 50;
+    transform: rotateZ(45deg);
+    color: gray;
+    opacity: 0.5;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    "><h1 style="
+    position: fixed;
+    font-size: 15rem;
+    left: 0;
 
+    text-transform: uppercase;
+    z-index: 50;
+    transform: rotateZ(45);
+    color: gray;
+    opacity: 0.5;
+    margin: auto 0;
+    height: 100vh;
+    width: 100%;
+    vertical-align: middle;
+    padding: auto;
+    ">DRAFT</h1>
+    </div>
                             <div  style="padding-left: 25px !important; padding-right: 25px !important; padding-top:1px !important;">
-                                <div class="watermark_logo" style="position: fixed;opacity:1;front-size:8em;width:100%;text-align:center;z-index:100;height: 100%;">
-                                dsfgdhfjkghqEWRAETRSYTKULOI jkjkjkjkdsfgdhfjkghqEWRAETRSYTKULOI jkjkjkjkdsfgdhfjkghqEWRAETRSYTKULOI jkjkjkjkdsfgdhfjkghqEWRAETRSYTKULOI jkjkjkjkdsfgdhfjkghqEWRAETRSYTKULOI jkjkjkjkdsfgdhfjkghqEWRAETRSYTKULOI jkjkjkjkdsfgdhfjkghqEWRAETRSYTKULOI jkjkjkjkdsfgdhfjkghqEWRAETRSYTKULOI jkjkjkjkdsfgdhfjkghqEWRAETRSYTKULOI jkjkjkjk
-                                <img src="/smart_travel_agency/static/img/3.jpg" alt="Logo" style="height: 100%;width: 100%;"/>
-                            </div>
                                 <div  style="width: 50% !important; float:left !important; padding-right:10px;">
                                     <table class="table table-hover">
                                         <tr>
@@ -164,7 +190,7 @@
                                     </table>
                                 </div>
                                 <div style="width: 35% !important; float:right !important; margin-top:-8px !important;">
-                                    <table class="table table-hover" style="background-image:url('/smart_travel_agency/static/img/3.jpg')">
+                                    <table class="table table-hover">
                                         <tr>
                                             <th style="width:32% !important;" scope="col">Coverage Zone</th>
                                             <td><span t-field="o.geographical_coverage" /></td>
