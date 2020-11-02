@@ -93,18 +93,12 @@
     position: fixed;
     font-size: 15rem;
     left: 0;
-
     text-transform: uppercase;
     z-index: 50;
-    -webkit-transform: rotateZ(45deg);
-     -moz-transform: rotateZ(45deg);
-    -ms-transform: rotateZ(45deg);
-     -o-transform: rotateZ(45deg);
-     transform: rotateZ(45deg);
     color: gray;
     opacity: 0.5;
     margin: auto 0;
-    height: 100vh;
+    height: 200vh;
     width: 100%;
     vertical-align: middle;
     padding: auto;
