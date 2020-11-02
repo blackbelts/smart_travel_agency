@@ -78,7 +78,11 @@
     margin-top: 40%;
     text-transform: uppercase;
     z-index: 50;
-    transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+     -moz-transform: rotateZ(45deg);
+    -ms-transform: rotateZ(45deg);
+     -o-transform: rotateZ(45deg);
+     transform: rotateZ(45deg);
     color: gray;
     opacity: 0.5;
     height: 100vh;
@@ -92,7 +96,11 @@
 
     text-transform: uppercase;
     z-index: 50;
-    transform: rotateZ(45deg);
+    -webkit-transform: rotateZ(45deg);
+     -moz-transform: rotateZ(45deg);
+    -ms-transform: rotateZ(45deg);
+     -o-transform: rotateZ(45deg);
+     transform: rotateZ(45deg);
     color: gray;
     opacity: 0.5;
     margin: auto 0;
