@@ -97,11 +97,8 @@
     z-index: 50;
     color: gray;
     opacity: 0.5;
-    margin: auto 0;
-    height: 200vh;
-    width: 100%;
     vertical-align: middle;
-    padding: auto;
+   
     ">draft</h1>
     </div>
                             <div  style="padding-left: 25px !important; padding-right: 25px !important; padding-top:1px !important;">
