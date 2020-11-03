@@ -139,7 +139,6 @@
                             <group>
 
                                 <group>
-                                    <field name="price_details"/>
                                     <field name="currency_id"/>
                                     <field name="net_premium"/>
                                     <field name="gross_premium"/>
