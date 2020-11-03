@@ -14,50 +14,50 @@
                         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Homemade+Apple"/>
                         <style>
                             .cont {
-                              background-image: url('/smart_travel_agency/static/img/image.jpg');
-                              background-position: center;
-                              background-repeat: no-repeat;
-                              height:100px;
-                              background-attachment: fixed;
+                            background-image: url('/smart_travel_agency/static/img/image.jpg');
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            height:100px;
+                            background-attachment: fixed;
                             }
                             @font-face {
-                                font-family: 'dubai';
-                                src: url('/smart_travel_agency/static/fonts/Dubai-Bold.ttf');
-                             }
-                             table {
-                                width: 100%;
-                                border: 1px solid #ddd;
-                                text-align: left;
+                            font-family: 'dubai';
+                            src: url('/smart_travel_agency/static/fonts/Dubai-Bold.ttf');
                             }
-                            
+                            table {
+                            width: 100%;
+                            border: 1px solid #ddd;
+                            text-align: left;
+                            }
+
                             table td,
                             table th {
-                                font-size: 11px;
-                                padding: 3px !important;
+                            font-size: 11px;
+                            padding: 3px !important;
                             }
-                            
+
                             .table,
                             .table th,
                             .table td {
-                                border: 1px solid #ddd;
-                                border-collapse: collapse;
-                                padding: 3px !important;
-                                font-family: dubai !important;
+                            border: 1px solid #ddd;
+                            border-collapse: collapse;
+                            padding: 3px !important;
+                            font-family: dubai !important;
                             }
                             .table th {
-                                color: #073e89;
+                            color: #073e89;
                             }
-                            
+
                             p {
                             font-family: dubai !important;
                             }
                             .shadow {
-                                box-shadow: 0 12px 17px 0 rgba(0, 0, 0, 0.2), 0 1px 30px 0 rgba(0, 0, 0, 0.14), 0 2px 16px -1px rgba(0, 0, 0, 0.12) !important;
+                            box-shadow: 0 12px 17px 0 rgba(0, 0, 0, 0.2), 0 1px 30px 0 rgba(0, 0, 0, 0.14), 0 2px 16px -1px rgba(0, 0, 0, 0.12) !important;
                             }
                             tr:nth-child(even) {background-color: #f2f2f2;}
-                                html, body, div, span, h1, h2, h3, h4, h5, h6, p, a,  ol, ul, li, table, tbody, tfoot, thead, tr, th, td, footer, header {
-                                    font-family: dubai !important;
-                                }
+                            html, body, div, span, h1, h2, h3, h4, h5, h6, p, a,  ol, ul, li, table, tbody, tfoot, thead, tr, th, td, footer, header {
+                            font-family: dubai !important;
+                            }
 
 
 
@@ -68,65 +68,65 @@
                             <img class="img"  style="width: 100%;" src="/smart_travel_agency/static/img/3.jpg"/>
                             <h4 style="color: #073e89; text-align:center;">Travel Assistance Services (TAS)</h4>
                         </div>
-      	                <div class="page">
+                        <div class="page" style="unicode-bidi: bidi-override !important; direction: unset !important;">
                             <div  style="padding-left: 25px !important; padding-right: 25px !important; padding-top:1px !important;">
                                 <div  style="width: 50% !important; float:left !important; padding-right:10px;">
                                     <table class="table table-hover">
-                                            <tr>
-                                                <th scope="col">Insured</th>
-                                                <td style="text-transform: uppercase !important;"><t t-esc="o.insured"/></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="col">National ID</th>
-                                                <td><t t-esc="o.national_id"/></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="col">Address</th>
-                                                <td><t t-esc="o.address"/></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="col">Phone</th>
-                                                <td><t t-esc="o.phone"/></td>
-                                            </tr>
+                                        <tr>
+                                            <th scope="col">Insured</th>
+                                            <td style="text-transform: uppercase !important;"><t t-esc="o.insured"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">National ID</th>
+                                            <td><t t-esc="o.national_id"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">Address</th>
+                                            <td><t t-esc="o.address"/></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">Phone</th>
+                                            <td><t t-esc="o.phone"/></td>
+                                        </tr>
                                     </table>
                                 </div>
 
                                 <div  style="width: 50% !important; float:right !important;">
                                     <table class="table table-hover">
-                                        
-                                            <tr>
-                                                <th scope="col">Policy Number</th>
-                                                <td><t t-esc="o.policy_num" /></td>
-                                            </tr>
-<!--                                            <tr>-->
-<!--                                                <th scope="col">gross policy premiums</th>-->
-<!--                                                <td><t t-esc="round(o.gross_premium,2)" /> EGP</td>-->
-<!--                                            </tr>-->
-                                            <tr>
-                                                <th scope="col">Number of Passengers</th>
-                                                <t t-if="o.package == 'family'">
 
-                                                    <td>Family</td>
-                                                </t>
-                                                <t t-if="o.package == 'individual'">
+                                        <tr>
+                                            <th scope="col">Policy Number</th>
+                                            <td><t t-esc="o.policy_num" /></td>
+                                        </tr>
+                                        <!--                                            <tr>-->
+                                        <!--                                                <th scope="col">gross policy premiums</th>-->
+                                        <!--                                                <td><t t-esc="round(o.gross_premium,2)" /> EGP</td>-->
+                                        <!--                                            </tr>-->
+                                        <tr>
+                                            <th scope="col">Number of Passengers</th>
+                                            <t t-if="o.package == 'family'">
 
-                                                    <td>1</td>
-                                                </t>
-                                            </tr>
-                                            <tr>
-                                                <th scope="col">Country of Origin</th>
-                                                <td>Egypt</td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="col">Issue Date</th>
-                                                <td><t t-esc="context_timestamp(o.issue_date).strftime('%d-%m-%Y %H:%M:%S')"/></td>
-                                            </tr>
-                                        
+                                                <td>Family</td>
+                                            </t>
+                                            <t t-if="o.package == 'individual'">
+
+                                                <td>1</td>
+                                            </t>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">Country of Origin</th>
+                                            <td>Egypt</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="col">Issue Date</th>
+                                            <td><t t-esc="context_timestamp(o.issue_date).strftime('%d-%m-%Y %H:%M:%S')"/></td>
+                                        </tr>
+
                                     </table>
 
                                 </div>
-                            
-                            
+
+
                                 <div style="width: 21.6% !important; float:left !important; padding-right:10px; margin-top:-8px !important;">
                                     <table class="table table-hover">
 
@@ -166,15 +166,15 @@
                                 </div>
 
 
-<!--                                            <tr t-if="o.source == 'Agency'" >-->
-<!--                                                <th style="border: none !important; padding-bottom: 50px !important;" scope="col">Source</th>-->
-<!--                                                <t t-if="o.source != 'Agency'" >-->
-<!--                                                    <td style="border: none !important; padding-bottom: 18px !important;">Online</td>-->
-<!--                                                </t>-->
-<!--                                                <t >-->
-<!--                                                    <td style="border: none !important; padding-bottom: 18px !important;"></td>-->
-<!--                                                </t>-->
-<!--                                            </tr>-->
+                                <!--                                            <tr t-if="o.source == 'Agency'" >-->
+                                <!--                                                <th style="border: none !important; padding-bottom: 50px !important;" scope="col">Source</th>-->
+                                <!--                                                <t t-if="o.source != 'Agency'" >-->
+                                <!--                                                    <td style="border: none !important; padding-bottom: 18px !important;">Online</td>-->
+                                <!--                                                </t>-->
+                                <!--                                                <t >-->
+                                <!--                                                    <td style="border: none !important; padding-bottom: 18px !important;"></td>-->
+                                <!--                                                </t>-->
+                                <!--                                            </tr>-->
 
                                 <t t-if="o.price_details ==False" >
                                     <div style="width: 100% !important; float:right !important; margin-top:-8px !important;">
@@ -183,46 +183,46 @@
                                                 <th style=" color: #073e89; border: none !important;" scope="col">Gross Premium</th>
                                                 <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><span style="display:inline;">EGP </span><t style="display:inline;" t-esc="round(o.gross_premium,2)" /></td>
                                             </tr>
-<!--                                        <tr>-->
-<!--                                            <th style="color: #073e89;border: none !important;">Policy Premiums</th>-->
-<!--                                            <td style="border: none !important;"></td>-->
-<!--                                        </tr>        -->
-<!--                                        <tr>-->
-<!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Net premium</th>-->
-<!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.net_premium,2)" /> EGP</td>-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Proportional stamp</th>-->
-<!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.proportional_stamp,2)" /> EGP</td>-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Dimensional stamp</th>-->
-<!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.dimensional_stamp,2)" /> EGP</td>-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Supervisory fees</th>-->
-<!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.supervisory_stamp,2)" /> EGP</td>-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Policy approval fees</th>-->
-<!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.policy_approval_fees,2)" /> EGP</td>-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Policyholder’s protection fees</th>-->
-<!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.policy_holder_fees,2)" /> EGP</td>-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Issue fees</th>-->
-<!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.issue_fees,2)" /> EGP</td>-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Gross premium</th>-->
-<!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.gross_premium,2)" /> EGP</td>-->
-<!--                                        </tr>-->
-<!--                                        <tr>-->
-<!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Total</th>-->
-<!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.gross_premium,2)" /> EGP</td>-->
-<!--                                        </tr>-->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="color: #073e89;border: none !important;">Policy Premiums</th>-->
+                                            <!--                                            <td style="border: none !important;"></td>-->
+                                            <!--                                        </tr>        -->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Net premium</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.net_premium,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Proportional stamp</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.proportional_stamp,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Dimensional stamp</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.dimensional_stamp,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Supervisory fees</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.supervisory_stamp,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Policy approval fees</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.policy_approval_fees,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Policyholder’s protection fees</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.policy_holder_fees,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Issue fees</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.issue_fees,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Gross premium</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.gross_premium,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
+                                            <!--                                        <tr>-->
+                                            <!--                                            <th style="border: none !important; color: #000 !important; font-weight: normal !important" scope="col">Total</th>-->
+                                            <!--                                            <td style="border: none !important; justify-content: right !important; text-align: right !important; float: right !important; margin-left -2px !important;"><t t-esc="round(o.gross_premium,2)" /> EGP</td>-->
+                                            <!--                                        </tr>-->
                                         </table>
                                     </div>
                                 </t>
@@ -265,7 +265,7 @@
                                                 <th scope="col">Gender</th>
                                                 <th scope="col">Date Of Birth</th>
                                                 <th scope="col">Passport</th>
-<!--                                                <th t-if="o.package == 'family'" scope="col">Relationship</th>-->
+                                                <!--                                                <th t-if="o.package == 'family'" scope="col">Relationship</th>-->
 
                                             </tr>
                                         </thead>
@@ -275,24 +275,25 @@
                                                 <td><t t-esc="o.gender " /></td>
                                                 <td><t t-esc="o.DOB" /></td>
                                                 <td><t t-esc="o.passport_num " /></td>
-<!--                                                <td t-if="o.package == 'family'"></td>-->
+                                                <!--                                                <td t-if="o.package == 'family'"></td>-->
 
                                             </tr>
 
-<!--					                        <t t-if="o.family_age !=False" >-->
-<!--                                                <tr t-foreach='o.family_age' t-as="f">-->
-<!--                                                    <td style="text-transform: uppercase !important;"><t t-esc="f.name"/></td>-->
-<!--                                                    <td><t t-esc="f.gender"/></td>-->
-<!--                                                    <td><t t-esc="f.DOB"/></td>-->
-<!--                                                    <td><t t-esc="f.pass_num"/></td>-->
-<!--                                                    <td><t t-esc="f.type" /></td>-->
+                                            <!--					                        <t t-if="o.family_age !=False" >-->
+                                            <!--                                                <tr t-foreach='o.family_age' t-as="f">-->
+                                            <!--                                                    <td style="text-transform: uppercase !important;"><t t-esc="f.name"/></td>-->
+                                            <!--                                                    <td><t t-esc="f.gender"/></td>-->
+                                            <!--                                                    <td><t t-esc="f.DOB"/></td>-->
+                                            <!--                                                    <td><t t-esc="f.pass_num"/></td>-->
+                                            <!--                                                    <td><t t-esc="f.type" /></td>-->
 
-<!--                                                </tr>-->
-<!--		                                    </t>-->
+                                            <!--                                                </tr>-->
+                                            <!--		                                    </t>-->
                                         </tbody>
                                     </table>
+
                                 </div>
-                                 <div class="" style="width: 100% !important; margin-top:-8px !important; float: left;">
+                                <div class="" style="width: 100% !important; margin-top:-8px !important; float: left;">
                                     <table class="table table-hover">
                                         <thead>
                                             <tr>
@@ -303,58 +304,64 @@
                                         <tbody>
                                             <t t-foreach="o.get_benefits() " t-as="ben">
                                                 <tr>
-<!--                                                    <t t-if="o.package == 'individual'">-->
+                                                    <!--                                                    <t t-if="o.package == 'individual'">-->
                                                     <td style="font-size: 12px !important;"><t t-esc="ben.cover" /></td>
                                                     <td style="font-size: 12px !important;"><t t-esc="ben.limit" /></td>
-<!--                                                    </t>-->
-<!--                                                    <t t-if="o.package == 'family'">-->
-<!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.cover" /></td>-->
-<!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.limit" /></td>-->
-<!--                                                    </t>-->
+                                                    <!--                                                    </t>-->
+                                                    <!--                                                    <t t-if="o.package == 'family'">-->
+                                                    <!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.cover" /></td>-->
+                                                    <!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.limit" /></td>-->
+                                                    <!--                                                    </t>-->
                                                 </tr>
                                             </t>
+                                            <t  t-foreach="o.special_beneifts"  t-as="sben">
+                                                <tr>
+                                                    <td style="font-size: 12px !important;"><t t-esc="sben.cover" /></td>
+                                                    <td style="font-size: 12px !important;"><t t-esc="sben.limit" /></td>
 
-					                    </tbody>
+                                                </tr>
+                                            </t>
+                                        </tbody>
                                     </table>
                                 </div>
-<!--                                            <tr t-if="o.get_special_benefits()">-->
-<!--                                                <td style="border: none !important; font-weight:bolder !important; font-size:13px !important; color: #073e89;">Special Covers</td>-->
-<!--                                                <td></td>-->
-<!--                                            </tr>-->
-<!--                                            <t t-foreach="o.get_special_benefits()" t-as="sben">-->
-<!--                                                <tr>-->
-<!--                                                    <t t-if="o.package == 'individual'">-->
-<!--                                                            <td style="font-size: 12px !important;"><t t-esc="sben.cover" /></td>-->
-<!--                                                            <td style="font-size: 12px !important;"><t t-esc="sben.limit" /></td>-->
-<!--                                                    </t>-->
-<!--                                                    <t t-if="o.package == 'family'">-->
-<!--                                                        <td style="font-size: 9px !important;"><t t-esc="sben.cover" /></td>-->
-<!--                                                        <td style="font-size: 9px !important;"><t t-esc="sben.limit" /></td>-->
-<!--                                                    </t>-->
-<!--                                                </tr>-->
-<!--                                            </t>-->
+                                <!--                                            <tr t-if="o.get_special_benefits()">-->
+                                <!--                                                <td style="border: none !important; font-weight:bolder !important; font-size:13px !important; color: #073e89;">Special Covers</td>-->
+                                <!--                                                <td></td>-->
+                                <!--                                            </tr>-->
+                                <!--                                            <t t-foreach="o.get_special_benefits()" t-as="sben">-->
+                                <!--                                                <tr>-->
+                                <!--                                                    <t t-if="o.package == 'individual'">-->
+                                <!--                                                            <td style="font-size: 12px !important;"><t t-esc="sben.cover" /></td>-->
+                                <!--                                                            <td  style="font-size: 12px !important;"><t t-esc="sben.limit" /></td>-->
+                                <!--                                                    </t>-->
+                                <!--                                                    <t t-if="o.package == 'family'">-->
+                                <!--                                                        <td style="font-size: 9px !important;"><t t-esc="sben.cover" /></td>-->
+                                <!--                                                        <td style="font-size: 9px !important;"><t t-esc="sben.limit" /></td>-->
+                                <!--                                                    </t>-->
+                                <!--                                                </tr>-->
+                                <!--                                            </t>-->
                                 <div style="width: 50% !important; margin-top:-15px !important; float: left; white-space: nowrap !important;">
-<!--                                    <t t-if="o.package == 'individual'">-->
+                                    <!--                                    <t t-if="o.package == 'individual'">-->
                                     <ul style="padding-left:15px;font-size: 11px;">
                                         <li>The above is subject to policy terms and conditions as attached.</li>
                                         <li>Policy issued online doesn't need insured signature.</li>
                                         <li>(*) Excess applies.</li>
                                         <li>(**) Actual expenses should not exceed the maximum policy limit.</li>
                                     </ul>
-<!--                                    </t>-->
+                                    <!--                                    </t>-->
 
-<!--                                    <t t-if="o.package == 'family'">-->
-<!--                                        <ul style="padding-left:15px;font-size: 10px;">-->
-<!--                                            <li>The above is subject to policy terms and conditions as attached.</li>-->
-<!--                                            <li>Policy issued online doesn't need insured signature.</li>-->
-<!--                                            <li>(*) Excess applies.</li>-->
-<!--                                            <li>(**) Actual expenses should not exceed the maximum policy limit.</li>-->
-<!--                                        </ul>-->
-<!--                                    </t>-->
-<!--                                    <p style="font-size: 10px;"></p>-->
-<!--                                    <p style="font-size: 10px; margin-top:-10px !important;"></p>-->
-<!--                                    <p style="font-size: 10px;"></p>-->
-<!--                                    <p style="font-size: 10px; margin-top:-10px !important;"></p>-->
+                                    <!--                                    <t t-if="o.package == 'family'">-->
+                                    <!--                                        <ul style="padding-left:15px;font-size: 10px;">-->
+                                    <!--                                            <li>The above is subject to policy terms and conditions as attached.</li>-->
+                                    <!--                                            <li>Policy issued online doesn't need insured signature.</li>-->
+                                    <!--                                            <li>(*) Excess applies.</li>-->
+                                    <!--                                            <li>(**) Actual expenses should not exceed the maximum policy limit.</li>-->
+                                    <!--                                        </ul>-->
+                                    <!--                                    </t>-->
+                                    <!--                                    <p style="font-size: 10px;"></p>-->
+                                    <!--                                    <p style="font-size: 10px; margin-top:-10px !important;"></p>-->
+                                    <!--                                    <p style="font-size: 10px;"></p>-->
+                                    <!--                                    <p style="font-size: 10px; margin-top:-10px !important;"></p>-->
                                 </div>
                                 <div style="width: 50% !important; margin-top:-15px !important; float: right; text-align:end;">
                                     <t t-if="o.source != 'Agency'">
@@ -370,44 +377,70 @@
                                     </t>
 
                                 </div>
-                                <div t-if="o.get_special_benefits()" class="" style="width: 100% !important; margin-top:-8px !important; float: left;">
+                                <div class="" style="width: 100% !important; margin-top:-8px !important; float: left;">
                                     <table class="table table-hover">
                                         <thead>
                                             <tr>
-                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Special Covers</th>
-                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;"></th>
-                                            </tr>
-                                            <tr>
-                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Cover</th>
-                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Limit</th>
+                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Insurance Broker Name</th>
+                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">FRA Licence No</th>
+                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Due Basic Commission before tax</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <t t-foreach="o.get_special_benefits()" t-as="sben">
+
                                                 <tr>
 <!--                                                    <t t-if="o.package == 'individual'">-->
-                                                    <td style="font-size: 12px !important;"><t t-esc="sben.cover" /></td>
-                                                    <td style="font-size: 12px !important;"><t t-esc="sben.limit" /></td>
+                                                    <td style="font-size: 12px !important; height:20px !important;"></td>
+                                                    <td style="font-size: 12px !important;height:20px !important;"></td>
+                                                    <td style="font-size: 12px !important;height:20px !important;"></td>
 <!--                                                    </t>-->
 <!--                                                    <t t-if="o.package == 'family'">-->
-<!--                                                        <td style="font-size: 9px !important;"><t t-esc="sben.cover" /></td>-->
-<!--                                                        <td style="font-size: 9px !important;"><t t-esc="sben.limit" /></td>-->
+<!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.cover" /></td>-->
+<!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.limit" /></td>-->
 <!--                                                    </t>-->
                                                 </tr>
-                                            </t>
-					                    </tbody>
+
+                                        </tbody>
                                     </table>
                                 </div>
-<!--                                <t>-->
+                                <!--                                <div t-if="o.get_special_benefits()" class="" style="width: 100% !important; margin-top:-8px !important; float: left;">-->
+                                <!--                                    <table class="table table-hover">-->
+                                <!--                                        <thead>-->
+                                <!--                                            <tr>-->
+                                <!--                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Special Covers</th>-->
+                                <!--                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;"></th>-->
+                                <!--                                            </tr>-->
+                                <!--                                            <tr>-->
+                                <!--                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Cover</th>-->
+                                <!--                                                <th style="border: none !important; font-weight:bolder !important; font-size:13px !important;" scope="col">Limit</th>-->
+                                <!--                                            </tr>-->
+                                <!--                                        </thead>-->
+                                <!--                                        <tbody>-->
+                                <!--                                            <t t-foreach="o.get_special_benefits()" t-as="sben">-->
+                                <!--                                                <tr>-->
+                                <!--&lt;!&ndash;                                                    <t t-if="o.package == 'individual'">&ndash;&gt;-->
+                                <!--                                                    <td style="font-size: 12px !important;"><t t-esc="sben.cover" /></td>-->
+                                <!--                                                    <td style="font-size: 12px !important;"><t t-esc="sben.limit" /></td>-->
+                                <!--&lt;!&ndash;                                                    </t>&ndash;&gt;-->
+                                <!--&lt;!&ndash;                                                    <t t-if="o.package == 'family'">&ndash;&gt;-->
+                                <!--&lt;!&ndash;                                                        <td style="font-size: 9px !important;"><t t-esc="sben.cover" /></td>&ndash;&gt;-->
+                                <!--&lt;!&ndash;                                                        <td style="font-size: 9px !important;"><t t-esc="sben.limit" /></td>&ndash;&gt;-->
+                                <!--&lt;!&ndash;                                                    </t>&ndash;&gt;-->
+                                <!--                                                </tr>-->
+                                <!--                                            </t>-->
+                                <!--					                    </tbody>-->
+                                <!--                                    </table>-->
+                                <!--                                </div>-->
+                                <!--                                <t>-->
                                 <div style="margin-top:-4px !important;">
                                     <h4 style="color: #073e89; width: 100% !important; margin-top:-4px !important; float: left; text-align:center !important;">Assistance Information</h4>
                                 </div>
-<!--                                </t>-->
-<!--                                <t t-if="o.package == 'family'">-->
-<!--                                    <div style="margin-top:-8px !important;">-->
-<!--                                        <h4 style="color: #073e89; width: 100% !important; margin-top:-8px !important; float: left; text-align:center !important;">Assistance Information</h4>-->
-<!--                                    </div>-->
-<!--                                </t>-->
+                                <!--                                </t>-->
+                                <!--                                <t t-if="o.package == 'family'">-->
+                                <!--                                    <div style="margin-top:-8px !important;">-->
+                                <!--                                        <h4 style="color: #073e89; width: 100% !important; margin-top:-8px !important; float: left; text-align:center !important;">Assistance Information</h4>-->
+                                <!--                                    </div>-->
+                                <!--                                </t>-->
                                 <div style="width: 100% !important; margin-top:0px !important; float: left; border: 1px solid #ddd !important;">
                                     <div style="width: 25% !important; float: left; border: none !important;">
 
@@ -415,10 +448,10 @@
                                             <t t-foreach="o.get_assistance_information() " t-as="ai">
                                                 <span style="font-size:11px; color: #073e89;border: none !important; padding-left:3px; padding-bottom: 1px !important;">Contact Number (24 hours / 7 days)</span>
 
-<!--                                                <tr>-->
-<!--                                                    <th style="color: #073e89;border: none !important;"></th>-->
-<!--                                                    <td style="border: none !important;"></td>-->
-<!--                                                </tr>-->
+                                                <!--                                                <tr>-->
+                                                <!--                                                    <th style="color: #073e89;border: none !important;"></th>-->
+                                                <!--                                                    <td style="border: none !important;"></td>-->
+                                                <!--                                                </tr>-->
                                                 <tr style="background-color:white !important; margin-bottom: 3px !important;">
                                                     <th style="border: none !important; font-weight: normal !important; width:25% !important;">Hotline</th>
                                                     <td style="border: none !important;"><t t-esc="ai.hot_line" /></td>
@@ -444,7 +477,7 @@
                                         <table class="table table-hover" style="border: none !important;">
                                             <t t-foreach="o.get_assistance_information() " t-as="ai">
 
-                                                 <tr style="background-color:white !important; margin-bottom: 3px !important;">
+                                                <tr style="background-color:white !important; margin-bottom: 3px !important;">
                                                     <th style="border: none !important; font-weight: normal !important; width:32% !important;">Mobile App</th>
                                                     <td style="border: none !important; "><t t-esc="ai.mobile_app" /></td>
                                                 </tr>
@@ -458,73 +491,77 @@
                                                 </tr>
                                             </t>
                                         </table>
+
                                     </div>
+
                                     <div style="width: 35% !important; float: right !important; border: none !important; margin-top: 17px !important;">
                                         <img class="img img-responsive" style="height: 80px; float: right !important;" src="/smart_travel_agency/static/img/v.gif"/>
                                     </div>
                                 </div>
                             </div>
+                             <div style="page-break-after: always !important;"/>
                         </div>
-                            <div class="page" t-if="o.package == 'family'">
-                                <div  style="padding-left: 25px !important; padding-right: 25px !important; padding-top:1px !important;">
-                                    <div  style="width: 100% !important; float:left !important;">
-                                        <h4 style="color: #073e89; text-align:center; margin-top:5px !important;">Family Members</h4>
-                                        <table class="table table-hover" style="border: double #073e89 !important; margin-top:1px !important;">
-                                            <thead>
-                                                <tr style="background-color: #eee;">
-                                                    <th scope="col">Name</th>
-                                                    <th scope="col">Gender</th>
-                                                    <th scope="col">Date Of Birth</th>
-                                                    <th scope="col">Passport</th>
-                                                    <th scope="col">Relationship</th>
+                        <div class="page" style="unicode-bidi: bidi-override !important; direction: unset !important;" t-if="o.package == 'family'">
+                            <div  style="padding-left: 25px !important; padding-right: 25px !important; padding-top:1px !important;">
+                                <div  style="width: 100% !important; float:left !important;">
+                                    <h4 style="color: #073e89; text-align:center; margin-top:5px !important;">Family Members</h4>
+                                    <table class="table table-hover" style="border: double #073e89 !important; margin-top:1px !important;">
+                                        <thead>
+                                            <tr style="background-color: #eee;">
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Gender</th>
+                                                <th scope="col">Date Of Birth</th>
+                                                <th scope="col">Passport</th>
+                                                <th scope="col">Relationship</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-if="o.family_age !=False" >
+                                                <tr t-foreach='o.family_age' t-as="f">
+                                                    <td style="text-transform: uppercase !important;"><t t-esc="f.name"/></td>
+                                                    <td><t t-esc="f.gender"/></td>
+                                                    <td><t t-esc="f.DOB"/></td>
+                                                    <td><t t-esc="f.pass_num"/></td>
+                                                    <td><t t-esc="f.type" /></td>
 
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                <t t-if="o.family_age !=False" >
-                                                    <tr t-foreach='o.family_age' t-as="f">
-                                                        <td style="text-transform: uppercase !important;"><t t-esc="f.name"/></td>
-                                                        <td><t t-esc="f.gender"/></td>
-                                                        <td><t t-esc="f.DOB"/></td>
-                                                        <td><t t-esc="f.pass_num"/></td>
-                                                        <td><t t-esc="f.type" /></td>
-
-                                                    </tr>
-                                                </t>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                            </t>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
 
+                        </div>
+
                         <div class="footer" style="float:left; width:100px;">
-                                <img style="width:100% !important;" class="img img-responsive" src="/smart_travel_agency/static/img/1.png"/>
-                                <span style="font-size: 10px !important; white-space: nowrap !important; overflow: hidden !important;">AROPE PROPERTIES &amp; LIABILITIES INSURANCE EGYPT - S.A.E</span>
+                            <img style="width:100% !important;" class="img img-responsive" src="/smart_travel_agency/static/img/1.png"/>
+                            <span style="font-size: 10px !important; white-space: nowrap !important; overflow: hidden !important;">AROPE PROPERTIES &amp; LIABILITIES INSURANCE EGYPT - S.A.E</span>
                         </div>
                     </t>
                 </t>
             </t>
         </template>
-<!--           <report id="travel_xml_report"-->
-<!--           string="travel_xml_report"-->
-<!--           model="policy.travel"-->
-<!--           report_type="qweb-xml"-->
-<!--           name="smart_travel_agency.report_travel_docs"/>-->
-<!--        <template id="report_travel_docs">-->
+        <!--           <report id="travel_xml_report"-->
+        <!--           string="travel_xml_report"-->
+        <!--           model="policy.travel"-->
+        <!--           report_type="qweb-xml"-->
+        <!--           name="smart_travel_agency.report_travel_docs"/>-->
+        <!--        <template id="report_travel_docs">-->
 
-<!--                <t t-foreach="docs" t-as="o">-->
-<!--       <MAINHEADER>-->
-<!--           <POLICY >-->
-<!--                   <IssueDate t-esc="o.issue_date"/>-->
+        <!--                <t t-foreach="docs" t-as="o">-->
+        <!--       <MAINHEADER>-->
+        <!--           <POLICY >-->
+        <!--                   <IssueDate t-esc="o.issue_date"/>-->
 
-<!--           </POLICY>-->
-<!--&lt;!&ndash;           <SALEDETAILS t-foreach="dat" t-as="sales">&ndash;&gt;-->
-<!--&lt;!&ndash;               <NUMBER t-esc="sales['sale_sequence']"/>&ndash;&gt;-->
-<!--&lt;!&ndash;               <AMOUNT t-esc="sales['total_amount']"/>&ndash;&gt;-->
-<!--&lt;!&ndash;               <SALESPERSON t-esc="sales['sales_person_name']"/>&ndash;&gt;-->
-<!--&lt;!&ndash;           </SALEDETAILS>&ndash;&gt;-->
-<!--       </MAINHEADER>-->
-<!--             </t>-->
-<!--   </template>-->
+        <!--           </POLICY>-->
+        <!--&lt;!&ndash;           <SALEDETAILS t-foreach="dat" t-as="sales">&ndash;&gt;-->
+        <!--&lt;!&ndash;               <NUMBER t-esc="sales['sale_sequence']"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;               <AMOUNT t-esc="sales['total_amount']"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;               <SALESPERSON t-esc="sales['sales_person_name']"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;           </SALEDETAILS>&ndash;&gt;-->
+        <!--       </MAINHEADER>-->
+        <!--             </t>-->
+        <!--   </template>-->
     </data>
 </odoo>

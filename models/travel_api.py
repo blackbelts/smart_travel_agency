@@ -27,12 +27,14 @@ class Travelapi(models.Model):
         DOB = datetime.strptime(data.get('dob'), '%Y-%m-%d').date()
         when = datetime.strptime(data.get('p_from'), '%Y-%m-%d').date()
         to = datetime.strptime(data.get('p_to'), '%Y-%m-%d').date()
+
         policy_id = self.env['policy.travel'].create(
-            {'package': data.   get('package'), 'insured': data.get('c_name'), 'address': data.get('add'),
+            {'package': data.get('package'), 'insured': data.get('c_name'), 'address': data.get('add'),
              'gender': data.get('gender'), 'source': data.get('source'), 'passport_num': data.get('pass'),
              'national_id': data.get('id'), 'phone': data.get('phone'),
              'DOB': DOB, 'geographical_coverage': data.get('zone'), 'coverage_from': when, 'coverage_to': to,
-             'state': 'approved'})
+             'state': 'approved',
+             'special_beneifts':[(6,0,data['s_covers'])] if data['s_covers'] else False})
         if data.get('family'):
             for rec  in data.get('family'):
                f= self.env['policy.family.age'].create(

@@ -1,4 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_policy13,policy.policy13,model_travel_price_line,base.group_user,1,1,1,1
+access_policy17,policy.policy17,model_travel_price,base.group_user,1,1,1,1
+
 access_policy1,policy.policy1,model_policy_travel,base.group_user,1,1,1,1
 access_policy2,policy.policy2,model_cancel_policy,base.group_user,1,1,1,1
 access_policy8,policy.policy8,model_travel_front,base.group_user,1,1,1,1
@@ -17,6 +20,8 @@ access_policy7,policy.policy7,model_travel_commission,base.group_user,1,1,1,1
 access_policy14,policy.policy14,model_group_discount,base.group_user,1,1,1,1
 access_policy15,policy.policy15,model_target_bonus,base.group_user,1,1,1,1
 access_policy16,policy.policy16,model_agency_settle,base.group_user,1,1,1,1
+access_policy16,policy.policy16,model_travel_company_assist,base.group_user,1,1,1,1
+
 
 
 

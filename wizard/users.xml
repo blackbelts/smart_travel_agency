@@ -7,16 +7,16 @@
         <field name="arch" type="xml">
                   <xpath expr="//field[@name='password']" position="after">
 
-                            <field name="travel_agency_branch" readonly="1" force_save="1" attrs="{'invisible': [('branch', '!=', True)]}"/>
-                            <field name="travel_agency" readonly="1" force_save="1"/>
+                            <field name="travel_agency_branch" readonly="1" force_save="1" attrs="{'invisible': ['|',('branch', '!=', True),('user_type', '=', 'person')]}"/>
+                            <field name="travel_agency" readonly="1" force_save="1" attrs="{'invisible': ['|',('branch', '!=', True),('user_type', '=', 'person')]}"/>
                             <field name="branch" invisible="1"/>
                   </xpath>
             <xpath expr="//footer" position="inside">
 
                         <button name="generate_users" type="object"
-                                string="Create" class="oe_highlight" attrs="{'invisible': ['&amp;',('branch', '=', True),('user_type', '=', 'person')]}"/>
+                                string="Create" class="oe_highlight" attrs="{'invisible': ['|',('branch', '=', True),('user_type', '=', 'person')]}"/>
                             <button name="generate_branch_users" type="object"
-                                string="Create Branch User" class="oe_highlight" attrs="{'invisible': ['&amp;',('branch', '!=', True),('user_type', '=', 'person')]}"/>
+                                string="Create Branch User" class="oe_highlight" attrs="{'invisible': ['|',('branch', '!=', True),('user_type', '=', 'person')]}"/>
 
 
             </xpath>

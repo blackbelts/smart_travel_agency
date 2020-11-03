@@ -1,0 +1,1651 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* smart_travel_agency
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-03 11:25+0000\n"
+"PO-Revision-Date: 2020-11-03 13:27+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: ar\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#. module: smart_travel_agency
+#: model:mail.template,body_html:smart_travel_agency.email_template
+msgid ""
+"\n"
+"                \n"
+" AROPE Egypt Travel Insurance\n"
+" <br>\n"
+"${object.insured}\n"
+"عميلنا العزيز\n"
+"<br>\n"
+"${object.policy_num}\n"
+"وثيقة تأمين سفر رقم\n"
+"<br>\n"
+"<p>\n"
+"شكرا لثقتكم الغالية في برامج التأمين المقدمة من شركة أروب مصر لتأمينات\n"
+"الممتلكات و المسئوليات ..\n"
+"<br>\n"
+"أنت اﻷن مغطى تأمينيا في خلال سفرك للخارج كما هو موضح في جدول المزايا و\n"
+"شروط و أحكام الوثيقة\n"
+"\n"
+"مرفق\n"
+"جدول الوثيقة و\n"
+"\n"
+"رابط الشروط و اﻷحكام\n"
+"<br>\n"
+"\n"
+"مع تحيات\n"
+"شركة أروب مصر لتأمينات الممتلكات و المسئوليات\n"
+"<br>\n"
+"الخط الساخن   19243\n"
+"<br>\n"
+"http://arp-alb-773417538.eu-west-1.elb.amazonaws.com/"
+"TravelWording_General_Conditions.pdf\n"
+"\t    \n"
+"            "
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__expiry_date
+msgid " Expiration Date"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "(*) Excess applies."
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "(**) Actual expenses should not exceed the maximum policy limit."
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.excess_view_form
+msgid "1. Medical expenses and hospitalization abroad:"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "<span style=\"display:inline;\">EGP </span>"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid ""
+"<span style=\"font-size: 10px !important; white-space: nowrap !important; "
+"overflow: hidden !important;\">AROPE PROPERTIES &amp; LIABILITIES INSURANCE "
+"EGYPT - S.A.E</span>"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid ""
+"<span style=\"font-size:11px; color: #073e89;border: none !important; "
+"padding-left:3px; padding-bottom: 1px !important;\">Contact Number (24 "
+"hours / 7 days)</span>"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_target_bonus__up_target
+msgid "Above Target"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_target_bonus__target_ach
+msgid "Achieved"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_benefits__active_online
+msgid "Active Online"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_branch__address
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__address
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Address"
+msgstr "العنوان"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__admin_fees
+msgid "Admin Fees"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__age
+msgid "Age"
+msgstr "العمر"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_travel__source__agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.view_policy_search
+msgid "Agency"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_certificate_booklet__travel_agency_branch
+#: model:ir.model.fields,field_description:smart_travel_agency.field_person_user_wizard__travel_agency_branch
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__travel_agency_branch
+#: model:ir.model.fields,field_description:smart_travel_agency.field_res_users__travel_agency_branch
+#: model:ir.model.fields,field_description:smart_travel_agency.field_serial_available__travel_agency_branch
+msgid "Agency Branch"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.form_travel_agency
+msgid "Agency Branches"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__agency_code
+msgid "Agency Code"
+msgstr "كود الوكيل"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__travel_agency_comm
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.form_travel_agency
+msgid "Agency Commission"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__name
+msgid "Agency Name"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.form_travel_agency
+msgid "Agency Settlements"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.form_travel_agency
+msgid "Agency Targets / Bonus"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.actions.act_window,name:smart_travel_agency.comm_action
+#: model:ir.ui.menu,name:smart_travel_agency.comm_view_menu
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.agent_tree_view
+msgid "Agent Commission"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_excess__amount
+msgid "Amount"
+msgstr "المبلغ"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_travel__state__approved
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.view_policy_search
+msgid "Approved"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_benefits__ar_cover
+msgid "Arabic Cover"
+msgstr "التغطية بالعربى"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_benefits__ar_limit
+msgid "Arabic Limit (USD)"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_excess__ar_rule
+msgid "Arabic Rule"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:mail.template,subject:smart_travel_agency.email_template
+msgid "Arope Travel Insurance"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.actions.act_window,name:smart_travel_agency.travel_company_assist_action
+#: model:ir.ui.menu,name:smart_travel_agency.travel_company_assist_view_menu
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Assistance Information"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__attachment
+msgid "Attachment"
+msgstr "مرفق"
+
+#. module: smart_travel_agency
+#: model:ir.actions.act_window,name:smart_travel_agency.benefits_action
+#: model:ir.ui.menu,name:smart_travel_agency.benefits_menu
+msgid "Benefits"
+msgstr "المميزات"
+
+#. module: smart_travel_agency
+#: model:ir.actions.act_window,name:smart_travel_agency.billing_action
+#: model:ir.ui.menu,name:smart_travel_agency.billing_view_menu
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.billing_tree_view
+msgid "Billing"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.form_policy_travel
+msgid "Billing Info"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.form_policy_travel
+msgid "Billing Information"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__bonus_commission
+msgid "Bonus Commission"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__target_bonus_ids
+msgid "Bonus Target"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_certificate_booklet__booklet_num
+msgid "Booklet Number"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_person_user_wizard__branch
+msgid "Branch"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_branch__name
+msgid "Branch Name"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__branch_ids
+msgid "Branches"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__travel_agency__contract_source__broker
+msgid "Broker"
+msgstr "الوكيل"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__broker_code
+msgid "Broker Code"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__broker_code_expiration
+msgid "Broker Code From"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__broker_name
+msgid "Broker Name"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__broker_valid_from
+msgid "Broker Valid From"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__broker_valid_to
+msgid "Broker Valid To"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_travel__type__cancel
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.cancel_view
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.front_view
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__cancel_reason
+msgid "Cancel Reason"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_travel__state__canceled
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.view_policy_search
+msgid "Canceled"
+msgstr "ملغي"
+
+#. module: smart_travel_agency
+#: model:ir.actions.act_window,name:smart_travel_agency.certificate_booklet_action
+#: model:ir.ui.menu,name:smart_travel_agency.certificate_booklet_view_menu
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.form_certificate_booklet
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.tree_certificate_booklet
+msgid "Certificate Booklet"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__agency_comm
+msgid "Commission"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_commission__commission
+msgid "Commission Rate"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_company_assist__company_name
+msgid "Company Name"
+msgstr "اسم المؤسسة"
+
+#. module: smart_travel_agency
+#: model:ir.ui.menu,name:smart_travel_agency.configuration_view_menu2
+msgid "Configuration"
+msgstr "إعداد"
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.cancel_view
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.front_view
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__contact_number
+msgid "Contact Mobile"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__contact_name
+msgid "Contact Name"
+msgstr "اسم جهة الاتصال"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__contract_from
+msgid "Contract From"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__contract_source
+msgid "Contract Source"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__contract_to
+msgid "Contract To"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Country of Origin"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_benefits__cover
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Cover"
+msgstr "التغطيات"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_benefits__cover_rate
+msgid "Cover Rate"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_rating_table__coverage_period
+msgid "Coverage Period"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Coverage Zone"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.agents_user_wizard
+msgid "Create"
+msgstr "إنشاء"
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.agents_user_wizard
+msgid "Create Branch User"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.form_travel_agency
+msgid "Create User"
+msgstr "إنشاء مستخدم"
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_policy_travel
+msgid "Create Your Travel Policies"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_branch__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_settle__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_cancel_policy__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_certificate_booklet__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_family_members__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_discount__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_ticket__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_orders__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_family_age__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_rating_table__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_serial_available__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_target_bonus__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_benefits__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_commission__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_company_assist__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_excess__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_front__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price__create_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price_line__create_uid
+msgid "Created by"
+msgstr "أنشئ بواسطة"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_branch__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_settle__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_cancel_policy__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_certificate_booklet__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_family_members__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_discount__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_ticket__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_orders__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_family_age__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_rating_table__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_serial_available__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_target_bonus__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_benefits__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_commission__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_company_assist__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_excess__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_front__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price__create_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price_line__create_date
+msgid "Created on"
+msgstr "أنشئ في"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__currency_id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_target_bonus__target_count
+msgid "Current Target"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_family_age__DOB
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__DOB
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Date Of Birth"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__days
+msgid "Day(s)"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__dimensional_stamp
+#: model:ir.model.fields,field_description:smart_travel_agency.field_rating_table__dimensional_stamp
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price_line__dimensional_stamp
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Dimensional Stamp"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__travel_agency__contract_source__direct
+msgid "Direct"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_discount__perc
+msgid "Discount"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_branch__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_settle__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_cancel_policy__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_certificate_booklet__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_family_members__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_discount__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_ticket__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_orders__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_family_age__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_rating_table__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_serial_available__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_target_bonus__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_benefits__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_commission__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_company_assist__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_excess__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_front__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price__display_name
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price_line__display_name
+msgid "Display Name"
+msgstr "الاسم المعروض"
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Due Basic Commission before tax"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__duration
+msgid "Duration"
+msgstr "المدة"
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "EGP"
+msgstr "جم"
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Egypt"
+msgstr "مصر"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_branch__email
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__email
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_company_assist__email
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_travel__geographical_coverage__zone_1
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__travel_price__zone__zone_1
+msgid "Europe"
+msgstr "أوروبا"
+
+#. module: smart_travel_agency
+#: model:ir.actions.act_window,name:smart_travel_agency.excess_action
+#: model:ir.ui.menu,name:smart_travel_agency.excess_menu
+msgid "Excess"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_company_assist__fb_messenger
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "FB Messenger"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "FRA Licence No"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_travel__package__family
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__travel_price__package__family
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Family"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__family_age
+msgid "Family Age"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.form_policy_travel
+msgid "Family Ages"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Family Members"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.actions.act_window,name:smart_travel_agency.family_members_action
+#: model:ir.ui.menu,name:smart_travel_agency.family_members_age_view_menu
+msgid "Family Members Age Setup"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.ui.menu,name:smart_travel_agency.price_menu_family
+msgid "Family Package"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_company_assist__fax
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Fax"
+msgstr "الفاكس"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_family_age__gender__f
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_travel__gender__f
+msgid "Female"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__coverage_from
+#: model:ir.model.fields,field_description:smart_travel_agency.field_target_bonus__bonus_from
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "From"
+msgstr "من"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_family_members__from_age
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price__from_age
+msgid "From Age"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_discount__from_date
+msgid "From Date"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_discount__from_size
+msgid "From Size"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_family_age__gender
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__gender
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Gender"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_rating_table__geographical_coverage
+msgid "Geographical Coverage"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_serial_available
+msgid "Get The not used Serial Numbers"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__gross_premium
+#: model:ir.model.fields,field_description:smart_travel_agency.field_rating_table__gross_premium
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price_line__gross_premium
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Gross Premium"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_quoate__group
+msgid "Group"
+msgstr "المجموعة"
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.view_policy_search
+msgid "Group By"
+msgstr "تجميع حسب"
+
+#. module: smart_travel_agency
+#: model:ir.ui.menu,name:smart_travel_agency.group_menu
+msgid "Group Discount"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.help_desk_inherit_travel_quoate
+msgid "Groups"
+msgstr "المجموعات"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_company_assist__hot_line
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Hotline"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_branch__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_settle__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_cancel_policy__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_certificate_booklet__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_family_members__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_discount__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_ticket__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_orders__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_family_age__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_rating_table__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_serial_available__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_target_bonus__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_benefits__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_commission__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_company_assist__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_excess__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_front__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price__id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price_line__id
+msgid "ID"
+msgstr "المُعرف"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_travel__package__individual
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__travel_price__package__individual
+msgid "Individual"
+msgstr "فرد"
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Insurance Broker Name"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Insured"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.actions.act_window,name:smart_travel_agency.insured_traveler_action
+#: model:ir.ui.menu,name:smart_travel_agency.insured_traveler_view_menu
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.insured_traveler_tree_view
+msgid "Insured Travelers"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.actions.act_window,name:smart_travel_agency.insured_trips_action
+#: model:ir.ui.menu,name:smart_travel_agency.insured_trips_view_menu
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.insured_trips_tree_view
+msgid "Insured Trips"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__is_canceled
+msgid "Is Canceled"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_travel__type__issue
+msgid "Issue"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_family_age__issue_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__issue_date
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.view_policy_search
+msgid "Issue Date"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__issue_fees
+#: model:ir.model.fields,field_description:smart_travel_agency.field_rating_table__issue_fees
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price_line__issue_fees
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Issue Fees"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_branch____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_settle____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_cancel_policy____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_certificate_booklet____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_family_members____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_discount____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_ticket____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_orders____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_family_age____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_rating_table____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_serial_available____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_target_bonus____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_benefits____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_commission____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_company_assist____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_excess____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_front____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price____last_update
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price_line____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_branch__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_settle__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_cancel_policy__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_certificate_booklet__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_family_members__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_discount__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_ticket__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_orders__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_family_age__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_rating_table__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_serial_available__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_target_bonus__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_benefits__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_commission__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_company_assist__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_excess__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_front__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price__write_uid
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_branch__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_settle__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_cancel_policy__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_certificate_booklet__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_family_members__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_discount__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_ticket__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_orders__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_family_age__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_rating_table__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_serial_available__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_target_bonus__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_benefits__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_commission__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_company_assist__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_excess__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_front__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price__write_date
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price_line__write_date
+msgid "Last Updated on"
+msgstr "آخر تحديث في"
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Limit"
+msgstr "حد"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_benefits__limit
+msgid "Limit (USD)"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_company_assist__logo_url
+msgid "Logo Url"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_family_age__gender__m
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_travel__gender__m
+msgid "Male"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__max_outst
+msgid "Max Outstanding"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_company_assist__mobile_app
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Mobile App"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_branch__mobile
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__mobile
+msgid "Mobile Number"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Name"
+msgstr "الاسم"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__national_id
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "National ID"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__net_premium
+#: model:ir.model.fields,field_description:smart_travel_agency.field_rating_table__net_premium
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price_line__net_premium
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Net Premium"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__net_to_insurer
+msgid "Net To Insurer"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Number of Passengers"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_travel__source__online
+msgid "Online"
+msgstr "متصل"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_orders__order_id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__order_id
+msgid "Order ID"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.ui.menu,name:smart_travel_agency.orders_menu
+msgid "Orders"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__remain_outst
+msgid "OutStanding"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__package
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price__package
+msgid "Package For"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_family_age__pass_num
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Passport"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__passport_num
+msgid "Passport Number"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_travel__state__pending
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.view_policy_search
+msgid "Pending"
+msgstr "قيد الإنتظار"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price_line__period
+msgid "Period"
+msgstr "الفترة"
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Phone"
+msgstr "رقم الهاتف"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_branch__phone
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__phone
+msgid "Phone Number"
+msgstr "رقم الهاتف"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_family_age__policy_id
+msgid "Policy"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Policy Approval Fees"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.actions.act_window,name:smart_travel_agency.action_cancel
+msgid "Policy Cancel"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.form_policy_travel
+msgid "Policy Information"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__policy_num
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Policy Number"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Policy Period"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__policy_approval_fees
+msgid "Policy approval fees"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price_line__policy_approval_fees
+msgid "Policy approval fees "
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Policy issued online doesn't need insured signature."
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Policyholder’s Protection Fees"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__policy_holder_fees
+msgid "Policyholder’s protection fees"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price_line__policy_holder_fees
+msgid "Policyholder’s protection fees "
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price_line__price_id
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.price_view_form
+msgid "Price"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.actions.act_window,name:smart_travel_agency.group_action
+#: model:ir.actions.act_window,name:smart_travel_agency.price_action
+#: model:ir.actions.act_window,name:smart_travel_agency.price_action_family
+#: model:ir.ui.menu,name:smart_travel_agency.price_menu
+msgid "Price Table"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price__price_lines
+msgid "Prices"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__proportional_stamp
+#: model:ir.model.fields,field_description:smart_travel_agency.field_rating_table__proportional_stamp
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price_line__proportional_stamp
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Proportional Stamp"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_ticket__range
+msgid "Range"
+msgstr "المدى"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_family_members__relationship
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_family_age__relationship
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Relationship"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_excess__rule
+msgid "Rule"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_certificate_booklet__serial_from
+msgid "Serial From"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__serial_no
+msgid "Serial Number"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_serial_available__numbers
+msgid "Serial Numbers Not Used"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_certificate_booklet__serial_to
+msgid "Serial To"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_travel_price
+msgid "Set up Price tables"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_rating_table
+msgid "Set up Rating tables"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_certificate_booklet
+msgid "Set up Your Certificate Booklet"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_travel_agency
+msgid "Set up Your Travel Agency"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_agency_branch
+msgid "Set up Your Travel Agency Branch"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_group_discount
+#: model:ir.model,name:smart_travel_agency.model_travel_commission
+msgid "Set up Your Travel Commissions"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_target_bonus
+msgid "Set up Your Travel bonus"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_agency_settle
+msgid "Settlement"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_settle__amount
+msgid "Settlement Amount"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_settle__settle_date
+msgid "Settlement Date"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__settle_ids
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.tree_settlement
+msgid "Settlements"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__price_details
+msgid "Show Price Details In Policy"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_ticket__size
+msgid "Size"
+msgstr "الحجم"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__source
+msgid "Source"
+msgstr "المصدر"
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Source :"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Source : OLF"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Source : OLI"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_company_assist__spain
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Spain"
+msgstr "أسبانيا"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__special_beneifts
+msgid "Special Benefits"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_benefits__special_covers
+msgid "Special Covers"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_family_age__type__spouse
+msgid "Spouse"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Supervisory Fees"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__supervisory_stamp
+#: model:ir.model.fields,field_description:smart_travel_agency.field_rating_table__supervisory_stamp
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price_line__supervisory_stamp
+msgid "Supervisory Stamp"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "The above is subject to policy terms and conditions as attached."
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__coverage_to
+#: model:ir.model.fields,field_description:smart_travel_agency.field_target_bonus__bonus_to
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "To"
+msgstr "إلى"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_family_members__to_age
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price__to_age
+msgid "To Age"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_discount__to_date
+msgid "To Date"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_discount__to_size
+msgid "To Size"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__outstanding
+msgid "Total OutStanding"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.ui.menu,name:smart_travel_agency.travel_menu_id
+msgid "Travel "
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.actions.act_window,name:smart_travel_agency.travel_agency_action
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_branch__travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_settle__agency_id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_certificate_booklet__travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_person_user_wizard__travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_res_users__travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_serial_available__travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_target_bonus__agency_id
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_commission__travel_agency
+#: model:ir.ui.menu,name:smart_travel_agency.travel_agency_view_menu
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.form_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.tree_travel_agency
+msgid "Travel Agency"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.actions.act_window,name:smart_travel_agency.agency_branch_action
+#: model:ir.ui.menu,name:smart_travel_agency.agency_branch_view_menu
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.form_agency_branch
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.tree_agency_branch
+msgid "Travel Agency Branch"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.actions.act_window,name:smart_travel_agency.agency_settle_action
+msgid "Travel Agency Settlement"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "Travel Assistance Services (TAS)"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.actions.act_window,name:smart_travel_agency.travel_commission_action
+#: model:ir.ui.menu,name:smart_travel_agency.travel_commission_view_menu
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.form_travel_commission
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.tree_travel_commission
+msgid "Travel Commission"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.ui.menu,name:smart_travel_agency.travel_policy_view_menu
+msgid "Travel Issue"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:res.groups,name:smart_travel_agency.all_agencies_group
+msgid "Travel Manager Group"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.actions.act_window,name:smart_travel_agency.travel_policy_action
+#: model:ir.actions.act_window,name:smart_travel_agency.travel_policy_action_agent
+#: model:ir.actions.report,name:smart_travel_agency.travel_policy_report
+#: model:ir.ui.menu,name:smart_travel_agency.travel_policy_view
+#: model:ir.ui.menu,name:smart_travel_agency.travel_policy_view_menu2
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.form_policy_travel
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.tree_policy_travel
+msgid "Travel Policy"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_rating_table__traveler_age
+msgid "Traveler Age"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__address
+msgid "Traveller Address"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__insured
+msgid "Traveller Name"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__phone
+msgid "Traveller Phone"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__trip_from
+msgid "Trip From"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__trip_to
+msgid "Trip To"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_family_age__type
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__type
+msgid "Type"
+msgstr "النوع"
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.form_travel_agency
+msgid "Upload Files"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__user
+msgid "User"
+msgstr "المستخدم"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__user_id
+msgid "User Name"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:res.groups,name:smart_travel_agency.agency_group
+msgid "User: All Agency Documents"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:res.groups,name:smart_travel_agency.branch_group
+msgid "User: Own Documents"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_res_users
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_branch__users
+msgid "Users"
+msgstr "المستخدمون"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_commission__valid_from
+msgid "Valid From"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_commission__valid_to
+msgid "Valid To"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_agency__web_site
+msgid "Website"
+msgstr "الموقع الإلكتروني"
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_company_assist__whats_app
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "WhatsApp"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__rating_table__geographical_coverage__all_countries
+msgid "WorldWide + USA&CANADA"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__rating_table__geographical_coverage__not_all_countries
+msgid "WorldWide - USA&CANADA"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_travel__geographical_coverage__zone_3
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__travel_price__zone__zone_3
+msgid "Worldwide"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_travel__geographical_coverage__zone_2
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__travel_price__zone__zone_2
+msgid "Worldwide excluding USA & CANADA"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.actions.act_window,help:smart_travel_agency.certificate_booklet_action
+msgid "Your Booklet"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_cancel_policy__cancel_reason
+msgid "Your Cancel Reason"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_agency_settle__attachment
+msgid "Your Files"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.actions.act_window,help:smart_travel_agency.travel_agency_action
+msgid "Your Travel Agency"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.actions.act_window,help:smart_travel_agency.agency_branch_action
+msgid "Your Travel Agency Branch"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.actions.act_window,help:smart_travel_agency.agency_settle_action
+msgid "Your Travel Agency Settlement"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.actions.act_window,help:smart_travel_agency.travel_commission_action
+#: model_terms:ir.actions.act_window,help:smart_travel_agency.travel_policy_action
+msgid "Your Travel Commission"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__geographical_coverage
+#: model:ir.model.fields,field_description:smart_travel_agency.field_travel_price__zone
+msgid "Zone"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_family_age__age
+msgid "age"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.form_policy_travel
+msgid "approved"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_target_bonus__bonus
+msgid "bonus"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_family_age__type__brother
+msgid "brother"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_cancel_policy
+msgid "cancel.policy"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_travel__agent_commission
+msgid "commission"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.policy
+msgid "day(s)"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model_terms:ir.ui.view,arch_db:smart_travel_agency.form_travel_agency
+msgid "e.g. Agency Name."
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_family_members
+msgid "family.members"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_family_age__type__grandparents
+msgid "grandparents"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_group_ticket
+msgid "group.ticket"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_family_age__type__kid
+msgid "kid"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_policy_family_age__name
+msgid "name"
+msgstr "الاسم"
+
+#. module: smart_travel_agency
+#: model:ir.actions.act_window,name:smart_travel_agency.orders_action
+#: model:ir.model,name:smart_travel_agency.model_orders
+msgid "orders"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_family_age__type__parent
+msgid "parent"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_person_user_wizard
+msgid "person.user.wizard"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_policy_family_age
+msgid "policy.family.age"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_quoate
+msgid "quoate"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields.selection,name:smart_travel_agency.selection__policy_family_age__type__sister
+msgid "sister"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:res.groups,comment:smart_travel_agency.agency_group
+msgid ""
+"the user will have access to all of the agency documents.\n"
+"            "
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:res.groups,comment:smart_travel_agency.branch_group
+msgid "the user will have access to his Documents"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:res.groups,comment:smart_travel_agency.all_agencies_group
+msgid "the user will have an access to All Documents."
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model.fields,field_description:smart_travel_agency.field_group_ticket__group_id
+msgid "ticket"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_travel_benefits
+msgid "travel.benefits"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_travel_company_assist
+msgid "travel.company.assist"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_travel_excess
+msgid "travel.excess"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_travel_front
+msgid "travel.front"
+msgstr ""
+
+#. module: smart_travel_agency
+#: model:ir.model,name:smart_travel_agency.model_travel_price_line
+msgid "travel.price.line"
+msgstr ""
