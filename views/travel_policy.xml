@@ -145,6 +145,7 @@
                                     <field name="gross_premium"/>
                                     <field name="travel_agency_comm"/>
                                     <field name="bonus_commission"/>
+                                    <field name="broker_commission"/>
                                     <field name="net_to_insurer"/>
 
                                 </group>

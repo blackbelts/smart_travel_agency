@@ -83,6 +83,7 @@ class TravelPolicy(models.Model):
     cancel_reason = fields.Char('Cancel Reason')
     travel_agency_comm = fields.Float('Agency Commission',compute='get_financial_data',store=True)
     agent_commission=fields.Float('commission',compute='get_financial_data',store=True)
+    broker_commission=fields.Float('Broker commission')
     bonus_commission=fields.Float('Bonus Commission',compute='get_financial_data',store=True)
 
     net_to_insurer = fields.Float('Net To Insurer', compute='get_financial_data',store=True)
@@ -150,6 +151,9 @@ class TravelPolicy(models.Model):
     @api.onchange('package','coverage_from','coverage_to','DOB')
     def get_price_calculations(self):
         self.get_financial_data()
+
+
+
 
     # @api.depends('age', 'geographical_coverage', 'days')
     # @api.one
