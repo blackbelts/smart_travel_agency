@@ -46,6 +46,7 @@ class TravelPolicy(models.Model):
     source = fields.Selection([('online', 'Online'),
                                ('Agency', 'Agency'),
                                ], default='Agency')
+    broker = fields.Many2one('persons', string="Broker" ,domain="[('type','=','broker')]")
     DOB = fields.Date('Date Of Birth', default=lambda self:fields.datetime.today())
     age = fields.Integer('Age', compute='compute_age',store=True)
     gender = fields.Selection([('M', 'Male'), ('F', 'Female')])
@@ -82,6 +83,7 @@ class TravelPolicy(models.Model):
     cancel_reason = fields.Char('Cancel Reason')
     travel_agency_comm = fields.Float('Agency Commission',compute='get_financial_data',store=True)
     agent_commission=fields.Float('commission',compute='get_financial_data',store=True)
+    broker_commission=fields.Float('Broker commission')
     bonus_commission=fields.Float('Bonus Commission',compute='get_financial_data',store=True)
 
     net_to_insurer = fields.Float('Net To Insurer', compute='get_financial_data',store=True)
@@ -145,6 +147,13 @@ class TravelPolicy(models.Model):
     def get_end_date(self):
         if self.coverage_from and self.duration:
             self.coverage_to=self.coverage_from+timedelta(days=int(self.duration))
+
+    @api.onchange('package','coverage_from','coverage_to','DOB')
+    def get_price_calculations(self):
+        self.get_financial_data()
+
+
+
 
     # @api.depends('age', 'geographical_coverage', 'days')
     # @api.one
@@ -421,8 +430,6 @@ class TravelPolicy(models.Model):
                 raise exceptions.ValidationError('You Must Enter Correct Birth Date')
 
     @api.constrains('national_id')
-    @api.onchange('national_id')
-
     def _check_national(self):
         if self.national_id:
             if self.national_id[1:3] != str(self.DOB).split('-')[0][-2:] or self.national_id[3:5] != str(self.DOB).split('-')[1] or self.national_id[5:7] != str(self.DOB).split('-')[2]:
@@ -442,6 +449,7 @@ class TravelPolicy(models.Model):
         if self.address and self.insured and self.passport_num and self.DOB and self.gender and self.geographical_coverage and self.days:
             self.get_financial_data()
             self._check_contract_period()
+            self._check_national()
             self.state = 'approved'
             self.travel_agency.outstanding+=self.net_to_insurer
             bonus = self.env['target.bonus'].search(
@@ -616,3 +624,5 @@ class FamilyMembersAgeSetyp(models.Model):
         for rec in self.env['family.members'].search([]):
             result.append({'type': rec.relationship, 'from_age': rec.from_age, 'to_age': rec.to_age})
         return result
+
+

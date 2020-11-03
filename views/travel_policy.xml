@@ -5,7 +5,7 @@
         <field name="priority" eval="0"/>
         <field name="arch" type="xml">
             <tree decoration-warning="state == 'pending'" decoration-danger="state == 'canceled'"
-                  string="Travel Policy">
+                  string="Travel Policy"  default_order="issue_date desc">
                 <field name="package"/>
                 <field name="policy_num"/>
                 <field name="serial_no"/>
@@ -58,19 +58,19 @@
                 <header>
 
                     <field name="state" widget="statusbar" statusbar_visible="pending,approved"/>
-                    <button name="confirm_policy" string="approved" type="object"
+                    <button name="confirm_policy" string="approved" type="object" groups="smart_travel_agency.all_agencies_group,smart_travel_agency.head_office_group"
                             class="oe_highlight"
                             attrs="{'invisible': ['|',('state', '=', 'approved'),('state', '=', 'canceled')]}"/>
                     <!--                    <button name="send_mail_template" string="send" type="object"-->
                     <!--                    class="oe_highlight"-->
                     <!--                    />-->
-                    <button name="get_financial_data" string="Get Price" type="object"
-                            class="oe_highlight"
-                            attrs="{'invisible': ['|',('state', '=', 'approved'),('state', '=', 'canceled')]}"/>
+                    <!--                    <button name="get_financial_data" string="Get Price" type="object"-->
+                    <!--                            class="oe_highlight"-->
+                    <!--                            attrs="{'invisible': ['|',('state', '=', 'approved'),('state', '=', 'canceled')]}"/>-->
                     <!--                     <button name="get_financial" string="TEST" type="object"-->
                     <!--                            class="oe_highlight"/>-->
-                    <button name="print_report_xml" string="XML" type="object"
-                            class="oe_highlight"/>
+                    <!--                    <button name="print_report_xml" string="XML" type="object"-->
+                    <!--                            class="oe_highlight"/>-->
 
                 </header>
                 <sheet>
@@ -83,10 +83,10 @@
                     <h3>Policy Information</h3>
                     <group>
                         <group>
-                            <field name="insured" attrs="{'readonly': [('state', '=','approved')]}"/>
+                            <field name="insured"  required="1" attrs="{'readonly': [('state', '=','approved')]}"/>
                             <field name="address" attrs="{'readonly': [('state', '=','approved')]}"/>
                             <field name="phone" attrs="{'readonly': [('state', '=','approved')]}"/>
-                            <field name="national_id" attrs="{'readonly': [('state', '=','approved')]}"/>
+                            <field name="national_id"  required="1" attrs="{'readonly': [('state', '=','approved')]}"/>
                             <field name="passport_num" attrs="{'readonly': [('state', '=','approved')]}" required="1"/>
                         </group>
                         <group>
@@ -97,21 +97,22 @@
                         </group>
                         <group>
 
-                            <field name="coverage_from" attrs="{'readonly': [('state', '=','approved')]}"/>
-                            <field name="duration" attrs="{'readonly': [('state', '=','approved')]}" force_save="1"/>
+                            <field name="coverage_from"  required="1" attrs="{'readonly': [('state', '=','approved')]}"/>
+                            <field name="duration"  required="1" attrs="{'readonly': [('state', '=','approved')]}" force_save="1"/>
 
 
                             <field name="coverage_to" readonly="1" force_save="1"/>
                             <field name="days" invisible="1"/>
-                            <field name="geographical_coverage" attrs="{'readonly': [('state', '=','approved')]}"/>
+                            <field name="geographical_coverage" required="1" attrs="{'readonly': [('state', '=','approved')]}"/>
 
 
                         </group>
                         <group>
                             <field name="user_id" invisible="1"  force_save="1" />
+                            <field name="broker" groups="smart_travel_agency.all_agencies_group,smart_travel_agency.head_office_group"  />
                             <field name="travel_agency" readonly="1" force_save="1" />
                             <field name="travel_agency_branch" invisible="1"  force_save="1"/>
-                            <field name="DOB" attrs="{'readonly': [('state', '=','approved')]}"/>
+                            <field name="DOB"  required="1" attrs="{'readonly': [('state', '=','approved')]}"/>
                             <field name="age"/>
                             <field name="gender" attrs="{'readonly': [('state', '=','approved')]}"/>
                         </group>
@@ -138,12 +139,12 @@
                             <group>
 
                                 <group>
-                                    <field name="price_details"/>
                                     <field name="currency_id"/>
                                     <field name="net_premium"/>
                                     <field name="gross_premium"/>
                                     <field name="travel_agency_comm"/>
                                     <field name="bonus_commission"/>
+                                    <field name="broker_commission"/>
                                     <field name="net_to_insurer"/>
 
                                 </group>
@@ -186,6 +187,12 @@
             <p class="oe_view_nocontent_create">Your Travel Commission
             </p>
         </field>
+    </record>
+    <record model="ir.actions.act_window" id="travel_policy_action_agent">
+        <field name="name">Travel Policy</field>
+        <field name="res_model">policy.travel</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="form_policy_travel"/>
     </record>
 
     <record id="cancel_view" model="ir.ui.view">
@@ -380,8 +387,8 @@
         <field name="code">order</field>
         <field name="prefix">ORDER_</field>
         <field name="padding">6</field>
-<!--        <field name="number_next">1</field>-->
-<!--        <field name="number_increment">1</field>-->
+        <!--        <field name="number_next">1</field>-->
+        <!--        <field name="number_increment">1</field>-->
     </record>
     <record model="ir.ui.view" id="orders_tree_view">
         <field name="name">orders</field>
