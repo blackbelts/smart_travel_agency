@@ -46,7 +46,7 @@ class TravelPolicy(models.Model):
     source = fields.Selection([('online', 'Online'),
                                ('Agency', 'Agency'),
                                ], default='Agency')
-    # broker = fields.Many2one('persons', string="Broker" ,domain="[('type','=','broker')]")
+    broker = fields.Many2one('persons', string="Broker" ,domain="[('type','=','broker')]")
     DOB = fields.Date('Date Of Birth', default=lambda self:fields.datetime.today())
     age = fields.Integer('Age', compute='compute_age',store=True)
     gender = fields.Selection([('M', 'Male'), ('F', 'Female')])
