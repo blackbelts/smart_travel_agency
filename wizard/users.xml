@@ -3,7 +3,7 @@
         <record model="ir.ui.view" id="agents_user_wizard">
         <field name="name">person.user.wizard</field>
         <field name="model">person.user.wizard</field>
-        <field name="inherit_id" ref="arope-conf.persons_user_wizard"/>
+        <field name="inherit_id" ref="arope_conf.persons_user_wizard"/>
         <field name="arch" type="xml">
                   <xpath expr="//field[@name='password']" position="after">
 
