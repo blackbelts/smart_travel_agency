@@ -36,6 +36,7 @@
         'views/travel_policy.xml',
         'views/benefits.xml',
         'views/excess.xml',
+        'views/products.xml',
         'views/ticket.xml',
         'views/priceTable.xml',
         'views/companyAssist.xml',

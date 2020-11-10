@@ -38,3 +38,9 @@ class PriceTable(models.Model):
     price_id=fields.Many2one('travel.price', ondelete='cascade')
 
     #you Must Delete Gross Prem or make it computed
+
+class InsuranceProducts(models.Model):
+    _inherit = 'insurance.product'
+
+    ar_product_name = fields.Char('Arabic Product Name')
+    active_online = fields.Boolean('Active Online')

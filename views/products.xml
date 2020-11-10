@@ -1,0 +1,15 @@
+<odoo>
+    <record id="view_product_form_inherit" model="ir.ui.view">
+            <field name="name"></field>
+            <field name="model">insurance.product</field>
+            <field name="inherit_id" ref="insurance.product.form_product"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='product_name']" position="after">
+                    <field name="ar_product_name"/>
+                </xpath>
+                <xpath expr="//field[@name='prod_desc']" position="after">
+                    <field name="active_online"/>
+                </xpath>
+            </field>
+    </record>
+</odoo>
