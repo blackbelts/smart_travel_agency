@@ -37,11 +37,7 @@
                             </field>
                         </page>
                         <page string="Covers">
-                            <field name="covers">
-                                <tree editable="bottom">
-                                    <field name="cover"/>
-                                </tree>
-                            </field>
+                            <field name="covers"/>
                         </page>
 
                     </notebook>
