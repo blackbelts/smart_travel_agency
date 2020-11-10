@@ -3,6 +3,8 @@ from odoo import models, tools, fields, api
 class PriceTable(models.Model):
     _name = 'travel.price'
     _description = 'Set up Price tables'
+    product = field.Many2one('insurance.product', string='Product')
+
     package = fields.Selection([('individual', 'Individual'),
                              ('family', 'Family'),],
                             'Package For',
@@ -16,6 +18,8 @@ class PriceTable(models.Model):
     currency_id=fields.Many2one('res.currency')
     from_age = fields.Float('From Age')
     to_age = fields.Float('To Age')
+
+    covers = fields.Many2many('travel.benefits', string='Covers')
 
     price_lines=fields.One2many('travel.price.line','price_id',string='Prices')
 
