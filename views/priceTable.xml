@@ -9,7 +9,6 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="product"/>
                             <field name="package"/>
                             <field name="zone"/>
                             <field name="currency_id"/>
@@ -36,9 +35,6 @@
                                 </tree>
                             </field>
                         </page>
-                        <page string="Covers">
-                            <field name="covers"/>
-                        </page>
 
                     </notebook>
                 </sheet>
@@ -51,7 +47,6 @@
         <field name="model">travel.price</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="product"/>
                 <field name="package"/>
                 <field name="zone"/>
                 <!--<field name="period"/>-->
