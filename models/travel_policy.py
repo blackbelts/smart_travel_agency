@@ -23,7 +23,7 @@ class TravelPolicy(models.Model):
 
         template_id.send_mail(self.ids[0], force_send=True)
         # self.env['mail.template'].browse(template_id.id).send_mail(self.id)
-
+    product = fields.Many2one('insurance.product', string='Product')
     package = fields.Selection([('individual', 'Individual'), ('family', 'Family')], 'Package For', default='individual')
 
     policy_num = fields.Char(string='Policy Number', required=True, copy=False, index=True,
@@ -171,8 +171,9 @@ class TravelPolicy(models.Model):
     def print_report_xml(self):
         # data = {'start_date': self.start_date, 'end_date': self.end_date}
         return self.env.ref('smart_travel_agency.travel_xml_report').report_action(self)
+
     def get_financial_data(self):
-        if self.age and self.geographical_coverage and self.days:
+        if self.age and self.geographical_coverage and self.days and self.product:
             # data = self.env['travel.price'].search(
             #     [('zone', '=', self.geographical_coverage)])
             result={}
@@ -184,11 +185,11 @@ class TravelPolicy(models.Model):
                 # print(kid_dob)
 
                 if self.package == 'individual':
-                    result=self.get_individual({'z':self.geographical_coverage,'d':[self.DOB],'p_from':self.coverage_from,'p_to':self.coverage_to})
+                    result=self.get_individual({'product': self.product.id, 'z':self.geographical_coverage,'d':[self.DOB],'p_from':self.coverage_from,'p_to':self.coverage_to})
 
 
                 elif self.package == 'family':
-                    result=self.get_family({'z':self.geographical_coverage,'p_from':self.coverage_from,'p_to':self.coverage_to,'kid_dob':kid_dob})
+                    result=self.get_family({'product': self.product.id, 'z':self.geographical_coverage,'p_from':self.coverage_from,'p_to':self.coverage_to,'kid_dob':kid_dob})
                     # result=self.get_group({'zone':self.geographical_coverage,'p_from':self.coverage_from,'p_to':self.coverage_to,'group':[{'size':20,'age':5},{'size':50,'age':20}]})
                 print(result)
                 if result:
@@ -218,7 +219,7 @@ class TravelPolicy(models.Model):
 
     @api.model
     def get_individual(self,data):
-        if data.get('z') and data.get('d') and data.get('p_from') and data.get('p_to'):
+        if data.get('z') and data.get('d') and data.get('p_from') and data.get('p_to') and data.get('product'):
             result = {}
             s_coverSum = 0
             s_covers=[]
@@ -231,13 +232,14 @@ class TravelPolicy(models.Model):
             DOB=data.get('d')
             coverage_from=data.get('p_from')
             coverage_to=data.get('p_to')
+            product = data.get('product')
 
             # dob=[DOB]
             days=self.calculate_period(coverage_from,coverage_to)
             age=self.calculate_age(DOB)
 
             data = self.env['travel.price'].search(
-                [('zone', '=', geographical_coverage),('from_age','<=',age[0]),('to_age','>=',age[0])])
+                [('product', '=', product),('zone', '=', geographical_coverage),('from_age','<=',age[0]),('to_age','>=',age[0])])
 
             opj = []
             for rec in data.price_lines:
@@ -268,7 +270,7 @@ class TravelPolicy(models.Model):
 
     @api.model
     def get_family(self,data):
-        if data.get('z') and data.get('p_from') and data.get('p_to'):
+        if data.get('z') and data.get('p_from') and data.get('p_to') and data.get('product'):
             s_coverSum = 0
             if data.get("s_covers"):
                 s_covers = data.get('s_covers')
@@ -278,6 +280,7 @@ class TravelPolicy(models.Model):
             geographical_coverage = data.get('z')
             coverage_from = data.get('p_from')
             coverage_to = data.get('p_to')
+            product = data.get('product')
             days=self.calculate_period(coverage_from,coverage_to)
             res = {}
             final_kid=[]
@@ -288,7 +291,7 @@ class TravelPolicy(models.Model):
                     # print(period_from)
                     # print(period_to)
                     print ([rec])
-                    res=self.get_individual({'z':geographical_coverage,'d':[rec],'p_from':coverage_from,'p_to':coverage_to})
+                    res=self.get_individual({'product': product,'z':geographical_coverage,'d':[rec],'p_from':coverage_from,'p_to':coverage_to})
                     final_kid.append(res)
                     print('8888888888888888888888888888888888888888888888888888888888888888888888')
                 print(res)
@@ -297,7 +300,7 @@ class TravelPolicy(models.Model):
                 print(age[0])
             result = {}
             data = self.env['travel.price'].search(
-                [('zone', '=',geographical_coverage),('package','=','family')])
+                [('product', '=', product),('zone', '=',geographical_coverage),('package','=','family')])
 
             opj = []
             for rec in data.price_lines:
@@ -337,7 +340,7 @@ class TravelPolicy(models.Model):
 
     @api.model
     def get_group(self,data):
-        if data.get('zone') and data.get('p_from') and data.get('p_to'):
+        if data.get('zone') and data.get('p_from') and data.get('p_to') and data.get('product'):
             s_coverSum = 0
             if data.get("s_covers"):
                 s_covers = data.get('s_covers')
@@ -354,7 +357,7 @@ class TravelPolicy(models.Model):
                    discount=price_discount.perc
 
                price = self.env['travel.price'].search(
-                  [('zone', '=', data.get('zone')), ('from_age', '<=',group['age']), ('to_age', '>=', group['age'])])
+                  [('product', '=', data.get('product')),('zone', '=', data.get('zone')), ('from_age', '<=',group['age']), ('to_age', '>=', group['age'])])
 
                opj = []
                for rec in price.price_lines:
@@ -497,7 +500,13 @@ class TravelPolicy(models.Model):
 
     # @api.multi
     def get_benefits(self):
-        return self.env['travel.benefits'].search([('special_covers', '=', False)])
+        benefits = []
+        product = self.env['travel.price'].search(
+                [('product', '=', self.product.id),('zone', '=', self.geographical_coverage)], limit=1)
+        for rec in product.covers:
+            benefits.append(rec)
+        return benefits
+        # return self.env['travel.benefits'].search([('special_covers', '=', False)])
 
     def get_special_benefits(self):
         return self.env['travel.benefits'].search([('special_covers', '=', True)])

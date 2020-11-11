@@ -307,7 +307,7 @@
                                         </thead>
                                         <tbody>
                                             <t t-foreach="o.get_benefits() " t-as="ben">
-                                                <tr>
+                                                <tr t-if="ben.special_covers == False">
                                                     <!--                                                    <t t-if="o.package == 'individual'">-->
                                                     <td style="font-size: 12px !important;"><t t-esc="ben.cover" /></td>
                                                     <td style="font-size: 12px !important;"><t t-esc="ben.limit" /></td>
@@ -318,8 +318,8 @@
                                                     <!--                                                    </t>-->
                                                 </tr>
                                             </t>
-                                            <t  t-foreach="o.special_beneifts"  t-as="sben">
-                                                <tr>
+                                            <t  t-foreach="o.get_benefits()" t-as="sben">
+                                                <tr t-if="sben.special_covers == True">
                                                     <td style="font-size: 12px !important;"><t t-esc="sben.cover" /></td>
                                                     <td style="font-size: 12px !important;"><t t-esc="sben.limit" /></td>
 
