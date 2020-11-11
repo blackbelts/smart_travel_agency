@@ -76,8 +76,19 @@ class Travelapi(models.Model):
 
         return ticket_id.id
 
-
-
-
-
-
+    @api.model
+    def get_covers(self, data):
+        covers = []
+        if data.get('type') == 'individual':
+            age = self.env['policy.travel'].calculate_age(data.get('d'))
+            for rec in self.env['travel.price'].search([('product', '=', data.get('product_id')),
+                                                        ('zone', '=', data.get('zone')),('from_age','<=',age[0]),('to_age','>=',age[0])]).covers:
+                covers.append({'id': rec.id, 'cover': rec.cover, 'limit': rec.limit,
+                               'ar_cover': rec.ar_cover, 'ar_limit': rec.ar_limit})
+            return covers
+        else:
+            for rec in self.env['travel.price'].search([('product', '=', data.get('product_id')),
+                                                        ('zone', '=', data.get('zone')), ('package', '=', 'family')]).covers:
+                covers.append({'id': rec.id, 'cover': rec.cover, 'limit': rec.limit,
+                               'ar_cover': rec.ar_cover, 'ar_limit': rec.ar_limit})
+            return covers
