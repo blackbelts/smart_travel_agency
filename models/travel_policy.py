@@ -210,9 +210,8 @@ class TravelPolicy(models.Model):
                             print(rec.commission)
                             self.travel_agency_comm = (rec.commission / 100)
                             self.agent_commission = self.net_premium * self.travel_agency_comm
-                if self.broker and self.lob and self.product:
-                    commission = self.env['commission.table'].search([('lob', 'in', [self.lob.id]),
-                                                                      ('product', 'in', [self.product.id]),
+                if self.broker and self.product:
+                    commission = self.env['commission.table'].search([('product', 'in', [self.product.id]),
                                                                       ('broker', 'in', [self.broker.id])],limit=1)
                     for rec in commission:
                         self.broker_commission = self.net_premium * rec.basic
