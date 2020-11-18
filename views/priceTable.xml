@@ -79,11 +79,23 @@
             </tree>
         </field>
     </record>
+    <record id="price_view_search" model="ir.ui.view">
+        <field name="name">price.search</field>
+        <field name="model">travel.price</field>
+        <field name="arch" type="xml">
+            <search string="Price">
+                <group expand="0" string="Group By">
+                    <filter string="Zone" name="groupby_zone" context="{'group_by': 'zone'}"/>
+                    <filter string="Product" name="groupby_product" context="{'group_by': 'product'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
     <record model="ir.actions.act_window" id="price_action">
         <field name="name">Price Table</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">travel.price</field>
-
+        <field name="context">{'search_default_groupby_zone': 1, 'search_default_groupby_product': 1}</field>
         <field name="view_id" ref="price_view_tree"/>
         <field name="view_mode">form,tree</field>
         <field name='domain'>[('package','!=','family')]</field>
@@ -92,6 +104,7 @@
         <field name="name">Price Table</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">travel.price</field>
+        <field name="context">{'search_default_groupby_zone': 1, 'search_default_groupby_product': 1}</field>
         <field name="view_id" ref="price_view_tree_family"/>
         <field name="view_mode">form,tree</field>
         <field name='domain'>[('package','=','family')]</field>
