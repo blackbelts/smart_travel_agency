@@ -214,7 +214,7 @@ class TravelPolicy(models.Model):
                     commission = self.env['commission.table'].search([('product', 'in', [self.product.id]),
                                                                       ('broker', 'in', [self.broker.id])],limit=1)
                     for rec in commission:
-                        self.broker_commission = self.net_premium * rec.basic
+                        self.broker_commission = self.net_premium * (rec.basic /100)
 
                 self.net_to_insurer = self.gross_premium - self.agent_commission
             else:
