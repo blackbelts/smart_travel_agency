@@ -83,7 +83,7 @@ class TravelPolicy(models.Model):
     cancel_reason = fields.Char('Cancel Reason')
     travel_agency_comm = fields.Float('Agency Commission',compute='get_financial_data',store=True)
     agent_commission=fields.Float('commission',compute='get_financial_data',store=True)
-    broker_commission=fields.Float('Broker commission')
+    broker_commission=fields.Float('Broker commission', compute='get_financial_data',store=True)
     bonus_commission=fields.Float('Bonus Commission',compute='get_financial_data',store=True)
 
     net_to_insurer = fields.Float('Net To Insurer', compute='get_financial_data',store=True)
@@ -210,6 +210,13 @@ class TravelPolicy(models.Model):
                             print(rec.commission)
                             self.travel_agency_comm = (rec.commission / 100)
                             self.agent_commission = self.net_premium * self.travel_agency_comm
+                if self.broker and self.lob and self.product:
+                    commission = self.env['commission.table'].search([('lob', 'in', [self.lob.id]),
+                                                                      ('product', 'in', [self.product.id]),
+                                                                      ('broker', 'in', [self.broker.id])],limit=1)
+                    for rec in commission:
+                        self.broker_commission = self.net_premium * rec.basic
+
                 self.net_to_insurer = self.gross_premium - self.agent_commission
             else:
                 raise UserError((
