@@ -34,7 +34,8 @@ class Travelapi(models.Model):
              'national_id': data.get('id'), 'phone': data.get('phone'),
              'DOB': DOB, 'geographical_coverage': data.get('zone'), 'coverage_from': when, 'coverage_to': to,
              'state': 'approved',
-             'special_beneifts':[(6,0,data['s_covers'])] if data['s_covers'] else False})
+             # 'special_beneifts':[(6,0,data['s_covers'])] if data['s_covers'] else False
+             })
         if data.get('family'):
             for rec  in data.get('family'):
                f= self.env['policy.family.age'].create(
