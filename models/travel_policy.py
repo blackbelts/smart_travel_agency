@@ -92,6 +92,7 @@ class TravelPolicy(models.Model):
     special_beneifts = fields.Many2many('travel.benefits',string='Special Benefits',domain="[('special_covers', '=', True)]")
 
     price_details = fields.Boolean('Show Price Details In Policy', default=False)
+    country = fields.Many2one('res.country', 'Country')
 
     def test(self):
         self.send_mail_template('AhmedNourElhalaby@gmail.com')
