@@ -63,7 +63,7 @@ class TravelPolicy(models.Model):
 
     currency_id = fields.Many2one("res.currency", "Currency", copy=True,
                                   default=lambda self: self.env.user.company_id.currency_id, readonly=True)
-    net_premium = fields.Float('Net Premium', readonly=True, compute='get_financial_data',store=True)
+    net_premium = fields.Float('Net Premium', readonly=True,)
     proportional_stamp = fields.Float('Proportional Stamp', readonly=True,)
     dimensional_stamp = fields.Float('Dimensional Stamp', readonly=True, compute='get_financial_data',store=True)
     supervisory_stamp = fields.Float('Supervisory Stamp', readonly=True, compute='get_financial_data',store=True)
@@ -71,7 +71,7 @@ class TravelPolicy(models.Model):
     policy_holder_fees = fields.Float('Policyholder’s protection fees', readonly=True, compute='get_financial_data', store=True)
     admin_fees = fields.Float('Admin Fees', )
     issue_fees = fields.Float('Issue Fees', readonly=True, compute='get_financial_data',store=True)
-    gross_premium = fields.Float('Gross Premium', readonly=True, compute='get_financial_data',store=True)
+    gross_premium = fields.Float('Gross Premium', readonly=True,)
     travel_agency = fields.Many2one('travel.agency', 'Travel Agency', related='travel_agency_branch.travel_agency',store=True
                                     )
     travel_agency_branch = fields.Many2one('agency.branch', 'Agency Branch',
