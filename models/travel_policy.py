@@ -63,15 +63,15 @@ class TravelPolicy(models.Model):
 
     currency_id = fields.Many2one("res.currency", "Currency", copy=True,
                                   default=lambda self: self.env.user.company_id.currency_id, readonly=True)
-    net_premium = fields.Float('Net Premium', readonly=True, )
-    proportional_stamp = fields.Float('Proportional Stamp', readonly=True, compute='get_financial_data' ,store=True)
-    dimensional_stamp = fields.Float('Dimensional Stamp', readonly=True, compute='get_financial_data',store=True)
-    supervisory_stamp = fields.Float('Supervisory Stamp', readonly=True, compute='get_financial_data',store=True)
-    policy_approval_fees = fields.Float('Policy approval fees', readonly=True, compute='get_financial_data', store=True)
-    policy_holder_fees = fields.Float('Policyholder’s protection fees', readonly=True, compute='get_financial_data', store=True)
+    net_premium = fields.Float('Net Premium',  )
+    proportional_stamp = fields.Float('Proportional Stamp', )
+    dimensional_stamp = fields.Float('Dimensional Stamp', )
+    supervisory_stamp = fields.Float('Supervisory Stamp', )
+    policy_approval_fees = fields.Float('Policy approval fees', )
+    policy_holder_fees = fields.Float('Policyholder’s protection fees',)
     admin_fees = fields.Float('Admin Fees', )
-    issue_fees = fields.Float('Issue Fees', readonly=True, compute='get_financial_data',store=True)
-    gross_premium = fields.Float('Gross Premium', readonly=True,)
+    issue_fees = fields.Float('Issue Fees',)
+    gross_premium = fields.Float('Gross Premium')
     travel_agency = fields.Many2one('travel.agency', 'Travel Agency', related='travel_agency_branch.travel_agency',store=True
                                     )
     travel_agency_branch = fields.Many2one('agency.branch', 'Agency Branch',
@@ -81,10 +81,10 @@ class TravelPolicy(models.Model):
                               default=lambda self: self.env.user, readonly=True)
     duration=fields.Selection('_get_periods',string='Duration',store=True)
     cancel_reason = fields.Char('Cancel Reason')
-    travel_agency_comm = fields.Float('Agency Commission',compute='get_financial_data',store=True)
-    agent_commission=fields.Float('commission',compute='get_financial_data',store=True)
-    broker_commission=fields.Float('Broker commission', compute='get_financial_data',store=True)
-    bonus_commission=fields.Float('Bonus Commission',compute='get_financial_data',store=True)
+    travel_agency_comm = fields.Float('Agency Commission')
+    agent_commission=fields.Float('commission')
+    broker_commission=fields.Float('Broker commission', )
+    bonus_commission=fields.Float('Bonus Commission')
 
     net_to_insurer = fields.Float('Net To Insurer', compute='get_financial_data',store=True)
     is_canceled = fields.Boolean(default=False)
