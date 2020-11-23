@@ -64,7 +64,7 @@ class TravelPolicy(models.Model):
     currency_id = fields.Many2one("res.currency", "Currency", copy=True,
                                   default=lambda self: self.env.user.company_id.currency_id, readonly=True)
     net_premium = fields.Float('Net Premium', readonly=True, compute='get_financial_data',store=True)
-    proportional_stamp = fields.Float('Proportional Stamp', readonly=True, compute='get_financial_data' ,store=True)
+    proportional_stamp = fields.Float('Proportional Stamp', readonly=True,)
     dimensional_stamp = fields.Float('Dimensional Stamp', readonly=True, compute='get_financial_data',store=True)
     supervisory_stamp = fields.Float('Supervisory Stamp', readonly=True, compute='get_financial_data',store=True)
     policy_approval_fees = fields.Float('Policy approval fees', readonly=True, compute='get_financial_data', store=True)
