@@ -149,9 +149,10 @@ class TravelPolicy(models.Model):
         if self.coverage_from and self.duration:
             self.coverage_to=self.coverage_from+timedelta(days=int(self.duration))
 
-    @api.depends('package','coverage_from','coverage_to','DOB')
+    @api.onchange('package','coverage_from','coverage_to','DOB','product')
     def get_price_calculations(self):
-        self.get_financial_data()
+        if self.Product:
+            self.get_financial_data()
 
 
 
