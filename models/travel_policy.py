@@ -149,7 +149,7 @@ class TravelPolicy(models.Model):
         if self.coverage_from and self.duration:
             self.coverage_to=self.coverage_from+timedelta(days=int(self.duration))
 
-    @api.onchange('package','coverage_from','coverage_to','DOB')
+    @api.depends('package','coverage_from','coverage_to','DOB')
     def get_price_calculations(self):
         self.get_financial_data()
 
@@ -212,10 +212,13 @@ class TravelPolicy(models.Model):
                             self.travel_agency_comm = (rec.commission / 100)
                             self.agent_commission = self.net_premium * self.travel_agency_comm
                 if self.broker and self.product:
-                    commission = self.env['commission.table'].search([('product', 'in', [self.product.id]),
-                                                                      ('broker', 'in', [self.broker.id])],limit=1)
+                    commission = self.env['commission.table'].search([('product', 'in', [self.product.id])],limit=1)
                     for rec in commission:
-                        self.broker_commission = self.net_premium * (rec.basic /100)
+                        if rec.broker and self.broker.id in rec.broker.ids:
+                              self.broker_commission = self.net_premium * (rec.basic /100)
+                              break
+                        else:
+                             self.broker_commission = self.net_premium * (rec.basic / 100)
 
                 self.net_to_insurer = self.gross_premium - self.agent_commission
             else:
