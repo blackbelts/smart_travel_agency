@@ -151,7 +151,7 @@ class TravelPolicy(models.Model):
 
     @api.onchange('package','coverage_from','coverage_to','DOB','product')
     def get_price_calculations(self):
-        if self.Product:
+        if self.product:
             self.get_financial_data()
 
 
