@@ -47,6 +47,8 @@ class TravelPolicy(models.Model):
                                ('Agency', 'Agency'),
                                ], default='Agency')
     broker = fields.Many2one('persons', string="Broker" ,domain="[('type','=','broker')]")
+    broker_agent_code = fields.Char(related='broker.agent_code', string="Broker" )
+
     DOB = fields.Date('Date Of Birth', default=lambda self:fields.datetime.today())
     age = fields.Integer('Age', compute='compute_age',store=True)
     gender = fields.Selection([('M', 'Male'), ('F', 'Female')])
@@ -63,15 +65,15 @@ class TravelPolicy(models.Model):
 
     currency_id = fields.Many2one("res.currency", "Currency", copy=True,
                                   default=lambda self: self.env.user.company_id.currency_id, readonly=True)
-    net_premium = fields.Float('Net Premium', readonly=True, compute='get_financial_data',store=True)
-    proportional_stamp = fields.Float('Proportional Stamp', readonly=True, compute='get_financial_data' ,store=True)
-    dimensional_stamp = fields.Float('Dimensional Stamp', readonly=True, compute='get_financial_data',store=True)
-    supervisory_stamp = fields.Float('Supervisory Stamp', readonly=True, compute='get_financial_data',store=True)
-    policy_approval_fees = fields.Float('Policy approval fees', readonly=True, compute='get_financial_data', store=True)
-    policy_holder_fees = fields.Float('Policyholder’s protection fees', readonly=True, compute='get_financial_data', store=True)
+    net_premium = fields.Float('Net Premium',  )
+    proportional_stamp = fields.Float('Proportional Stamp', )
+    dimensional_stamp = fields.Float('Dimensional Stamp', )
+    supervisory_stamp = fields.Float('Supervisory Stamp', )
+    policy_approval_fees = fields.Float('Policy approval fees', )
+    policy_holder_fees = fields.Float('Policyholder’s protection fees',)
     admin_fees = fields.Float('Admin Fees', )
-    issue_fees = fields.Float('Issue Fees', readonly=True, compute='get_financial_data',store=True)
-    gross_premium = fields.Float('Gross Premium', readonly=True, compute='get_financial_data',store=True)
+    issue_fees = fields.Float('Issue Fees',)
+    gross_premium = fields.Float('Gross Premium')
     travel_agency = fields.Many2one('travel.agency', 'Travel Agency', related='travel_agency_branch.travel_agency',store=True
                                     )
     travel_agency_branch = fields.Many2one('agency.branch', 'Agency Branch',
@@ -81,10 +83,10 @@ class TravelPolicy(models.Model):
                               default=lambda self: self.env.user, readonly=True)
     duration=fields.Selection('_get_periods',string='Duration',store=True)
     cancel_reason = fields.Char('Cancel Reason')
-    travel_agency_comm = fields.Float('Agency Commission',compute='get_financial_data',store=True)
-    agent_commission=fields.Float('commission',compute='get_financial_data',store=True)
-    broker_commission=fields.Float('Broker commission', compute='get_financial_data',store=True)
-    bonus_commission=fields.Float('Bonus Commission',compute='get_financial_data',store=True)
+    travel_agency_comm = fields.Float('Agency Commission')
+    agent_commission=fields.Float('commission')
+    broker_commission=fields.Float('Broker commission', )
+    bonus_commission=fields.Float('Bonus Commission')
 
     net_to_insurer = fields.Float('Net To Insurer', compute='get_financial_data',store=True)
     is_canceled = fields.Boolean(default=False)
@@ -149,9 +151,10 @@ class TravelPolicy(models.Model):
         if self.coverage_from and self.duration:
             self.coverage_to=self.coverage_from+timedelta(days=int(self.duration))
 
-    @api.onchange('package','coverage_from','coverage_to','DOB')
+    @api.onchange('package','coverage_from','coverage_to','DOB','product')
     def get_price_calculations(self):
-        self.get_financial_data()
+        if self.product:
+            self.get_financial_data()
 
 
 
@@ -212,10 +215,13 @@ class TravelPolicy(models.Model):
                             self.travel_agency_comm = (rec.commission / 100)
                             self.agent_commission = self.net_premium * self.travel_agency_comm
                 if self.broker and self.product:
-                    commission = self.env['commission.table'].search([('product', 'in', [self.product.id]),
-                                                                      ('broker', 'in', [self.broker.id])],limit=1)
+                    commission = self.env['commission.table'].search([('product', 'in', [self.product.id])],limit=1)
                     for rec in commission:
-                        self.broker_commission = self.net_premium * (rec.basic /100)
+                        if rec.broker and self.broker.id in rec.broker.ids:
+                              self.broker_commission = self.net_premium * (rec.basic /100)
+                              break
+                        else:
+                             self.broker_commission = self.net_premium * (rec.basic / 100)
 
                 self.net_to_insurer = self.gross_premium - self.agent_commission
             else:

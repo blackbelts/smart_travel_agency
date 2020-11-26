@@ -394,9 +394,9 @@
 
                                                 <tr>
 <!--                                                    <t t-if="o.package == 'individual'">-->
-                                                    <td style="font-size: 12px !important; height:20px !important;"><t t-esc="o.broker" /></td>
+                                                    <td style="font-size: 12px !important; height:20px !important;"><t t-esc="o.broker.name" /></td>
                                                     <td style="font-size: 12px !important;height:20px !important;"><t t-esc="o.broker.fra_no" /></td>
-                                                    <td style="font-size: 12px !important;height:20px !important;"><t t-esc="o.broker_commission" /></td>
+                                                    <td style="font-size: 12px !important;height:20px !important;"><t t-esc="round(o.broker_commission,2)" /></td>
 <!--                                                    </t>-->
 <!--                                                    <t t-if="o.package == 'family'">-->
 <!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.cover" /></td>-->
