@@ -75,7 +75,7 @@
 
                             <div  style="padding-left: 10px !important; padding-right: 10px !important; padding-top:1px !important;">
 
-                                <div  style="width: 50% !important; float:left !important; padding-right:10px;">
+                                <div  style="width: 48% !important; float:left !important; padding-right:5px;">
                                     <table class="table table-hover">
                                         <tr>
                                             <th scope="col">Insured</th>
@@ -95,7 +95,7 @@
                                         </tr>
                                     </table>
                                 </div>
-                                <div  style="width: 50% !important; float:right !important;">
+                                <div  style="width: 48% !important; float:right !important;">
                                     <table class="table table-hover">
 
                                         <tr>
