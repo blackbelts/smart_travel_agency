@@ -129,7 +129,7 @@
                                     </table>
 
                                 </div>
-                                <div style="width: 20.6% !important; float:left !important; padding-right:10px; margin-top:-8px !important;">
+                                <div style="width: 20.6% !important; float:left !important; padding-right:10px;">
                                     <table class="table table-hover">
 
                                         <tr>
@@ -182,7 +182,7 @@
                                 <!--                                            </tr>-->
 
                                 <t t-if="o.price_details ==False" >
-                                    <div style="width: 100% !important; float:right !important; margin-top:-8px !important;">
+                                    <div style="width: 100% !important; float:right !important;">
                                         <table class="table table-hover">
                                             <tr>
                                                 <th style=" color: #073e89; border: none !important;" scope="col">Gross Premium</th>
@@ -232,7 +232,7 @@
                                     </div>
                                 </t>
                                 <t t-if="o.price_details !=False" >
-                                    <div style="width: 100% !important; margin-top:-9px !important; float: left;">
+                                    <div style="width: 100% !important;  float: left;">
                                         <table class="table table-hover">
                                             <thead>
                                                 <tr style="background-color: #eee;">
@@ -262,7 +262,7 @@
                                         </table>
                                     </div>
                                 </t>
-                                <div style="width: 100% !important; margin-top:-9px !important; float: left;">
+                                <div style="width: 100% !important;  float: left;">
                                     <table class="table table-hover" style="border: double #073e89 !important;">
                                         <thead>
                                             <tr style="background-color: #eee;">
@@ -298,7 +298,7 @@
                                     </table>
 
                                 </div>
-                                <div class="" style="width: 100% !important; margin-top:-8px !important; float: left;">
+                                <div class="" style="width: 100% !important; float: left;">
                                     <table class="table table-hover">
                                         <thead>
                                             <tr>
@@ -345,7 +345,7 @@
                                 <!--                                                    </t>-->
                                 <!--                                                </tr>-->
                                 <!--                                            </t>-->
-                                <div style="width: 50% !important; margin-top:-15px !important; float: left; white-space: nowrap !important;">
+                                <div style="width: 50% !important;  float: left; white-space: nowrap !important;">
                                     <!--                                    <t t-if="o.package == 'individual'">-->
                                     <ul style="padding-left:15px;font-size: 11px;">
                                         <li>The above is subject to policy terms and conditions as attached.</li>
@@ -368,7 +368,7 @@
                                     <!--                                    <p style="font-size: 10px;"></p>-->
                                     <!--                                    <p style="font-size: 10px; margin-top:-10px !important;"></p>-->
                                 </div>
-                                <div style="width: 50% !important; margin-top:-15px !important; float: right; text-align:end;">
+                                <div style="width: 50% !important;  float: right; text-align:end;">
                                     <t t-if="o.source != 'Agency'">
                                         <t t-if="o.package == 'individual'">
                                             <p style="text-align:end; font-size: 10px;">Source : OLI</p>
@@ -382,7 +382,7 @@
                                     </t>
 
                                 </div>
-                                <div class="" style="width: 100% !important; margin-top:-8px !important; float: left;">
+                                <div class="" style="width: 100% !important;  float: left;">
                                     <table class="table table-hover">
                                         <thead>
                                             <tr>
