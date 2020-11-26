@@ -66,17 +66,16 @@
 
                         </style>
 
-                        <div class="header" >
+                        <div class="header" style="height: 300px !important; margin-top:100px;">
                             <img class="img img-responsive"  style="width: 100%;" src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/3.png"/>
                             <img class="img img-responsive"  style="width: 100%;" src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/3.png"/>
                             <h4 style="color: #073e89; text-align:center;">Travel Assistance Services (TAS)</h4>
-                            <img class="img img-responsive"  style="width: 100%;" src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/3.png"/>
+<!--                            <img class="img img-responsive"  style="width: 100%;" src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/3.png"/>-->
                         </div>
 
-                        <div class="page" style="unicode-bidi: bidi-override !important; direction: unset !important;">
+                        <div class="page">
 
                             <div  style="padding-left: 25px !important; padding-right: 25px !important; padding-top:1px !important;">
-                                <img class="img img-responsive"  style="width: 100%;" src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/3.png"/>
                                 <div  style="width: 50% !important; float:left !important; padding-right:10px;">
                                     <table class="table table-hover">
                                         <tr>
