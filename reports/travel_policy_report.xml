@@ -15,7 +15,7 @@
                         <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Homemade+Apple"/>
                         <style>
                             .cont {
-                            background-image: url('/smart_travel_agency/static/img/image.jpg');
+                            background-image: url('https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/img/image.jpg');
                             background-position: center;
                             background-repeat: no-repeat;
                             height:100px;
@@ -23,7 +23,7 @@
                             }
                             @font-face {
                             font-family: 'dubai';
-                            src: url('/smart_travel_agency/static/fonts/Dubai-Bold.ttf');
+                            src: url('https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/fonts/Dubai-Bold.ttf');
                             }
                             table {
                             width: 100%;
@@ -67,7 +67,7 @@
                         </style>
 
                         <div class="header" style="height: 100px !important;">
-                            <img class="img"  style="width: 100%;" src="/smart_travel_agency/static/img/3.jpg"/>
+                            <img class="img"  style="width: 100%;" src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/img/3.jpg"/>
                             <h4 style="color: #073e89; text-align:center;">Travel Assistance Services (TAS)</h4>
                         </div>
 
@@ -499,7 +499,7 @@
                                     </div>
 
                                     <div style="width: 35% !important; float: right !important; border: none !important; margin-top: 17px !important;">
-                                        <img class="img img-responsive" style="height: 80px; float: right !important;" src="/smart_travel_agency/static/img/v.gif"/>
+                                        <img class="img img-responsive" style="height: 80px; float: right !important;" src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/img/v.gif"/>
                                     </div>
                                 </div>
                             </div>
@@ -543,7 +543,7 @@
                         </div>
 
                         <div class="footer" style="float:left; width:100px;">
-                            <img style="width:100% !important;" class="img img-responsive" src="/smart_travel_agency/static/img/1.png"/>
+                            <img style="width:100% !important;" class="img img-responsive" src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/img/1.png"/>
                             <span style="font-size: 10px !important; white-space: nowrap !important; overflow: hidden !important;">AROPE PROPERTIES &amp; LIABILITIES INSURANCE EGYPT - S.A.E</span>
                         </div>
                     </t>
