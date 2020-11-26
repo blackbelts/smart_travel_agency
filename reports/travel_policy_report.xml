@@ -438,7 +438,7 @@
                                 <!--                                </div>-->
                                 <!--                                <t>-->
                                 <div style="margin-top:-4px !important;">
-                                    <h4 style="color: #073e89; width: 100% !important; margin-top:-2px !important; float: left; text-align:center !important;">Assistance Information</h4>
+                                    <h4 style="color: #073e89; width: 100% !important; margin-top:0px !important; float: left; text-align:center !important;">Assistance Information</h4>
                                 </div>
                                 <!--                                </t>-->
                                 <!--                                <t t-if="o.package == 'family'">-->
@@ -446,7 +446,7 @@
                                 <!--                                        <h4 style="color: #073e89; width: 100% !important; margin-top:-8px !important; float: left; text-align:center !important;">Assistance Information</h4>-->
                                 <!--                                    </div>-->
                                 <!--                                </t>-->
-                                <div style="width: 100% !important; margin-top:-8px !important; float: left; border: 1px solid #ddd !important;">
+                                <div style="width: 100% !important; margin-top:-10px !important; float: left; border: 1px solid #ddd !important;">
                                     <div style="width: 25% !important; float: left; border: none !important;">
 
                                         <table class="table table-hover" style="border: none !important;">
