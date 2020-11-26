@@ -67,7 +67,7 @@
                         </style>
 
                         <div class="header" >
-                            <img class="img"  style="width: 100%;" src="/smart_travel_agency/static/src/images/3.png"/>
+                            <img class="img img-responsive"  style="width: 100%;" src="/smart_travel_agency/static/src/images/3.png"/>
                             <h4 style="color: #073e89; text-align:center;">Travel Assistance Services (TAS)</h4>
                         </div>
 
