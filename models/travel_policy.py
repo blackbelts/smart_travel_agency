@@ -111,23 +111,21 @@ class TravelPolicy(models.Model):
     def test(self):
         self.send_mail_template('AhmedNourElhalaby@gmail.com')
 
-    @api.depends('geographical_coverage')
     def _get_periods(self):
-        if self.geographical_coverage:
         #you Must Change
-            options = []
-            options_dict = []
-            data = self.env['travel.price.line'].search([])
-            for option in data:
-                if self.geographical_coverage == 'zone 1':
+        options = []
+        options_dict = []
+        data = self.env['travel.price.line'].search([])
+        for option in data:
+            if self.geographical_coverage == 'zone 1':
+                options.append(option.period)
+            else:
+                if option.period <= 730:
                     options.append(option.period)
-                else:
-                    if option.period <= 730:
-                        options.append(option.period)
-            options = list(dict.fromkeys(options))
-            for option in options:
-                    options_dict.append((str(option),str(option)+' Days'))
-            return options_dict
+        options = list(dict.fromkeys(options))
+        for option in options:
+                options_dict.append((str(option),str(option)+' Days'))
+        return options_dict
     # @api.onchange('admin_fees','gross_premium')
     # def get_new_gross(self):
     #     if self.admin_fees :
