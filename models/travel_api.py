@@ -31,7 +31,7 @@ class Travelapi(models.Model):
         policy_id = self.env['policy.travel'].create(
             {'product': data.get('product'),'package': data.get('package'), 'insured': data.get('c_name'), 'address': data.get('add'),
              'gender': data.get('gender'), 'source': data.get('source'), 'passport_num': data.get('pass'),
-             'national_id': data.get('id'), 'phone': data.get('phone'),
+             'national_id': data.get('id'), 'phone': data.get('phone'),'country': data.get('destination'),
              'DOB': DOB, 'geographical_coverage': data.get('zone'), 'coverage_from': when, 'coverage_to': to,
              'state': 'approved',
              # 'special_beneifts':[(6,0,data['s_covers'])] if data['s_covers'] else False
