@@ -23,6 +23,17 @@ class TravelPolicy(models.Model):
 
         template_id.send_mail(self.ids[0], force_send=True)
         # self.env['mail.template'].browse(template_id.id).send_mail(self.id)
+
+    @api.model
+    def create(self, vals):
+        serial_no = self.env['ir.sequence'].next_by_code('policy')
+        if vals.get('source') == 'online':
+            vals['policy_num'] = 'TAS/' + str(serial_no)
+            return super(TravelPolicy, self).create(vals)
+        else:
+            vals['policy_num'] = 'THO/' + str(serial_no)
+            return super(TravelPolicy, self).create(vals)
+
     product = fields.Many2one('insurance.product', string='Product', domain="[('line_of_bus.line_of_business','=','Travel')]")
     package = fields.Selection([('individual', 'Individual'), ('family', 'Family')], 'Package For', default='individual')
 
@@ -32,6 +43,7 @@ class TravelPolicy(models.Model):
                               ('approved', 'Approved'),
                               ('canceled', 'Canceled'), ],
                              'Status', required=True, default='pending', copy=False)
+    # country = fields.Many2one('res.country', 'Destination')
     type = fields.Selection([('issue', 'Issue'), ('cancel', 'Cancel')], readonly=True, default='issue')
     issue_date = fields.Datetime(string='Issue Date', readonly=True, default=lambda self:fields.datetime.today())
     serial_no = fields.Integer('Serial Number')
@@ -94,7 +106,7 @@ class TravelPolicy(models.Model):
     special_beneifts = fields.Many2many('travel.benefits',string='Special Benefits',domain="[('special_covers', '=', True)]")
 
     price_details = fields.Boolean('Show Price Details In Policy', default=False)
-    country = fields.Many2one('res.country', 'Country')
+    country = fields.Many2one('res.country', 'Destination')
 
     def test(self):
         self.send_mail_template('AhmedNourElhalaby@gmail.com')

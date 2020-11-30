@@ -120,6 +120,8 @@
                                         <tr>
                                             <th scope="col">Country of Origin</th>
                                             <td>Egypt</td>
+                                            <th scope="col">Destination</th>
+                                            <td><t t-esc="o.country" /></td>
                                         </tr>
                                         <tr>
                                             <th scope="col">Issue Date</th>
