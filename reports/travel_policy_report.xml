@@ -449,8 +449,8 @@
                                     </table>
                                 </div>
 
-                                <div style="margin-top:-4px !important;">
-                                    <h4 style="color: #073e89; width: 100% !important; margin-top:0px !important; float: left; text-align:center !important;">Assistance Information</h4>
+                                <div style="margin-top:-8px !important;">
+                                    <h4 style="color: #073e89; width: 100% !important; margin-top:-4px !important; float: left; text-align:center !important;">Assistance Information</h4>
                                 </div>
                                 <!--                                </t>-->
                                 <!--                                <t t-if="o.package == 'family'">-->
