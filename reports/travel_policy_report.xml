@@ -95,7 +95,7 @@
                                         </tr>
                                         <tr>
                                             <th scope="col">Destination</th>
-                                            <td><t t-field="o.country" /></td>
+                                            <td><span t-field="o.country" /></td>
                                         </tr>
                                     </table>
                                 </div>
