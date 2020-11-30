@@ -111,7 +111,7 @@ class TravelPolicy(models.Model):
     def test(self):
         self.send_mail_template('AhmedNourElhalaby@gmail.com')
 
-    @api.onchange('geographical_coverage')
+    @api.depends('geographical_coverage')
     def _get_periods(self):
         if self.geographical_coverage:
         #you Must Change
