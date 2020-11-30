@@ -39,8 +39,8 @@ class TravelPolicy(models.Model):
 
     policy_num = fields.Char(string='Policy Number', required=True, copy=False, index=True,
                              default=lambda self: self.env['ir.sequence'].next_by_code('policy'), readonly=True)
-    state = fields.Selection([('pending', 'Pending'),
-                              ('approved', 'Approved'),
+    state = fields.Selection([('pending', 'Draft'),
+                              ('approved', 'Issued'),
                               ('canceled', 'Canceled'), ],
                              'Status', required=True, default='pending', copy=False)
     # country = fields.Many2one('res.country', 'Destination')
@@ -534,7 +534,13 @@ class TravelPolicy(models.Model):
         # return self.env['travel.benefits'].search([('special_covers', '=', False)])
 
     def get_special_benefits(self):
-        return self.env['travel.benefits'].search([('special_covers', '=', True)])
+        benefits = []
+        product = self.env['travel.price'].search(
+            [('product', '=', self.product.id), ('zone', '=', self.geographical_coverage)], limit=1)
+        for rec in product.covers:
+            if rec.special_covers == True:
+                benefits.append(rec)
+        return benefits
 
     # @api.multi
     def get_assistance_information(self):

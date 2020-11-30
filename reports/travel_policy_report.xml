@@ -320,7 +320,7 @@
                                         </thead>
                                         <tbody>
                                             <t t-foreach="o.get_benefits() " t-as="ben">
-                                                <tr>
+                                                <tr t-if="ben.special_covers == False">
                                                     <!--                                                    <t t-if="o.package == 'individual'">-->
                                                     <td style="font-size: 10px !important;"><t t-esc="ben.cover" /></td>
                                                     <td style="font-size: 10px !important;"><t t-esc="ben.limit" /></td>
@@ -330,6 +330,16 @@
                                                     <!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.limit" /></td>-->
                                                     <!--                                                    </t>-->
                                                 </tr>
+                                                <tr t-if="o.get_special_benefits()">
+                                                    <td style="border: none !important; font-weight:bolder !important; font-size:13px !important; color: #073e89;">Special Covers</td>
+                                                    <td></td>
+                                                </tr>
+                                                <t t-foreach="o.get_special_benefits()" t-as="sben">
+                                                    <tr>
+                                                        <td style="font-size: 10px !important;"><t t-esc="sben.cover" /></td>
+                                                        <td  style="font-size: 10px !important;"><t t-esc="sben.limit" /></td>
+                                                    </tr>
+                                                </t>
                                             </t>
 <!--                                            <t  t-foreach="o.get_benefits()" t-as="sben">-->
 <!--                                                <tr t-if="sben.special_covers == True">-->
