@@ -111,7 +111,6 @@ class TravelPolicy(models.Model):
     def test(self):
         self.send_mail_template('AhmedNourElhalaby@gmail.com')
 
-    @api.onchange('geographical_coverage')
     def _get_periods(self):
         #you Must Change
         options = []
@@ -119,13 +118,6 @@ class TravelPolicy(models.Model):
         data = self.env['travel.price.line'].search([])
         for option in data:
             options.append(option.period)
-            if self.geographical_coverage == 'zone 1':
-                options = []
-                options.append(option.period)
-            else:
-                options = []
-                if option.period <= 730:
-                    options.append(option.period)
         options = list(dict.fromkeys(options))
         for option in options:
                 options_dict.append((str(option),str(option)+' Days'))
