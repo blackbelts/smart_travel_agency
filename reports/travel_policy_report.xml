@@ -333,8 +333,8 @@
                                             </t>
                                             <t  t-foreach="o.get_benefits()" t-as="sben">
                                                 <tr t-if="sben.special_covers == True">
-                                                    <td style="font-size: 12px !important;"><t t-esc="sben.cover" /></td>
-                                                    <td style="font-size: 12px !important;"><t t-esc="sben.limit" /></td>
+                                                    <td style="font-size: 10px !important;"><t t-esc="sben.cover" /></td>
+                                                    <td style="font-size: 10px !important;"><t t-esc="sben.limit" /></td>
 
                                                 </tr>
                                             </t>
@@ -357,7 +357,7 @@
                                 <!--                                                    </t>-->
                                 <!--                                                </tr>-->
                                 <!--                                            </t>-->
-                                <div style="width: 50% !important; margin-top: -2px !important; float: left; white-space: nowrap !important;">
+                                <div style="width: 50% !important; margin-top: -3px !important; float: left; white-space: nowrap !important;">
                                     <!--                                    <t t-if="o.package == 'individual'">-->
                                     <ul style="padding-left:15px;font-size: 11px;">
                                         <li>The above is subject to policy terms and conditions as attached.</li>
