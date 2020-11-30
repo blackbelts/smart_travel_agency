@@ -138,7 +138,7 @@
                                     </table>
 
                                 </div>
-                                <div style="width: 20.6% !important; margin-top: 5px !important; float:left !important; padding-right:10px;">
+                                <div style="width: 33.3% !important; margin-top: 3px !important; float:left !important; padding-right:10px;">
                                     <table class="table table-hover">
 
                                         <tr>
@@ -147,7 +147,7 @@
                                         </tr>
                                     </table>
                                 </div>
-                                <div style="width: 20.6% !important; float:left !important; padding-right:10px; margin-top: 5px !important;">
+                                <div style="width: 33.3% !important; float:left !important; padding-right:10px; margin-top: 3px !important;">
                                     <table class="table table-hover">
 
                                         <tr>
@@ -159,7 +159,7 @@
                                         </tr>
                                     </table>
                                 </div>
-                                <div style="width: 20.6% !important; float:left !important; padding-right:10px; margin-top: 5px !important;">
+                                <div style="width: 33.3% !important; float:left !important; padding-right:10px; margin-top: 3px !important;">
                                     <table class="table table-hover">
                                         <tr>
                                             <th style="width:50% !important;" scope="col">Policy Period</th>
@@ -167,7 +167,7 @@
                                         </tr>
                                     </table>
                                 </div>
-                                <div style="width: 34% !important; float:right !important; margin-top: 5px !important;">
+                                <div style="width: 34% !important; float:right !important; margin-top: 3px !important;">
                                      <div t-if="o.state =='pending'" style="position: absolute;font-size: 15rem;left: 0%;top:250px;text-transform: uppercase;z-index: 9999;-webkit-transform: rotateZ(45deg);-moz-transform: rotateZ(45deg);-ms-transform: rotateZ(45deg);-o-transform: rotateZ(45deg);transform: rotateZ(45deg);color: gray;opacity: 0.3;width: 100%;text-align: center;vertical-align: middle;">
                                          <h1 style="font-size: 15rem;text-transform: uppercase;z-index: 9999;color: gray;vertical-align: middle;">draft</h1>
                                      </div>
@@ -192,7 +192,7 @@
                                 <!--                                            </tr>-->
 
                                 <t t-if="o.price_details ==False" >
-                                    <div style="width: 100% !important; float:right !important; margin-top: 5px !important;">
+                                    <div style="width: 100% !important; float:right !important; margin-top: 3px !important;">
                                         <table class="table table-hover">
                                             <tr>
                                                 <th style=" color: #073e89; border: none !important;" scope="col">Gross Premium</th>
