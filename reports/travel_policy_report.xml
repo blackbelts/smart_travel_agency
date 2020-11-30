@@ -93,6 +93,10 @@
                                             <th scope="col">Phone</th>
                                             <td><t t-esc="o.phone"/></td>
                                         </tr>
+                                        <tr>
+                                            <th scope="col">Destination</th>
+                                            <td><t t-field="o.country" /></td>
+                                        </tr>
                                     </table>
                                 </div>
                                 <div  style="width: 48% !important; float:right !important;">
@@ -120,8 +124,6 @@
                                         <tr>
                                             <th scope="col">Country of Origin</th>
                                             <td>Egypt</td>
-                                            <th scope="col">Destination</th>
-                                            <td><t t-esc="o.country" /></td>
                                         </tr>
                                         <tr>
                                             <th scope="col">Issue Date</th>
@@ -168,6 +170,7 @@
                                         <tr>
                                             <th style="width:32% !important;" scope="col">Coverage Zone</th>
                                             <td><span t-field="o.geographical_coverage" /></td>
+
                                         </tr>
                                     </table>
                                 </div>
@@ -271,6 +274,7 @@
                                                 <th scope="col">Name</th>
                                                 <th scope="col">Gender</th>
                                                 <th scope="col">Date Of Birth</th>
+                                                <th scope="col">Age</th>
                                                 <th scope="col">Passport</th>
                                                 <!--                                                <th t-if="o.package == 'family'" scope="col">Relationship</th>-->
 
@@ -281,6 +285,7 @@
                                                 <td style="text-transform: uppercase !important;"><t t-esc="o.insured " /></td>
                                                 <td><t t-esc="o.gender " /></td>
                                                 <td><t t-esc="o.DOB" /></td>
+                                                <td><t t-esc="o.age" /></td>
                                                 <td><t t-esc="o.passport_num " /></td>
                                                 <!--                                                <td t-if="o.package == 'family'"></td>-->
 
@@ -351,7 +356,7 @@
                                     <!--                                    <t t-if="o.package == 'individual'">-->
                                     <ul style="padding-left:15px;font-size: 11px;">
                                         <li>The above is subject to policy terms and conditions as attached.</li>
-                                        <li>Policy issued online doesn't need insured signature.</li>
+                                        <li t-if="o.source != 'Agency'">Policy issued online doesn't need insured signature.</li>
                                         <li>(*) Excess applies.</li>
                                         <li>(**) Actual expenses should not exceed the maximum policy limit.</li>
                                     </ul>
@@ -380,7 +385,7 @@
                                         </t>
                                     </t>
                                     <t t-if="o.source == 'Agency'">
-                                        <p style="text-align:end; font-size: 10px;">Source : <t t-esc="o.travel_agency.agency_code" /></p>
+                                        <p style="text-align:end; font-size: 10px;">Source : H.O<t t-esc="o.travel_agency.agency_code" /></p>
                                     </t>
 
                                 </div>
@@ -522,6 +527,7 @@
                                                 <th scope="col">Name</th>
                                                 <th scope="col">Gender</th>
                                                 <th scope="col">Date Of Birth</th>
+                                                <th scope="col">Age</th>
                                                 <th scope="col">Passport</th>
                                                 <th scope="col">Relationship</th>
 
@@ -533,6 +539,7 @@
                                                     <td style="text-transform: uppercase !important;"><t t-esc="f.name"/></td>
                                                     <td><t t-esc="f.gender"/></td>
                                                     <td><t t-esc="f.DOB"/></td>
+                                                    <td><t t-esc="f.age"/></td>
                                                     <td><t t-esc="f.pass_num"/></td>
                                                     <td><t t-esc="f.type" /></td>
 
@@ -546,7 +553,7 @@
                         </div>
 
                         <div class="footer" style="float:left; width:100px;">
-                            <img style="width:100% !important;" class="img img-responsive" src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/1.png"/>
+                            <img t-if="o.source != 'Agency'" style="width:100% !important;" class="img img-responsive" src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/1.png"/>
                             <span style="font-size: 10px !important; white-space: nowrap !important; overflow: hidden !important;">AROPE PROPERTIES &amp; LIABILITIES INSURANCE EGYPT - S.A.E</span>
                         </div>
                     </t>

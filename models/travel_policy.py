@@ -28,10 +28,10 @@ class TravelPolicy(models.Model):
     def create(self, vals):
         serial_no = self.env['ir.sequence'].next_by_code('policy')
         if vals.get('source') == 'online':
-            vals['policy_num'] = 'TAS/' + str(serial_no)
+            vals['policy_num'] = 'TAS' + str(serial_no)
             return super(TravelPolicy, self).create(vals)
         else:
-            vals['policy_num'] = 'THO/' + str(serial_no)
+            vals['policy_num'] = 'THO' + str(serial_no)
             return super(TravelPolicy, self).create(vals)
 
     product = fields.Many2one('insurance.product', string='Product', domain="[('line_of_bus.line_of_business','=','Travel')]")
