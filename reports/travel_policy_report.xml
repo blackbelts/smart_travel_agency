@@ -572,6 +572,7 @@
                 menu="False"
                 name="smart_travel_agency.report_travel_docs"/>
         <template id="report_travel_docs">
+            <Root>
             <t t-foreach="docs" t-as="o">
                 <Policy>
                    <PIN>123456</PIN>
@@ -625,6 +626,7 @@
                 <!--           </SALEDETAILS>-->
                 <!--                </MAINHEADER>-->
             </t>
+            </Root>
         </template>
     </data>
 </odoo>
