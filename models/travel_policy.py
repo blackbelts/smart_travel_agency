@@ -456,7 +456,7 @@ class TravelPolicy(models.Model):
     def _check_age_limit(self):
         if self.age <= 0:
                 raise exceptions.ValidationError('You Must Enter Correct Birth Date')
-    @api.one
+    @api.model
     @api.constrains('duration','geographical_coverage')
     def _check_period(self):
         if int(self.duration/365) >2 and self.geographical_coverage !='zone 1':
