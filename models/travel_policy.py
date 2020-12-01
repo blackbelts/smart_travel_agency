@@ -459,7 +459,7 @@ class TravelPolicy(models.Model):
     @api.model
     @api.constrains('duration','geographical_coverage')
     def _check_period(self):
-        if int(self.duration/365) >2 and self.geographical_coverage !='zone 1':
+        if int(int(self.duration)/365) >2 and self.geographical_coverage !='zone 1':
             raise exceptions.ValidationError('Duration Error For This Region')
 
     @api.constrains('national_id')
