@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','mail','helpdesk_inherit','arope_conf'],
+    'depends': ['base','mail','helpdesk_inherit','arope_conf','report_xml'],
 
 
     # always loaded

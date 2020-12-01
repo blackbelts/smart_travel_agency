@@ -47,7 +47,7 @@ class TravelPolicy(models.Model):
                                ('Agency', 'Agency'),
                                ], default='Agency')
     broker = fields.Many2one('persons', string="Broker" ,domain="[('type','=','broker')]")
-    broker_agent_code = fields.Char(related='broker.agent_code', string="Broker" )
+    broker_agent_code = fields.Char(related='broker.agent_code', string="Broker code" )
 
     DOB = fields.Date('Date Of Birth', default=lambda self:fields.datetime.today())
     age = fields.Integer('Age', compute='compute_age',store=True)
@@ -444,6 +444,11 @@ class TravelPolicy(models.Model):
     def _check_age_limit(self):
         if self.age <= 0:
                 raise exceptions.ValidationError('You Must Enter Correct Birth Date')
+    @api.one
+    @api.constrains('duration','geographical_coverage')
+    def _check_period(self):
+        if int(self.duration/365) >2 and self.geographical_coverage !='zone 1':
+            raise exceptions.ValidationError('Duration Error For This Region')
 
     @api.constrains('national_id')
     def _check_national(self):

@@ -409,8 +409,22 @@
         <field name="res_model">orders</field>
         <field name="view_mode">tree,form,pivot,graph</field>
         <field name="view_id" ref="orders_tree_view"/>
-
-
     </record>
+    <record id="call_from_policy_action" model="ir.actions.server">
+        <field name="name">Export XML</field>
+        <field name="model_id" ref="model_policy_travel"/>
+        <field name="binding_model_id" ref="model_policy_travel"/>
+        <field name="state">code</field>
+        <field name="code">action = model.print_report_xml()</field>
+    </record>
+
+<!--    <record model="ir.values" id="demo_any_id">-->
+<!--        <field name="model_id"  ref="model_policy_travel" />-->
+<!--        <field name="name">test</field>-->
+<!--        <field name="key2">client_action_multi</field>-->
+<!--        <field name="value"  eval="'ir.actions.server,' +str(ref('call_from_policy_action'))" />-->
+<!--        <field name="key">action</field>-->
+<!--        <field name="model">policy.travel.model</field>-->
+<!--    </record>-->
 
 </odoo>

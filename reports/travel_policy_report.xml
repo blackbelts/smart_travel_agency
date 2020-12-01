@@ -5,7 +5,7 @@
                 model="policy.travel"
                 report_type="qweb-pdf"
                 name="smart_travel_agency.policy"
-                 menu="{'False':[('state','=','pending')]}"
+                menu="{'False':[('state','=','pending')]}"
         />
 
         <template id="policy">
@@ -158,9 +158,9 @@
                                     </table>
                                 </div>
                                 <div style="width: 35% !important; float:right !important; margin-top:-8px !important;">
-                                     <div t-if="o.state =='pending'" style="position: absolute;font-size: 15rem;left: 0%;top:250px;text-transform: uppercase;z-index: 9999;-webkit-transform: rotateZ(45deg);-moz-transform: rotateZ(45deg);-ms-transform: rotateZ(45deg);-o-transform: rotateZ(45deg);transform: rotateZ(45deg);color: gray;opacity: 0.3;width: 100%;text-align: center;vertical-align: middle;">
-                                         <h1 style="font-size: 15rem;text-transform: uppercase;z-index: 9999;color: gray;vertical-align: middle;">draft</h1>
-                                     </div>
+                                    <div t-if="o.state =='pending'" style="position: absolute;font-size: 15rem;left: 0%;top:250px;text-transform: uppercase;z-index: 9999;-webkit-transform: rotateZ(45deg);-moz-transform: rotateZ(45deg);-ms-transform: rotateZ(45deg);-o-transform: rotateZ(45deg);transform: rotateZ(45deg);color: gray;opacity: 0.3;width: 100%;text-align: center;vertical-align: middle;">
+                                        <h1 style="font-size: 15rem;text-transform: uppercase;z-index: 9999;color: gray;vertical-align: middle;">draft</h1>
+                                    </div>
                                     <table class="table table-hover">
                                         <tr>
                                             <th style="width:32% !important;" scope="col">Coverage Zone</th>
@@ -392,17 +392,17 @@
                                         </thead>
                                         <tbody>
 
-                                                <tr>
-<!--                                                    <t t-if="o.package == 'individual'">-->
-                                                    <td style="font-size: 12px !important; height:20px !important;"><t t-esc="o.broker.name" /></td>
-                                                    <td style="font-size: 12px !important;height:20px !important;"><t t-esc="o.broker.fra_no" /></td>
-                                                    <td style="font-size: 12px !important;height:20px !important;"><t t-esc="round(o.broker_commission,2)" /></td>
-<!--                                                    </t>-->
-<!--                                                    <t t-if="o.package == 'family'">-->
-<!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.cover" /></td>-->
-<!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.limit" /></td>-->
-<!--                                                    </t>-->
-                                                </tr>
+                                            <tr>
+                                                <!--                                                    <t t-if="o.package == 'individual'">-->
+                                                <td style="font-size: 12px !important; height:20px !important;"><t t-esc="o.broker.name" /></td>
+                                                <td style="font-size: 12px !important;height:20px !important;"><t t-esc="o.broker.fra_no" /></td>
+                                                <td style="font-size: 12px !important;height:20px !important;"><t t-esc="round(o.broker_commission,2)" /></td>
+                                                <!--                                                    </t>-->
+                                                <!--                                                    <t t-if="o.package == 'family'">-->
+                                                <!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.cover" /></td>-->
+                                                <!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.limit" /></td>-->
+                                                <!--                                                    </t>-->
+                                            </tr>
 
                                         </tbody>
                                     </table>
@@ -503,14 +503,14 @@
                                     </div>
                                 </div>
                             </div>
-                             <div style="page-break-after: always !important;"/>
+                            <div style="page-break-after: always !important;"/>
                         </div>
                         <div class="page" style="unicode-bidi: bidi-override !important; direction: unset !important;" t-if="o.package == 'family'">
 
                             <div  style="padding-left: 25px !important; padding-right: 25px !important; padding-top:1px !important;">
                                 <div t-if="o.state =='pending'" style="position: absolute;font-size: 15rem;left: 0%;top:1250px;text-transform: uppercase;z-index: 9999;-webkit-transform: rotateZ(45deg);-moz-transform: rotateZ(45deg);-ms-transform: rotateZ(45deg);-o-transform: rotateZ(45deg);transform: rotateZ(45deg);color: gray;opacity: 0.3;width: 100%;text-align: center;vertical-align: middle;">
-                                 <h1 style="font-size: 15rem;text-transform: uppercase;z-index: 9999;color: gray;vertical-align: middle;">draft</h1>
-                             </div>
+                                    <h1 style="font-size: 15rem;text-transform: uppercase;z-index: 9999;color: gray;vertical-align: middle;">draft</h1>
+                                </div>
                                 <div  style="width: 100% !important; float:left !important;">
                                     <h4 style="color: #073e89; text-align:center; margin-top:5px !important;">Family Members</h4>
                                     <table class="table table-hover" style="border: double #073e89 !important; margin-top:1px !important;">
@@ -550,26 +550,73 @@
                 </t>
             </t>
         </template>
-        <!--           <report id="travel_xml_report"-->
-        <!--           string="travel_xml_report"-->
-        <!--           model="policy.travel"-->
-        <!--           report_type="qweb-xml"-->
-        <!--           name="smart_travel_agency.report_travel_docs"/>-->
-        <!--        <template id="report_travel_docs">-->
+        <report id="travel_xml_report"
+                string="travel_xml_report"
+                model="policy.travel"
+                report_type="qweb-xml"
+                menu="False"
+                name="smart_travel_agency.report_travel_docs"/>
+        <template id="report_travel_docs">
 
-        <!--                <t t-foreach="docs" t-as="o">-->
-        <!--       <MAINHEADER>-->
-        <!--           <POLICY >-->
-        <!--                   <IssueDate t-esc="o.issue_date"/>-->
+<!--            <t t-foreach="docs" t-as="o">-->
+<!--                <MAINHEADER>-->
+<!--                    <POLICY  amount="">-->
+<!--                        <IssueDate t-esc="o.issue_date"/>-->
 
-        <!--           </POLICY>-->
-        <!--&lt;!&ndash;           <SALEDETAILS t-foreach="dat" t-as="sales">&ndash;&gt;-->
-        <!--&lt;!&ndash;               <NUMBER t-esc="sales['sale_sequence']"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;               <AMOUNT t-esc="sales['total_amount']"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;               <SALESPERSON t-esc="sales['sales_person_name']"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;           </SALEDETAILS>&ndash;&gt;-->
-        <!--       </MAINHEADER>-->
-        <!--             </t>-->
-        <!--   </template>-->
+<!--                    </POLICY>-->
+                    <t t-foreach="docs" t-as="o">
+                <Policy>
+                    <PIN>123456</PIN>
+                    <Gender t-esc="o.gender"/>
+                    <FirstName t-esc="o.insured"/>
+                    <Father></Father>
+                    <Family>FamilyName</Family>
+                    <Dob_Day t-esc="o.DOB.day"/>
+                    <Dob_Month>1</Dob_Month>
+                    <Dob_Year>1980</Dob_Year>
+                    <Nationality>422</Nationality>
+                    <PASSPORT>422-6665666</PASSPORT>
+                    <Prof_Code></Prof_Code>
+                    <Marital>2</Marital>
+                    <Mobile></Mobile>
+                    <Email></Email>
+                    <Adr_Type>R</Adr_Type>
+                    <Adr_Line1>Beirut</Adr_Line1>
+                    <Adr_Line2></Adr_Line2>
+                    <Adr_Line3></Adr_Line3>
+                    <Adr_Phone1></Adr_Phone1>
+                    <Loc_Code></Loc_Code>
+                    <Product>TAS</Product>
+                    <Policy_No>1111</Policy_No>
+                    <Agt_Code>B114</Agt_Code>
+                    <Agt_Com>30</Agt_Com>
+                    <Inception>2020-12-01</Inception>
+                    <Expiry>2020-12-09</Expiry>
+                    <Cur_Code>01</Cur_Code>
+                    <Net_Premium>440</Net_Premium>
+                    <CHARGES>0.84</CHARGES>
+                    <Policy_Cost>5</Policy_Cost>
+                    <Tax>3.96</Tax>
+                    <Stamps>2.2</Stamps>
+                    <Fixed_Stamps>3</Fixed_Stamps>
+                    <TOTAL_Premium>455</TOTAL_Premium>
+                    <COVERAREA>01</COVERAREA>
+                    <COVERTYPE>01</COVERTYPE>
+                    <COVERDURATION>01</COVERDURATION>
+                    <COVERDESTINATION>France</COVERDESTINATION>
+                    <CPNAME></CPNAME>
+                    <CPAddress></CPAddress>
+                    <CPPHONE></CPPHONE>
+                    <CPMobile></CPMobile>
+                    <NBR_INSUREDS>2</NBR_INSUREDS>
+                </Policy>
+                    <!--           <SALEDETAILS t-foreach="dat" t-as="sales">-->
+                    <!--               <NUMBER t-esc="sales['sale_sequence']"/>-->
+                    <!--               <AMOUNT t-esc="sales['total_amount']"/>-->
+                    <!--               <SALESPERSON t-esc="sales['sales_person_name']"/>-->
+                    <!--           </SALEDETAILS>-->
+<!--                </MAINHEADER>-->
+            </t>
+        </template>
     </data>
 </odoo>
