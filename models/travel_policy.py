@@ -27,7 +27,7 @@ class TravelPolicy(models.Model):
     @api.model
     def create(self, vals):
         serial_no = self.env['ir.sequence'].next_by_code('policy')
-        if self.env.user.has_group('head_office_group'):
+        if self.env.user.has_group('smart_travel_agency.head_office_group'):
             vals['policy_num'] = 'THO' + str(serial_no)
             return super(TravelPolicy, self).create(vals)
         else:
