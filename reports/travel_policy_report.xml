@@ -5,10 +5,10 @@
                 model="policy.travel"
                 report_type="qweb-pdf"
                 name="smart_travel_agency.policy"
-                 menu="{'False':[('state','=','pending')]}"
+                menu="{'False':[('state','=','pending')]}"
         />
 
-        <template id="policy">
+          <template id="policy">
             <t t-call="web.html_container">
                 <t t-foreach="docs" t-as="o">
                     <t t-call="web.basic_layout">
@@ -565,26 +565,68 @@
                 </t>
             </t>
         </template>
-        <!--           <report id="travel_xml_report"-->
-        <!--           string="travel_xml_report"-->
-        <!--           model="policy.travel"-->
-        <!--           report_type="qweb-xml"-->
-        <!--           name="smart_travel_agency.report_travel_docs"/>-->
-        <!--        <template id="report_travel_docs">-->
-
-        <!--                <t t-foreach="docs" t-as="o">-->
-        <!--       <MAINHEADER>-->
-        <!--           <POLICY >-->
-        <!--                   <IssueDate t-esc="o.issue_date"/>-->
-
-        <!--           </POLICY>-->
-        <!--&lt;!&ndash;           <SALEDETAILS t-foreach="dat" t-as="sales">&ndash;&gt;-->
-        <!--&lt;!&ndash;               <NUMBER t-esc="sales['sale_sequence']"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;               <AMOUNT t-esc="sales['total_amount']"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;               <SALESPERSON t-esc="sales['sales_person_name']"/>&ndash;&gt;-->
-        <!--&lt;!&ndash;           </SALEDETAILS>&ndash;&gt;-->
-        <!--       </MAINHEADER>-->
-        <!--             </t>-->
-        <!--   </template>-->
+        <report id="travel_xml_report"
+                string="travel_xml_report"
+                model="policy.travel"
+                report_type="qweb-xml"
+                menu="False"
+                name="smart_travel_agency.report_travel_docs"/>
+        <template id="report_travel_docs">
+            <Root>
+            <t t-foreach="docs" t-as="o">
+                <Policy>
+                   <PIN>123456</PIN>
+                    <Gender t-esc="o.gender"/>
+                    <FirstName t-esc="o.insured"/>
+                    <Father></Father>
+                    <Family></Family>
+                    <Dob_Day t-esc="o.DOB.day"/>
+                    <Dob_Month  t-esc="o.DOB.month"/>
+                    <Dob_Year t-esc="o.DOB.year"/>
+                    <Nationality></Nationality>
+                    <PASSPORT t-esc="o.passport_num"/>
+                    <Prof_Code></Prof_Code>
+                    <Marital></Marital>
+                    <Mobile/>
+                    <Email/>
+                    <Adr_Type>R</Adr_Type>
+                    <Adr_Line1>Beirut</Adr_Line1>
+                    <Adr_Line2></Adr_Line2>
+                    <Adr_Line3></Adr_Line3>
+                    <Adr_Phone1></Adr_Phone1>
+                    <Loc_Code></Loc_Code>
+                    <Product t-esc="o.product.product_name"/>
+                    <Policy_No t-esc="o.policy_num"/>
+                    <Agt_Code t-esc="o.broker_agent_code" />
+                    <Agt_Com  t-esc="o.broker_commission"/>
+                    <Inception t-esc="o.coverage_from"/>
+                    <Expiry t-esc="o.coverage_to"/>
+                    <Cur_Code>01</Cur_Code>
+                    <Net_Premium t-esc="o.net_premium"/>
+                    <CHARGES>0.84</CHARGES>
+                    <Policy_Cost>5</Policy_Cost>
+                    <Tax>3.96</Tax>
+                    <Stamps>2.2</Stamps>
+                    <Fixed_Stamps>3</Fixed_Stamps>
+                    <TOTAL_Premium t-esc="o.gross_premium"/>
+                    <COVERAREA t-field="o.geographical_coverage"/>
+                    <COVERTYPE>01</COVERTYPE>
+                    <COVERDURATION t-field="o.duration"/>
+                    <COVERDESTINATION />
+                    <CPNAME></CPNAME>
+                    <CPAddress></CPAddress>
+                    <CPPHONE></CPPHONE>
+                    <CPMobile></CPMobile>
+                    <NBR_INSUREDS />
+                </Policy>
+                <!--           <SALEDETAILS t-foreach="dat" t-as="sales">-->
+                <!--               <NUMBER t-esc="sales['sale_sequence']"/>-->
+                <!--               <AMOUNT t-esc="sales['total_amount']"/>-->
+                <!--               <SALESPERSON t-esc="sales['sales_person_name']"/>-->
+                <!--           </SALEDETAILS>-->
+                <!--                </MAINHEADER>-->
+            </t>
+            </Root>
+        </template>
     </data>
 </odoo>
