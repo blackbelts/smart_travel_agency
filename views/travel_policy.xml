@@ -93,7 +93,7 @@
                         <group>
                             <field name="product"/>
                             <field name="package" attrs="{'readonly': [('state', '=','approved')]}"/>
-                            <field name="type"/>
+<!--                            <field name="type"/>-->
                             <field name="issue_date" readonly="1" force_save="1"/>
 <!--                            <field name="special_beneifts" widget="many2many_tags"/>-->
                         </group>
