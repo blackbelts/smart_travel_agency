@@ -138,7 +138,7 @@
                                     </table>
 
                                 </div>
-                                <div style="width: 32% !important; margin-top: 5px !important; float:left !important; padding-right:8px;">
+                                <div style="width: 32.5% !important; margin-top: 5px !important; float:left !important; padding-right:8px;">
                                     <table class="table table-hover">
 
                                         <tr>
@@ -147,7 +147,7 @@
                                         </tr>
                                     </table>
                                 </div>
-                                <div style="width: 32% !important; float:left !important; padding-right:8px; margin-top: 5px !important;">
+                                <div style="width: 32.5% !important; float:left !important; padding-right:8px; margin-top: 5px !important;">
                                     <table class="table table-hover">
 
                                         <tr>
@@ -159,7 +159,7 @@
                                         </tr>
                                     </table>
                                 </div>
-                                <div style="width: 32% !important; float:left !important; margin-top: 5px !important;">
+                                <div style="width: 32.5% !important; float:left !important; margin-top: 5px !important;">
                                     <table class="table table-hover">
                                         <tr>
                                             <th style="width:50% !important;" scope="col">Policy Period</th>
