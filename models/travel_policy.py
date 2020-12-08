@@ -67,7 +67,7 @@ class TravelPolicy(models.Model):
     gender = fields.Selection([('M', 'Male'), ('F', 'Female')])
     trip_from = fields.Many2one('res.country', 'Trip From')
     trip_to = fields.Many2one('res.country', 'Trip To')
-    coverage_from = fields.Date('From', default=lambda self:fields.datetime.today())
+    coverage_from = fields.Date('From', default=lambda self:(datetime.now() + timedelta(days=(1))))
     coverage_to = fields.Date('To')
     days = fields.Integer('Day(s)',compute='compute_days',store='True')
     geographical_coverage = fields.Selection([('zone 1', 'Europe'),
