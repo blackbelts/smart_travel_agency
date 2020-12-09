@@ -14,7 +14,7 @@ class AgentUsersWizard(models.TransientModel):
 
     # @api.multi
     def generate_users(self):
-        self.env['res.users'].create({'name': self.name, 'login': 'test','password':self.password,
+        self.env['res.users'].create({'name': self.name, 'login': self.name,'password':self.password,
                                       'sel_groups_1_8_9' : '1','in_group_17': True})
             #                           'groups_id': [
             # self.env['res.groups'].search([('name', '=', 'User: All Agency Documents')]).id]})
