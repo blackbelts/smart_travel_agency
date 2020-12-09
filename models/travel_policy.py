@@ -115,13 +115,15 @@ class TravelPolicy(models.Model):
 
 
     def computeAgency(self):
-        if self.env.user.travel_agency != False:
-            self.travel_agency = self.create_uid.travel_agency.id
+        for rec in self:
+            if rec.env.user.travel_agency != False:
+                rec.travel_agency = rec.create_uid.travel_agency.id
 
 
     def compute_branch(self):
-        if self.env.user.travel_agency_branch != False:
-            self.travel_agency_branch = self.create_uid.travel_agency_branch.id
+        for rec in self:
+            if rec.env.user.travel_agency_branch != False:
+                rec.travel_agency_branch = rec.create_uid.travel_agency_branch.id
 
     def test(self):
         self.send_mail_template('AhmedNourElhalaby@gmail.com')
