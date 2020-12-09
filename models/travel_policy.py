@@ -116,13 +116,13 @@ class TravelPolicy(models.Model):
 
     def computeAgency(self):
         for rec in self:
-            if rec.env.user.travel_agency != False:
+            if rec.create_uid.travel_agency != False:
                 rec.travel_agency = rec.create_uid.travel_agency.id
 
 
     def compute_branch(self):
         for rec in self:
-            if rec.env.user.travel_agency_branch != False:
+            if rec.create_uid.travel_agency_branch != False:
                 rec.travel_agency_branch = rec.create_uid.travel_agency_branch.id
 
     def test(self):
