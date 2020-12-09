@@ -72,7 +72,7 @@
         <field name="arch" type="xml">
             <form string="Travel Agency">
                 <header>
-                    <button name="create_agency_user" string="Create User" type="object"
+                    <button name="create_agency_user" string="Create Agency Manger" type="object"
                             class="oe_highlight" attrs="{'invisible': [('user', '=', True)]}" />
                 </header>
                 <sheet>
@@ -137,7 +137,7 @@
                                     <field name="phone"/>
                                     <field name="mobile"/>
                                     <button name="create_branch_user" type="object"
-                                            string="Create User" class="oe_highlight"/>
+                                            string="Create Branch User" class="oe_highlight"/>
                                     <field name="users" widget="many2many_tags"/>
                                 </tree>
                             </field>
