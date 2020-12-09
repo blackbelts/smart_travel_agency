@@ -117,9 +117,9 @@ class TravelPolicy(models.Model):
         if self.create_uid.travel_agency:
             self.travel_agency = self.create_uid.travel_agency.id
 
-    def compute_branch(self):
-        if self.create_uid.travel_agency_branch:
-            self.travel_agency_branch = self.create_uid.travel_agency_branch.id
+    # def compute_branch(self):
+    #     if self.create_uid.travel_agency_branch:
+    #         self.travel_agency_branch = self.create_uid.travel_agency_branch.id
 
     def test(self):
         self.send_mail_template('AhmedNourElhalaby@gmail.com')
