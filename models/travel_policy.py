@@ -90,7 +90,7 @@ class TravelPolicy(models.Model):
     issue_fees = fields.Float('Issue Fees',)
     gross_premium = fields.Float('Gross Premium')
     # travel_agent = fields.Many2one('travel.agency', 'Travel Agency',force_save="1")
-    travel_agency = fields.Many2one('travel.agency', 'Travel Agency', related='travel_agency_branch.travel_agency',store=True, force_save="1"
+    travel_agency = fields.Many2one('travel.agency', 'Travel Agency', compute='compute_agency',store=True, force_save="1"
                                     )
     travel_agency_branch = fields.Many2one('agency.branch', 'Agency Branch',
                                            domain="[('travel_agency','=',travel_agency)]",
@@ -113,6 +113,9 @@ class TravelPolicy(models.Model):
     country = fields.Many2one('res.country', 'Destination')
 
 
+    def compute_agency(self):
+        if self.create_uid.travel_agency:
+            self.travel_agency = self.create_uid.travel_agency
     def test(self):
         self.send_mail_template('AhmedNourElhalaby@gmail.com')
 
