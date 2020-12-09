@@ -114,9 +114,9 @@
                             <field name="user_id" invisible="1"  force_save="1" />
                             <field name="broker" groups="smart_travel_agency.all_agencies_group,smart_travel_agency.head_office_group"  />
                             <field name="broker_agent_code" groups="smart_travel_agency.all_agencies_group,smart_travel_agency.head_office_group"  />
-                            <field name="travel_agency" readonly="0" force_save="1" />
+                            <field name="travel_agency" readonly="1" force_save="1" />
                             <br/>
-                            <field name="travel_agency_branch" readonly="0"  force_save="1"/>
+                            <field name="travel_agency_branch" readonly="1"  force_save="1"/>
                             <field name="DOB"  required="1" attrs="{'readonly': [('state', '=','approved')]}"/>
                             <field name="age"/>
                             <field name="gender" attrs="{'readonly': [('state', '=','approved')]}"/>
