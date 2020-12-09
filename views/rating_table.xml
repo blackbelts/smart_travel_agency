@@ -380,30 +380,6 @@
             </tree>
         </field>
     </record>
-<!--    <record id="users_form_inherit" model="ir.ui.view">-->
-<!--        <field name="name">Users</field>-->
-<!--        <field name="model">res.users</field>-->
-<!--&lt;!&ndash;        <field name="mode">primary</field>&ndash;&gt;-->
-<!--&lt;!&ndash;        <field name="priority" eval="500"/>&ndash;&gt;-->
-<!--        <field name="inherit_id" ref="base.view_users_form"/>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <form>-->
-<!--&lt;!&ndash;                <header>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <button name="" string="Reset Password" type="object"&ndash;&gt;-->
-<!--&lt;!&ndash;                            class="oe_highlight" />&ndash;&gt;-->
-<!--&lt;!&ndash;                </header>&ndash;&gt;-->
-<!--                <sheet>-->
-<!--                    <group>-->
-<!--                        <field name="name"/>-->
-<!--                        <field name="login" string="User Name"/>-->
-<!--&lt;!&ndash;                        <field name="reset_mail"/>&ndash;&gt;-->
-
-<!--                    </group>-->
-
-<!--                </sheet>-->
-<!--            </form>-->
-<!--        </field>-->
-<!--    </record>-->
     <record id="travel_users1" model="ir.actions.act_window">
         <field name="name">Users</field>
         <field name="res_model">res.users</field>
