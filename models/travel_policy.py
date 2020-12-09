@@ -31,8 +31,14 @@ class TravelPolicy(models.Model):
             vals['policy_num'] = 'THO' + str(serial_no)
             return super(TravelPolicy, self).create(vals)
         else:
+            if self.env.user.travel_agency:
+                vals['travel_agency'] = self.env.user.travel_agency.id
+            if self.create_uid.travel_agency:
+                vals['travel_agency'] = self.create_uid.travel_agency.id
             vals['policy_num'] = 'TAS' + str(serial_no)
             return super(TravelPolicy, self).create(vals)
+
+
 
 
     product = fields.Many2one('insurance.product', string='Product', domain="[('line_of_bus.line_of_business','=','Travel')]")
