@@ -7,16 +7,16 @@ from odoo import api, fields, models
 
 class AgentUsersWizard(models.TransientModel):
     _inherit = 'person.user.wizard'
-    name = fields.Char('Name')
-    username = fields.Char('User Name')
-    password = fields.Char('Password')
+
     branch=fields.Boolean(default=False)
     travel_agency = fields.Many2one('travel.agency', 'Travel Agency')
     travel_agency_branch = fields.Many2one('agency.branch', 'Agency Branch')
 
     # @api.multi
     def generate_users(self):
-        self.env['res.users'].create({'name': self.name, 'login': self.name,'password':self.password,
+
+        self.env['res.users'].create({'name': self.name, 'state': 'active', 'active': True, 'email': self.name,
+                                      'login': self.name,'password':self.password,
                                       'sel_groups_1_8_9' : '1','in_group_17': True})
             #                           'groups_id': [
             # self.env['res.groups'].search([('name', '=', 'User: All Agency Documents')]).id]})
