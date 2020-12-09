@@ -289,7 +289,7 @@
                                             <tr>
                                                 <td style="text-transform: uppercase !important;"><t t-esc="o.insured " /></td>
                                                 <td><t t-esc="o.gender " /></td>
-                                                <td><t t-esc="o.DOB" /></td>
+                                                <td><t t-esc="o.DOB.strftime('%d-%m-%Y')" /></td>
                                                 <td><t t-esc="o.age" /></td>
                                                 <td><t t-esc="o.passport_num " /></td>
                                                 <!--                                                <td t-if="o.package == 'family'"></td>-->
@@ -583,7 +583,7 @@
                                                 <tr t-foreach='o.family_age' t-as="f">
                                                     <td style="text-transform: uppercase !important;"><t t-esc="f.name"/></td>
                                                     <td><t t-esc="f.gender"/></td>
-                                                    <td><t t-esc="f.DOB"/></td>
+                                                    <td><t t-esc="f.DOB.strftime('%d-%m-%Y')"/></td>
                                                     <td><t t-esc="f.age"/></td>
                                                     <td><t t-esc="f.pass_num"/></td>
                                                     <td><t t-esc="f.type" /></td>
