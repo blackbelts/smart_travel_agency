@@ -73,8 +73,7 @@
             <form string="Travel Agency">
                 <header>
                     <button name="create_agency_user" string="Create User" type="object"
-                            class="oe_highlight" />
-<!--                    attrs="{'invisible': [('user', '=', True)]}"-->
+                            class="oe_highlight" attrs="{'invisible': [('user', '=', True)]}" />
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">

@@ -85,7 +85,7 @@ class TravelAgency(models.Model):
                 'type': 'ir.actions.act_window',
                 'target': 'new',
 
-                'context': {'default_name': self.name,
+                'context': {'default_name': self.name,'default_user_type':'agency',
                             'default_username': self.name,'default_travel_agency':self.id}
 
             }
@@ -118,7 +118,7 @@ class AgencyBranch(models.Model):
             'target': 'new',
 
             'context': {'default_branch': True,'default_travel_agency_branch':self.id,'default_travel_agency':self.travel_agency.id,
-                        'user_type':'agency'}
+                        'default_user_type':'agency'}
 
         }
 
