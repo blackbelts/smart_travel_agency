@@ -91,10 +91,11 @@ class TravelPolicy(models.Model):
     gross_premium = fields.Float('Gross Premium')
     # travel_agent = fields.Many2one('travel.agency', 'Travel Agency',force_save="1")
     travel_agency = fields.Many2one('travel.agency', 'Travel Agency',store=True, force_save="1"
-                                    )
+                                    ,compute="compute_agency")
     travel_agency_branch = fields.Many2one('agency.branch', 'Agency Branch',
                                            domain="[('travel_agency','=',travel_agency)]",
-                                            readonly=True)
+                                            readonly=True
+                                           ,compute="compute_branch")
     user_id = fields.Many2one('res.users', 'User Name', index=True, track_visibility='onchange',
                               default=lambda self: self.env.user, readonly=True)
     duration=fields.Selection('_get_periods',string='Duration',store=True)
@@ -112,10 +113,15 @@ class TravelPolicy(models.Model):
     price_details = fields.Boolean('Show Price Details In Policy', default=False)
     country = fields.Many2one('res.country', 'Destination')
 
-    @api.onchange('duration')
+
     def compute_agency(self):
-        # if self.user_id.travel_agency:
+        if self.self.env.user.travel_agency:
             self.travel_agency = self.create_uid.travel_agency.id
+
+
+    def compute_branch(self):
+        if self.self.env.user.travel_agency_branch:
+            self.travel_agency_branch = self.create_uid.travel_agency_branch.id
 
     def test(self):
         self.send_mail_template('AhmedNourElhalaby@gmail.com')
