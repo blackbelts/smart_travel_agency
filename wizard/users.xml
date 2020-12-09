@@ -9,7 +9,9 @@
 
                             <field name="travel_agency_branch" readonly="1" force_save="1" attrs="{'invisible': ['|',('branch', '!=', True),('user_type', '=', 'person')]}"/>
                             <field name="travel_agency" readonly="1" force_save="1" attrs="{'invisible': ['|',('branch', '!=', True),('user_type', '=', 'person')]}"/>
-                            <field name="branch" invisible="1"/>
+                            <field name="user_type" />
+<!--                        <field name="branch"/>-->
+                            <field name="branch"/>
                   </xpath>
             <xpath expr="//footer" position="inside">
 
