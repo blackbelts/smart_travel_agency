@@ -93,7 +93,6 @@ class TravelPolicy(models.Model):
                                     )
     travel_agency_branch = fields.Many2one('agency.branch', 'Agency Branch',
                                            domain="[('travel_agency','=',travel_agency)]",
-                                           compute='compute_branch',
                                            force_save="1",
                                             readonly=True)
     user_id = fields.Many2one('res.users', 'User Name', index=True, track_visibility='onchange',
