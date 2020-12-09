@@ -112,6 +112,9 @@ class TravelPolicy(models.Model):
     def test(self):
         self.send_mail_template('AhmedNourElhalaby@gmail.com')
 
+    def check_soucre(self):
+        return self.create_uid.has_group('smart_travel_agency.head_office_group')
+
     def _get_periods(self):
         #you Must Change
         options = []
@@ -281,6 +284,8 @@ class TravelPolicy(models.Model):
                                     result['pro_stamp'] = rec.proportional_stamp *(record.currency_id.rate)
                                     result['dimensional_stamp'] = rec.dimensional_stamp *(record.currency_id.rate)
                                     result['supervisory_stamp'] = rec.supervisory_stamp *(record.currency_id.rate)
+                                    result['policy_holder_fees'] = rec.policy_holder_fees
+                                    result['policy_approval_fees'] = rec.policy_approval_fees
                                     # self.issue_fees = record.issue_fees
                                     fra,result['gross'] = math.modf(rec.gross_premium *(record.currency_id.rate))
                                     # result['oldgross']=result['gross']
@@ -341,6 +346,8 @@ class TravelPolicy(models.Model):
                             result['pro_stamp'] = record.proportional_stamp *(rec.currency_id.rate)
                             result['dimensional_stamp'] = record.dimensional_stamp *(rec.currency_id.rate)
                             result['supervisory_stamp'] = record.supervisory_stamp*(rec.currency_id.rate)
+                            result['policy_holder_fees'] = rec.policy_holder_fees
+                            result['policy_approval_fees'] = rec.policy_approval_fees
                             # self.issue_fees = record.issue_fees
                             fra,result['gross'] = math.modf(record.gross_premium *(rec.currency_id.rate))
                             result['issue_fees'] = (record.issue_fees * (rec.currency_id.rate)) + (1 - fra)
@@ -357,6 +364,8 @@ class TravelPolicy(models.Model):
                    result['supervisory_stamp'] = (record.get('supervisory_stamp') *.5)+result.get('supervisory_stamp')
                    result['issue_fees'] = (record.get('issue_fees') *.5)+result.get('issue_fees')
                    result['gross'] = (record.get('gross') *.5)+result.get('gross')
+                   result['policy_holder_fees'] = record.get('policy_holder_fees') +result.get('policy_holder_fees')
+                   result['policy_approval_fees'] = record.get('policy_approval_fees') +result.get('policy_approval_fees')
                    print(fra)
                    print('kid')
                    print(record)
