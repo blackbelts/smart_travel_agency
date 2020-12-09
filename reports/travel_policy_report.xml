@@ -104,7 +104,7 @@
 
                                         <tr>
                                             <th scope="col">Policy Number</th>
-                                            <td><t t-esc="o.policy_num + '/'+ datetime.now().month + '/' +datetime.now().year" /></td>
+                                            <td><t t-esc="o.policy_num + '/' + datetime.datetime.now().month + '/' + datetime.datetime.now().year" /></td>
                                         </tr>
                                         <!--                                            <tr>-->
                                         <!--                                                <th scope="col">gross policy premiums</th>-->
