@@ -7,6 +7,9 @@ from odoo import api, fields, models
 
 class AgentUsersWizard(models.TransientModel):
     _inherit = 'person.user.wizard'
+    name = fields.Char('Name')
+    username = fields.Char('User Name')
+    password = fields.Char('Password')
     branch=fields.Boolean(default=False)
     travel_agency = fields.Many2one('travel.agency', 'Travel Agency')
     travel_agency_branch = fields.Many2one('agency.branch', 'Agency Branch')

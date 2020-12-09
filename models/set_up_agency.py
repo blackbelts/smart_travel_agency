@@ -79,7 +79,7 @@ class TravelAgency(models.Model):
                 'name': ('Users'),
                 'view_type': 'form',
                 'view_mode': 'form',
-                'res_model': 'agent.user.wizard',
+                'res_model': 'person.user.wizard',
                 # 'view_id': [(self.env.ref('smart_claim.tree_insurance_claim').id), 'tree'],
                 'views': [(form.id, 'form')],
                 'type': 'ir.actions.act_window',
