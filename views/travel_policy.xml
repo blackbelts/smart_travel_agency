@@ -59,7 +59,7 @@
                 <header>
 
                     <field name="state" widget="statusbar" statusbar_visible="pending,approved"/>
-                    <button name="confirm_policy" string="approved" type="object" groups="smart_travel_agency.all_agencies_group,smart_travel_agency.head_office_group"
+                    <button name="confirm_policy" string="approved" type="object"
                             class="oe_highlight"
                             attrs="{'invisible': ['|',('state', '=', 'approved'),('state', '=', 'canceled')]}"/>
                     <!--                    <button name="send_mail_template" string="send" type="object"-->
