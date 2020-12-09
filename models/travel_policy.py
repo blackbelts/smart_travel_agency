@@ -112,10 +112,10 @@ class TravelPolicy(models.Model):
     price_details = fields.Boolean('Show Price Details In Policy', default=False)
     country = fields.Many2one('res.country', 'Destination')
 
-
+    @api.onchange('duration')
     def compute_agency(self):
-        if self.create_uid.travel_agency:
-            self.travel_agency = self.create_uid.travel_agency.id
+        if self.user_id.travel_agency:
+            self.travel_agency = self.create_uid.user_id.id
     def test(self):
         self.send_mail_template('AhmedNourElhalaby@gmail.com')
 
