@@ -60,10 +60,30 @@
             <field eval="1" name="perm_read"/>
             <field eval="1" name="perm_create"/>
         </record>
+        <record id="agency_rule01" model="ir.rule">
+            <field name="name">Agency Manager</field>
+            <field ref="model_res_user" name="model_id"/>
+            <field name="domain_force">[('create_uid', '=', user.id )]</field>
+            <field name="groups" eval="[(4, ref('smart_travel_agency.agency_group'))]"/>
+            <field eval="1" name="perm_unlink"/>
+            <field eval="1" name="perm_write"/>
+            <field eval="1" name="perm_read"/>
+            <field eval="1" name="perm_create"/>
+        </record>
 
         <record id="general_manager" model="ir.rule">
             <field name="name">Travel Agency Manager</field>
             <field ref="model_policy_travel" name="model_id"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('smart_travel_agency.all_agencies_group'))]"/>
+            <field eval="1" name="perm_unlink"/>
+            <field eval="1" name="perm_write"/>
+            <field eval="1" name="perm_read"/>
+            <field eval="1" name="perm_create"/>
+        </record>
+        <record id="general_manager01" model="ir.rule">
+            <field name="name">Travel Agency Manager</field>
+            <field ref="model_res_user" name="model_id"/>
             <field name="domain_force">[(1, '=', 1)]</field>
             <field name="groups" eval="[(4, ref('smart_travel_agency.all_agencies_group'))]"/>
             <field eval="1" name="perm_unlink"/>
