@@ -381,16 +381,17 @@
                                     <!--                                    <p style="font-size: 10px; margin-top:-10px !important;"></p>-->
                                 </div>
                                 <div style="width: 50% !important; margin-top: -2px !important; float: right; text-align:end;">
-                                    <t t-if="o.source != 'Agency'">
-                                        <t t-if="o.package == 'individual'">
-                                            <p style="text-align:end; font-size: 10px;">Source : OLI</p>
-                                        </t>
-                                        <t t-if="o.package == 'family'">
-                                            <p style="text-align:end; font-size: 10px;">Source : OLF</p>
-                                        </t>
+                                    <t t-if="o.check_soucre()">
+<!--                                        <t t-if="o.package == 'individual'">-->
+                                            <p style="text-align:end; font-size: 10px;">Source : HO</p>
+<!--                                        <t t-esc="o.travel_agency.agency_code" />-->
+<!--                                        </t>-->
+<!--                                        <t t-if="o.package == 'family'">-->
+<!--                                            <p style="text-align:end; font-size: 10px;">Source : OLF</p>-->
+<!--                                        </t>-->
                                     </t>
-                                    <t t-if="o.source == 'Agency'">
-                                        <p style="text-align:end; font-size: 10px;">Source : H.O<t t-esc="o.travel_agency.agency_code" /></p>
+                                    <t t-if="o.check_soucre() == False">
+                                        <p style="text-align:end; font-size: 10px;">Source : ONLN</p>
                                     </t>
 
                                 </div>
