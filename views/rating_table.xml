@@ -190,7 +190,7 @@
     <record id="seq_agency" model="ir.sequence">
         <field name="name">Agency</field>
         <field name="code">agn</field>
-        <field name="prefix">Ag /</field>
+        <field name="prefix">Ag/</field>
         <field name="padding">4</field>
         <!--<field name="company_id" eval="False"/>-->
     </record>
