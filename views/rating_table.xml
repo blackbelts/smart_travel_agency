@@ -396,7 +396,7 @@
                     <group>
                         <field name="name"/>
                         <field name="login" string="User Name"/>
-                        <field name="reset_mail"/>
+<!--                        <field name="reset_mail"/>-->
 
                     </group>
 
