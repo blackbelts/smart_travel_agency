@@ -119,7 +119,7 @@ class TravelPolicy(models.Model):
 
     def compute_branch(self):
         if self.create_uid.travel_agency_branch:
-            self.travel_agency = self.create_uid.travel_agency_branch.id
+            self.travel_agency_branch = self.create_uid.travel_agency_branch.id
 
     def test(self):
         self.send_mail_template('AhmedNourElhalaby@gmail.com')
