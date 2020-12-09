@@ -89,7 +89,8 @@ class TravelPolicy(models.Model):
     admin_fees = fields.Float('Admin Fees', )
     issue_fees = fields.Float('Issue Fees',)
     gross_premium = fields.Float('Gross Premium')
-    travel_agency = fields.Many2one('travel.agency', 'Travel Agency', related='travel_agency_branch.travel_agency',store=True
+    # travel_agent = fields.Many2one('travel.agency', 'Travel Agency',force_save="1")
+    travel_agency = fields.Many2one('travel.agency', 'Travel Agency', related='travel_agency_branch.travel_agency',store=True, force_save="1"
                                     )
     travel_agency_branch = fields.Many2one('agency.branch', 'Agency Branch',
                                            domain="[('travel_agency','=',travel_agency)]",
@@ -201,6 +202,8 @@ class TravelPolicy(models.Model):
             #     [('zone', '=', self.geographical_coverage)])
             result={}
             kid_dob=[]
+            # if self.create
+            # self.travel_agency =
             if self.days>0 :
                 for rec in self.family_age:
                     if rec.type=='kid':
