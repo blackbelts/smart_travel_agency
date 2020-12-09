@@ -115,7 +115,7 @@ class TravelPolicy(models.Model):
 
     def compute_agency(self):
         if self.create_uid.travel_agency:
-            self.travel_agency = self.create_uid.travel_agency
+            self.travel_agency = self.create_uid.travel_agency.id
     def test(self):
         self.send_mail_template('AhmedNourElhalaby@gmail.com')
 
