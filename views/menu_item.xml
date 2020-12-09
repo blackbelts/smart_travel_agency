@@ -35,7 +35,7 @@
         <menuitem id="orders_menu" name="Orders" parent="configuration_view_menu2"
                   action="orders_action" sequence="20"/>
         <menuitem action="base.action_res_users" id="users"
-                  parent="configuration_view_menu2" sequence="1" groups="smart_travel_agency.agency_group,smart_travel_agency.all_agencies_group" />
+                  parent="travel_policy_view_menu2" sequence="5" groups="smart_travel_agency.agency_group,smart_travel_agency.all_agencies_group" />
         <menuitem id="excess_menu" name="Excess" parent="configuration_view_menu2"
                   action="excess_action" sequence="2"/>
         <menuitem id="travel_menu_id" name="Travel "
