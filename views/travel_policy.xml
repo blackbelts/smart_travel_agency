@@ -105,7 +105,7 @@
 
 
                             <field name="coverage_to" readonly="1" force_save="1"/>
-                            <field name="days" invisible="1"/>
+                            <field name="days" />
                             <field name="geographical_coverage" required="1" attrs="{'readonly': [('state', '=','approved')]}"/>
                             <field name="country" />
 
