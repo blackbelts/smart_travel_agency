@@ -144,6 +144,7 @@ class TravelPolicy(models.Model):
                 seen.append(x)
         # options = list(dict.fromkeys(options))
         for option in seen:
+            if option:
                 options_dict.append((str(option['value']),str(option['display'])))
         return options_dict
     # @api.onchange('admin_fees','gross_premium')
