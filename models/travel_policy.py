@@ -69,7 +69,7 @@ class TravelPolicy(models.Model):
     gender = fields.Selection([('M', 'Male'), ('F', 'Female')])
     trip_from = fields.Many2one('res.country', 'Trip From')
     trip_to = fields.Many2one('res.country', 'Trip To')
-    coverage_from = fields.Date('From', default=lambda self:(datetime.now() + timedelta(days=(1))))
+    coverage_from = fields.Date('From', default=lambda self:(datetime.now()))
     coverage_to = fields.Date('To')
     days = fields.Integer('Day(s)',compute='compute_days',store='True')
     geographical_coverage = fields.Selection([('zone 1', 'Europe'),
@@ -599,14 +599,10 @@ class NewModule(models.Model):
         if self.cancel_reason:
             for rec in self.env['policy.travel'].search([('id', 'in', active_ids)]):
                 if  rec.state == 'approved':
-                    rec.create(
-                        {'state': 'canceled', 'policy_num': rec.policy_num, 'issue_date': rec.issue_date,
+                    record=rec.write(
+                        {'state': 'canceled',
                          'type': 'cancel',
-                         'insured': rec.insured, 'address': rec.address, 'serial_no': rec.serial_no,
-                         'passport_num': rec.passport_num, 'DOB': rec.DOB, 'age': rec.age, 'gender': rec.gender,
-                         'coverage_from': rec.coverage_from,
-                         'geographical_coverage': rec.geographical_coverage, 'coverage_to': rec.coverage_to,
-                         'days': rec.days, 'currency_id': rec.currency_id.id, 'net_premium': (rec.net_premium*-1) ,
+                         'net_premium': (rec.net_premium*-1) ,
                          'proportional_stamp': (rec.proportional_stamp* -1), 'issue_fees': (rec.issue_fees*-1),
                          'dimensional_stamp': (rec.dimensional_stamp*-1), 'gross_premium': (rec.gross_premium*-1),
                          'supervisory_stamp': (rec.supervisory_stamp*-1), 'travel_agency': rec.travel_agency.id,
@@ -614,7 +610,6 @@ class NewModule(models.Model):
                          'travel_agency_comm': (rec.travel_agency_comm*-1), 'net_to_insurer': (rec.net_to_insurer * -1),
                          'cancel_reason': self.cancel_reason,
                          'is_editable': False, 'is_canceled': True})
-                    rec.write({'is_canceled': True})
                 else:
                     raise UserError((
                         'This Policy is Approved or Canceled!'))

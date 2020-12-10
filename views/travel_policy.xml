@@ -223,27 +223,27 @@
         </field>
     </record>
 
-    <!--    <act_window id="action_cancel"-->
-    <!--                multi="True"-->
-    <!--                key2="client_action_multi" name="Cancel Policy"-->
-    <!--                res_model="cancel.policy" src_model="policy.travel"-->
-    <!--                view_mode="form" target="new" view_type="form"/>-->
+        <act_window id="action_cancel"
+                    multi="True"
+                    key2="client_action_multi" name="Cancel Policy"
+                    res_model="cancel.policy" src_model="policy.travel"
+                    view_mode="form" target="new" view_type="form"/>
 
-    <record id="front_view" model="ir.ui.view">
-        <field name="name">Cancel Policy</field>
-        <field name="model">travel.front</field>
-        <field name="arch" type="xml">
-            <form>
+<!--    <record id="front_view" model="ir.ui.view">-->
+<!--        <field name="name">Cancel Policy</field>-->
+<!--        <field name="model">travel.front</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form>-->
 
-                <button string="Confirm" name="create_test" type="object" default_focus="1" class="btn-primary"/>
-                <footer>
-                    <!--                        <button string="Print Authorization" name="print_authorization" type="object" />-->
-                    <button string="Cancel" class="btn-default" special="cancel"/>
-                </footer>
-            </form>
+<!--                <button string="Confirm" name="create_test" type="object" default_focus="1" class="btn-primary"/>-->
+<!--                <footer>-->
+<!--                    &lt;!&ndash;                        <button string="Print Authorization" name="print_authorization" type="object" />&ndash;&gt;-->
+<!--                    <button string="Cancel" class="btn-default" special="cancel"/>-->
+<!--                </footer>-->
+<!--            </form>-->
 
-        </field>
-    </record>
+<!--        </field>-->
+<!--    </record>-->
     <record id="action_cancel" model="ir.actions.act_window">
         <field name="name">Policy Cancel</field>
         <field name="res_model">travel.front</field>
