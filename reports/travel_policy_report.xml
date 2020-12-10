@@ -179,7 +179,9 @@
 <!--                                        </tr>-->
 <!--                                    </table>-->
                                 </div>
-
+                                <div t-if="o.days > 60">
+                                    <span style="font-size: 10px;">Period Of coverage : 6 months (Max. per stay 90 days)</span>
+                                </div>
 
                                 <!--                                            <tr t-if="o.source == 'Agency'" >-->
                                 <!--                                                <th style="border: none !important; padding-bottom: 50px !important;" scope="col">Source</th>-->
