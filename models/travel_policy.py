@@ -470,7 +470,6 @@ class TravelPolicy(models.Model):
         period = (to - when).days
         return period
 
-    @api.model
     @api.constrains('coverage_from')
     def _check_date(self):
         if self.coverage_from:
