@@ -244,14 +244,14 @@
 
 <!--        </field>-->
 <!--    </record>-->
-<!--    <record id="action_cancel" model="ir.actions.act_window">-->
-<!--        <field name="name">Policy Cancel</field>-->
-<!--        <field name="res_model">travel.front</field>-->
-<!--        <field name="view_mode">form</field>-->
-<!--        &lt;!&ndash;        <field name="view_id" ref="import_image_view_form"/>&ndash;&gt;-->
-<!--        <field name="target">new</field>-->
-<!--        <field name="binding_model_id" ref="smart_travel_agency.model_policy_travel" />-->
-<!--    </record>-->
+    <record id="action_cancel" model="ir.actions.act_window">
+        <field name="name">Policy Cancel</field>
+        <field name="res_model">travel.front</field>
+        <field name="view_mode">form</field>
+        <!--        <field name="view_id" ref="import_image_view_form"/>-->
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="smart_travel_agency.model_policy_travel" />
+    </record>
 
     <!--    <act_window id="action_cancel"-->
     <!--                 name="front Policy"-->
