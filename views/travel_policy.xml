@@ -223,11 +223,11 @@
         </field>
     </record>
 
-        <act_window id="action_cancel"
-                    multi="True"
-                    key2="client_action_multi" name="Cancel Policy"
-                    res_model="cancel.policy" src_model="policy.travel"
-                    view_mode="form" target="new" view_type="form"/>
+    <!--    <act_window id="action_cancel"-->
+    <!--                multi="True"-->
+    <!--                key2="client_action_multi" name="Cancel Policy"-->
+    <!--                res_model="cancel.policy" src_model="policy.travel"-->
+    <!--                view_mode="form" target="new" view_type="form"/>-->
 
     <record id="front_view" model="ir.ui.view">
         <field name="name">Cancel Policy</field>
