@@ -215,7 +215,7 @@ class TravelPolicy(models.Model):
         return self.env.ref('smart_travel_agency.travel_xml_report').report_action(self)
 
     def get_financial_data(self):
-        if self.age and self.geographical_coverage and self.days and self.product:
+        if self.age and self.geographical_coverage and self.days:
             # data = self.env['travel.price'].search(
             #     [('zone', '=', self.geographical_coverage)])
             result={}
