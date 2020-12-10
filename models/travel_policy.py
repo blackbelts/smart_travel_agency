@@ -137,10 +137,14 @@ class TravelPolicy(models.Model):
         options_dict = []
         data = self.env['travel.price.line'].search([])
         for option in data:
-            options.append(option.period)
-        options = list(dict.fromkeys(options))
-        for option in options:
-                options_dict.append((str(option),str(option)+' Days'))
+            options.append({'value':option.period, 'display': option.dispaly_period})
+        seen = []
+        for x in options:
+            if x not in seen:
+                seen.append(x)
+        # options = list(dict.fromkeys(options))
+        for option in seen:
+                options_dict.append((str(option['value']),str(option['display'])))
         return options_dict
     # @api.onchange('admin_fees','gross_premium')
     # def get_new_gross(self):
