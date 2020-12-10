@@ -159,7 +159,7 @@
                                     <field name="policy_approval_fees" readonly="1" force_save="1"/>
                                     <field name="policy_holder_fees" readonly="1" force_save="1"/>
                                     <field name="issue_fees" readonly="1" force_save="1"/>
-                                    <field name="admin_fees" />
+                                    <field name="admin_fees" groups="smart_travel_agency.branch_group,smart_travel_agency.agency_group,smart_travel_agency.all_agencies_group"/>
                                     <field name="gross_premium" readonly="1" force_save="1"/>
                                 </group>
                             </group>

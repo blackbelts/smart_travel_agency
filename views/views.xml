@@ -1,4 +1,4 @@
-+<odoo>
+<odoo>
 <!--    <data>-->
         <record model="ir.ui.view" id="form_serial_available">
             <field name="name">form.serial.available</field>
