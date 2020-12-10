@@ -91,10 +91,10 @@ class TravelPolicy(models.Model):
     gross_premium = fields.Float('Gross Premium')
     # travel_agent = fields.Many2one('travel.agency', 'Travel Agency',force_save="1")
     travel_agency = fields.Many2one('travel.agency', 'Travel Agency', force_save="1"
-                                    ,compute="computeAgency")
+                                    ,compute="computeAgency",  store=True)
     travel_agency_branch = fields.Many2one('agency.branch', 'Agency Branch',
                                            domain="[('travel_agency','=',travel_agency)]",
-                                            readonly=True
+                                            readonly=True,  store=True
                                            ,compute="compute_branch")
     user_id = fields.Many2one('res.users', 'User Name', index=True, track_visibility='onchange',
                               default=lambda self: self.env.user, readonly=True)
