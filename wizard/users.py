@@ -14,7 +14,7 @@ class AgentUsersWizard(models.TransientModel):
 
     # @api.multi
     def generate_users(self):
-        self.env['res.users'].create({'name': self.name, 'login': self.name,'password':self.password,
+        self.env['res.users'].create({'name': self.name, 'login': self.username,'password':self.password,
                                       'sel_groups_1_8_9' : '1','in_group_17': True})
             #                           'groups_id': [
             # self.env['res.groups'].search([('name', '=', 'User: All Agency Documents')]).id]})
@@ -22,7 +22,7 @@ class AgentUsersWizard(models.TransientModel):
     # @api.multi
     def generate_branch_users(self):
         self.env['res.users'].create({'name': self.name,
-                                      'login': self.name,
+                                      'login': self.username,
                                       'travel_agency_branch':self.travel_agency_branch.id,'travel_agency':self.travel_agency.id,
                                       'password': self.password,'sel_groups_1_8_9' : '1','in_group_16': True})
         self.travel_agency_branch.write({'user_name': self.name})
