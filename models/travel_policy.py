@@ -113,13 +113,13 @@ class TravelPolicy(models.Model):
     price_details = fields.Boolean('Show Price Details In Policy', default=False)
     country = fields.Many2one('res.country', 'Destination')
 
-
+    @api.depends('create_uid')
     def computeAgency(self):
         for rec in self:
             if rec.create_uid.travel_agency != False:
                 rec.travel_agency = rec.create_uid.travel_agency.id
 
-
+    @api.depends('create_uid')
     def compute_branch(self):
         for rec in self:
             if rec.create_uid.travel_agency_branch != False:
