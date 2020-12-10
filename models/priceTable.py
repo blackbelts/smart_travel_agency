@@ -27,6 +27,7 @@ class PriceTable(models.Model):
     _name = 'travel.price.line'
 
     period = fields.Integer('Period')
+    dispaly_period = fields.Char('Display Period')
     issue_fees = fields.Float('Issue Fees')
     net_premium = fields.Float('Net Premium')
     proportional_stamp = fields.Float('Proportional Stamp')

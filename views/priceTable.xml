@@ -24,6 +24,7 @@
                             <field name="price_lines">
                                 <tree editable="bottom">
                                     <field name="period"/>
+                                    <field name="dispaly_period"/>
                                     <field name="net_premium"/>
                                     <field name="proportional_stamp"/>
                                     <field name="dimensional_stamp"/>
