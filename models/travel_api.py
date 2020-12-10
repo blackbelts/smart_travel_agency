@@ -58,10 +58,13 @@ class Travelapi(models.Model):
         #                                              ('price_id.from_age', '=', 0.00)])
         data = self.env['travel.price.line'].search([])
         for option in data:
-            options.append(option.period)
-        options = list(dict.fromkeys(options))
+            options.append({'value':option.period, 'display': option.dispaly_period})
+        seen = []
+        for x in options:
+            if x not in seen:
+                seen.append(x)
         print(options)
-        return options
+        return seen
 
     @api.model
     def create_travel_ticket(self, data):
