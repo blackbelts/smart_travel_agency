@@ -25,5 +25,6 @@ class AgentUsersWizard(models.TransientModel):
                                       'login': self.name,
                                       'travel_agency_branch':self.travel_agency_branch.id,'travel_agency':self.travel_agency.id,
                                       'password': self.password,'sel_groups_1_8_9' : '1','in_group_16': True})
+        self.travel_agency_branch.write({'user_name': self.name})
             #                           'groups_id': [
             # self.env['res.groups'].search([('name', '=', 'User: Own Documents')]).id]})

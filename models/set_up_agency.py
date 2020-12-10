@@ -97,6 +97,7 @@ class AgencyBranch(models.Model):
     users=fields.One2many('res.users','travel_agency_branch',)
     name = fields.Char('Branch Name', required=True)
     travel_agency = fields.Many2one('travel.agency', 'Travel Agency',required=True)
+    user_name = fields.Char('User Name', readonly=True, force_save=True)
     address = fields.Char('Address')
     email = fields.Char('Email')
     phone = fields.Char('Phone Number')
