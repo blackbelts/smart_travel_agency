@@ -370,8 +370,8 @@ class TravelPolicy(models.Model):
                             result['pro_stamp'] = record.proportional_stamp *(rec.currency_id.rate)
                             result['dimensional_stamp'] = record.dimensional_stamp *(rec.currency_id.rate)
                             result['supervisory_stamp'] = record.supervisory_stamp*(rec.currency_id.rate)
-                            result['policy_holder_fees'] = rec.policy_holder_fees
-                            result['policy_approval_fees'] = rec.policy_approval_fees
+                            result['policy_holder_fees'] = record.policy_holder_fees
+                            result['policy_approval_fees'] = record.policy_approval_fees
                             # self.issue_fees = record.issue_fees
                             fra,result['gross'] = math.modf(record.gross_premium *(rec.currency_id.rate))
                             result['issue_fees'] = (record.issue_fees * (rec.currency_id.rate)) + (1 - fra)

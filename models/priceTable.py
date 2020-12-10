@@ -3,7 +3,7 @@ from odoo import models, tools, fields, api
 class PriceTable(models.Model):
     _name = 'travel.price'
     _description = 'Set up Price tables'
-    product = fields.Many2one('insurance.product', string='Product')
+    product = fields.Many2one('insurance.product', string='Product', domain="[('line_of_bus.line_of_business', '=', 'Travel')]")
 
     package = fields.Selection([('individual', 'Individual'),
                              ('family', 'Family'),],
