@@ -179,8 +179,8 @@
 <!--                                        </tr>-->
 <!--                                    </table>-->
                                 </div>
-                                <div t-if="o.days > 60">
-                                    <span style="font-size: 10px;">Period Of coverage : 6 months (Max. per stay 90 days)</span>
+                                <div style="float:left !important; width:100%;" t-if="o.days > 60">
+                                    <span style="font-size: 9px;">Period Of coverage : 6 months (Max. per stay 90 days)</span>
                                 </div>
 
                                 <!--                                            <tr t-if="o.source == 'Agency'" >-->
@@ -324,8 +324,8 @@
                                             <t t-foreach="o.get_benefits() " t-as="ben">
                                                 <tr t-if="ben.special_covers == False">
                                                     <!--                                                    <t t-if="o.package == 'individual'">-->
-                                                    <td style="font-size: 10px !important;"><t t-esc="ben.cover" /></td>
-                                                    <td style="font-size: 10px !important;"><t t-esc="ben.limit" /></td>
+                                                    <td style="font-size: 9px !important;"><t t-esc="ben.cover" /></td>
+                                                    <td style="font-size: 9px !important;"><t t-esc="ben.limit" /></td>
                                                     <!--                                                    </t>-->
                                                     <!--                                                    <t t-if="o.package == 'family'">-->
                                                     <!--                                                        <td style="font-size: 9px !important;"><t t-esc="ben.cover" /></td>-->
@@ -361,7 +361,7 @@
                                 <!--                                            </t>-->
                                 <div style="width: 50% !important; margin-top: -8px !important; float: left; white-space: nowrap !important;">
                                     <!--                                    <t t-if="o.package == 'individual'">-->
-                                    <ul style="padding-left:15px;font-size: 11px;">
+                                    <ul style="padding-left:15px;font-size: 9px;">
                                         <li>The above is subject to policy terms and conditions as attached.</li>
                                         <li t-if="o.source != 'Agency'">Policy issued online doesn't need insured signature.</li>
                                         <li>(*) Excess applies.</li>
