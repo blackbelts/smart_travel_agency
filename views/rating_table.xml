@@ -220,6 +220,7 @@
                     <group>
                         <field name="name"/>
                         <field name="travel_agency"/>
+                        <field name="user_name"/>
                         <field name="address"/>
                         <field name="email"/>
                         <field name="phone"/>
