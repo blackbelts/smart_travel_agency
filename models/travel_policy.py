@@ -48,7 +48,7 @@ class TravelPolicy(models.Model):
                              'Status', required=True, default='pending', copy=False)
     # country = fields.Many2one('res.country', 'Destination')
     type = fields.Selection([('issue', 'Issue'), ('cancel', 'Cancel')], readonly=True, default='issue')
-    issue_date = fields.Datetime(string='Issue Date', readonly=True, default=lambda self:fields.datetime.today())
+    issue_date = fields.Datetime(string='Issue Date', default=lambda self:fields.datetime.today())
     serial_no = fields.Integer('Serial Number')
     insured = fields.Char('Traveller Name')
     phone = fields.Char('Traveller Phone')
@@ -470,7 +470,6 @@ class TravelPolicy(models.Model):
         period = (to - when).days
         return period
 
-    @api.model
     @api.constrains('coverage_from')
     def _check_date(self):
         if self.coverage_from:
