@@ -44,7 +44,7 @@ class Travelapi(models.Model):
 
                self.env['policy.family.age'].search([('id', '=', f.id)]).get_age()
 
-        self.env['policy.travel'].search([('id', '=', policy_id.id)]).get_price_calculations()
+        self.env['policy.travel'].search([('id', '=', policy_id.id)]).get_financial_data()
         self.env['policy.travel'].search([('id', '=', policy_id.id)]).send_mail_template(data.get('mail'))
         return [policy_id.id,policy_id.policy_num]
 
