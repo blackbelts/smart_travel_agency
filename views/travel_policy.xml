@@ -105,7 +105,7 @@
 
 
                             <field name="coverage_to" readonly="1" force_save="1"/>
-                            <field name="days" invisible="1"/>
+                            <field name="days" />
                             <field name="geographical_coverage" required="1" attrs="{'readonly': [('state', '=','approved')]}"/>
                             <field name="country" />
 
@@ -223,11 +223,11 @@
         </field>
     </record>
 
-        <act_window id="action_cancel"
-                    multi="True"
-                    key2="client_action_multi" name="Cancel Policy"
-                    res_model="cancel.policy" src_model="policy.travel"
-                    view_mode="form" target="new" view_type="form"/>
+<!--        <act_window id="action_cancel"-->
+<!--                    multi="True"-->
+<!--                    key2="client_action_multi" name="Cancel Policy"-->
+<!--                    res_model="cancel.policy" src_model="policy.travel"-->
+<!--                    view_mode="form" target="new" />-->
 
 <!--    <record id="front_view" model="ir.ui.view">-->
 <!--        <field name="name">Cancel Policy</field>-->
@@ -246,7 +246,7 @@
 <!--    </record>-->
     <record id="action_cancel" model="ir.actions.act_window">
         <field name="name">Policy Cancel</field>
-        <field name="res_model">travel.front</field>
+        <field name="res_model">cancel.policy</field>
         <field name="view_mode">form</field>
         <!--        <field name="view_id" ref="import_image_view_form"/>-->
         <field name="target">new</field>
