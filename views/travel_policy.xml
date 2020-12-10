@@ -250,7 +250,7 @@
         <field name="view_mode">form</field>
         <!--        <field name="view_id" ref="import_image_view_form"/>-->
         <field name="target">new</field>
-        <field name="binding_model_id" ref="smart_travel_agency.model_cancel_policy" />
+        <field name="binding_model_id" ref="smart_travel_agency.model_policy_travel" />
     </record>
 
     <!--    <act_window id="action_cancel"-->
