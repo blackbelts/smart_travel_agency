@@ -609,7 +609,7 @@ class NewModule(models.Model):
                          'travel_agency_branch': rec.travel_agency_branch.id, 'user_id': rec.user_id.id,
                          'travel_agency_comm': (rec.travel_agency_comm*-1), 'net_to_insurer': (rec.net_to_insurer * -1),
                          'cancel_reason': self.cancel_reason,
-                         'is_editable': False, 'is_canceled': True})
+                          'is_canceled': True})
                 else:
                     raise UserError((
                         'This Policy is Approved or Canceled!'))
