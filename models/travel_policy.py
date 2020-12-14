@@ -37,7 +37,7 @@ class TravelPolicy(models.Model):
 
 
 
-    product = fields.Many2one('insurance.product', string='Product', domain="[('line_of_bus.line_of_business','=','Travel')]")
+    product = fields.Many2one('insurance.product', string='Product', default=lambda self: self.env['insurance.product'].search([('product_name', '=', 'TAS')]).id, domain="[('line_of_bus.line_of_business','=','Travel')]")
     package = fields.Selection([('individual', 'Individual'), ('family', 'Family')], 'Package For', default='individual')
 
     policy_num = fields.Char(string='Policy Number', required=True, copy=False, index=True,
