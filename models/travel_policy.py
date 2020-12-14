@@ -119,6 +119,15 @@ class TravelPolicy(models.Model):
             if rec.create_uid.travel_agency != False:
                 rec.travel_agency = rec.create_uid.travel_agency.id
 
+    def downloadTerms(self):
+        return {
+                'name': 'Download Terms&Conditions',
+                'res_model': 'ir.actions.act_url',
+                'type': 'ir.actions.act_url',
+                'target': 'new',
+                'url': 'https://online.aropeegypt.com.eg/TravelWording_General_Conditions.pdf'
+                }
+
     @api.depends('create_uid')
     def compute_branch(self):
         for rec in self:

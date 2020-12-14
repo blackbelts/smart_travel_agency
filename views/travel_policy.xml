@@ -62,6 +62,8 @@
                     <button name="confirm_policy" string="approved" type="object"
                             class="oe_highlight"
                             attrs="{'invisible': ['|',('state', '=', 'approved'),('state', '=', 'canceled')]}"/>
+                    <button name="downloadTerms" string="Download Terms and Conditions" type="object"
+                            class="oe_highlight"/>
 
                     <!--                    <button name="send_mail_template" string="send" type="object"-->
                     <!--                    class="oe_highlight"-->
