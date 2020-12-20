@@ -87,7 +87,11 @@
                     <h3>Policy Information</h3>
                     <group>
                         <group>
-                            <field name="insured"  required="1" attrs="{'readonly': [('state', '=','approved')]}"/>
+                            <field name="insured"   invisible="1"  force_save="1"/>
+                            <field name="f_name"   required="1" attrs="{'readonly': [('state', '=','approved')]}"/>
+                            <field name="s_name"   required="1" attrs="{'readonly': [('state', '=','approved')]}"/>
+                            <field name="l_name"   required="1" attrs="{'readonly': [('state', '=','approved')]}"/>
+
                             <field name="address" attrs="{'readonly': [('state', '=','approved')]}"/>
                             <field name="phone" attrs="{'readonly': [('state', '=','approved')]}"/>
                             <field name="national_id"  required="1" attrs="{'readonly': [('state', '=','approved')]}"/>

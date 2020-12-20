@@ -51,6 +51,9 @@ class TravelPolicy(models.Model):
     issue_date = fields.Datetime(string='Issue Date', default=lambda self:fields.datetime.today())
     serial_no = fields.Integer('Serial Number')
     insured = fields.Char('Traveller Name')
+    f_name = fields.Char('Traveller First Name')
+    s_name = fields.Char('Traveller Second Name')
+    l_name = fields.Char('Traveller Last Name')
     phone = fields.Char('Traveller Phone')
     order_id = fields.Many2one('orders', 'Order ID', readonly=True)
 
@@ -72,11 +75,11 @@ class TravelPolicy(models.Model):
     coverage_from = fields.Date('From', default=lambda self:(datetime.now()))
     coverage_to = fields.Date('To')
     days = fields.Integer('Day(s)',compute='compute_days',store='True')
-    geographical_coverage = fields.Selection([('zone 1', 'Europe'),
-                                              ('zone 2', 'Worldwide excluding USA & CANADA'),
-                                              ('zone 3', 'Worldwide'), ],
+    geographical_coverage = fields.Selection([('01', 'Europe'),
+                                              ('02', 'Worldwide excluding USA & CANADA'),
+                                              ('03', 'Worldwide'), ],
                                              'Zone',
-                                             default='zone 1')
+                                             default='01')
 
     currency_id = fields.Many2one("res.currency", "Currency", copy=True,
                                   default=lambda self: self.env.user.company_id.currency_id, readonly=True)
@@ -113,6 +116,15 @@ class TravelPolicy(models.Model):
     price_details = fields.Boolean('Show Price Details In Policy', default=False)
     country = fields.Many2one('res.country', 'Destination')
 
+    def get_number_of_insuerd(self):
+        family = []
+        num = 1
+        if self.package == 'individual':
+            return num
+        else:
+            for rec in self.family_age:
+                family.append(rec)
+            return num + len(family)
     @api.depends('create_uid')
     def computeAgency(self):
         for rec in self:
@@ -191,7 +203,10 @@ class TravelPolicy(models.Model):
                 age += 1
             self.age = age
 
-
+    @api.onchange('f_name', 's_name', 'l_name')
+    def get_full_name(self):
+        if self.f_name and self.s_name and self.l_name:
+            self.insured = self.f_name + ' ' + self.s_name + ' ' + self.l_name
 
     @api.onchange('coverage_from','duration')
     def get_end_date(self):
@@ -501,7 +516,7 @@ class TravelPolicy(models.Model):
     @api.model
     @api.constrains('duration','geographical_coverage')
     def _check_period(self):
-        if int(int(self.duration)/365) >2 and self.geographical_coverage !='zone 1':
+        if int(int(self.duration)/365) >2 and self.geographical_coverage !='01':
             raise exceptions.ValidationError('Duration Error For This Region')
 
     @api.constrains('national_id')

@@ -619,9 +619,9 @@
                 <Policy>
                    <PIN>123456</PIN>
                     <Gender t-esc="o.gender"/>
-                    <FirstName t-esc="o.insured"/>
-                    <Father></Father>
-                    <Family></Family>
+                    <FirstName t-esc="o.f_name"/>
+                    <Father t-esc="o.s_name"></Father>
+                    <Family t-esc="o.l_name"></Family>
                     <Dob_Day t-esc="o.DOB.day"/>
                     <Dob_Month  t-esc="o.DOB.month"/>
                     <Dob_Year t-esc="o.DOB.year"/>
@@ -638,8 +638,8 @@
                     <Adr_Phone1></Adr_Phone1>
                     <Loc_Code></Loc_Code>
                     <Product t-esc="o.product.product_name"/>
-                    <Policy_No t-esc="o.policy_num"/>
-                    <Agt_Code t-esc="o.broker_agent_code" />
+                    <Policy_No t-esc="''.join(x for x in o.policy_num if x.isdigit())"/>
+                    <Agt_Code>123</Agt_Code>
                     <Agt_Com  t-esc="o.broker_commission"/>
                     <Inception t-esc="o.coverage_from"/>
                     <Expiry t-esc="o.coverage_to"/>
@@ -653,13 +653,13 @@
                     <TOTAL_Premium t-esc="o.gross_premium"/>
                     <COVERAREA t-field="o.geographical_coverage"/>
                     <COVERTYPE>01</COVERTYPE>
-                    <COVERDURATION t-field="o.duration"/>
-                    <COVERDESTINATION />
+                    <CoverDuration t-field="o.duration"/>
+                    <CoverDestination t-field="o.country"/>
                     <CPNAME></CPNAME>
                     <CPAddress></CPAddress>
                     <CPPHONE></CPPHONE>
                     <CPMobile></CPMobile>
-                    <NBR_INSUREDS />
+                    <NBR_INSUREDS t-esc="get_number_of_insuerd()" />
                 </Policy>
                 <!--           <SALEDETAILS t-foreach="dat" t-as="sales">-->
                 <!--               <NUMBER t-esc="sales['sale_sequence']"/>-->
