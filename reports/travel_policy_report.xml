@@ -659,7 +659,7 @@
                     <CPAddress></CPAddress>
                     <CPPHONE></CPPHONE>
                     <CPMobile></CPMobile>
-                    <NBR_INSUREDS t-esc="get_number_of_insuerd()" />
+                    <NBR_INSUREDS t-esc="num_of_insured" />
                 </Policy>
                 <!--           <SALEDETAILS t-foreach="dat" t-as="sales">-->
                 <!--               <NUMBER t-esc="sales['sale_sequence']"/>-->

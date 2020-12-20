@@ -10,11 +10,11 @@ class PriceTable(models.Model):
                             'Package For',
                             default='individual')
 
-    zone = fields.Selection([('zone 1', 'Europe'),
-                                              ('zone 2', 'Worldwide excluding USA & CANADA'),
-                                              ('zone 3', 'Worldwide'), ],
+    zone = fields.Selection([('01', 'Europe'),
+                                              ('02', 'Worldwide excluding USA & CANADA'),
+                                              ('03', 'Worldwide'), ],
                                              'Zone',
-                                             default='zone 1')
+                                             default='01')
     currency_id=fields.Many2one('res.currency')
     from_age = fields.Float('From Age')
     to_age = fields.Float('To Age')

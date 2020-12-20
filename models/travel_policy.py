@@ -115,16 +115,21 @@ class TravelPolicy(models.Model):
 
     price_details = fields.Boolean('Show Price Details In Policy', default=False)
     country = fields.Many2one('res.country', 'Destination')
+    num_of_insured = fields.Integer('Number Of Insured')
 
+    @api.onchange('package', 'family_age')
     def get_number_of_insuerd(self):
-        family = []
-        num = 1
-        if self.package == 'individual':
-            return num
-        else:
-            for rec in self.family_age:
-                family.append(rec)
-            return num + len(family)
+
+        if self.package:
+            family = []
+            num = 1
+            if self.package == 'individual':
+                self.num_of_insured = num
+            else:
+                for rec in self.family_age:
+                    family.append(rec)
+                self.num_of_insured = num + len(family)
+
     @api.depends('create_uid')
     def computeAgency(self):
         for rec in self:
