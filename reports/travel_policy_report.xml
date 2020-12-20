@@ -651,7 +651,7 @@
                     <Stamps>2.2</Stamps>
                     <Fixed_Stamps>3</Fixed_Stamps>
                     <TOTAL_Premium t-esc="o.gross_premium"/>
-                    <COVERAREA t-field="o.geographical_coverage"/>
+                    <COVERAREA t-esc="o.geographical_coverage"/>
                     <COVERTYPE>01</COVERTYPE>
                     <CoverDuration t-field="o.duration"/>
                     <CoverDestination t-field="o.country"/>
