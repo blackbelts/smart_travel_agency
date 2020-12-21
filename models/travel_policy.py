@@ -117,6 +117,9 @@ class TravelPolicy(models.Model):
     country = fields.Many2one('res.country', 'Destination')
     num_of_insured = fields.Integer('Number Of Insured')
 
+    def get_duration(self):
+        return ['01']
+
     @api.onchange('package', 'family_age')
     def get_number_of_insuerd(self):
 

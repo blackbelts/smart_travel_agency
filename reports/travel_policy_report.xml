@@ -625,7 +625,7 @@
                     <Dob_Day t-esc="o.DOB.day"/>
                     <Dob_Month  t-esc="o.DOB.month"/>
                     <Dob_Year t-esc="o.DOB.year"/>
-                    <Nationality></Nationality>
+                    <Nationality>004</Nationality>
                     <PASSPORT t-esc="o.passport_num"/>
                     <Prof_Code></Prof_Code>
                     <Marital></Marital>
@@ -653,7 +653,9 @@
                     <TOTAL_Premium t-esc="o.gross_premium"/>
                     <COVERAREA t-esc="o.geographical_coverage"/>
                     <COVERTYPE>01</COVERTYPE>
-                    <CoverDuration t-esc="o.duration"/>
+                    <t t-foreach="o.get_duration() " t-as="d">
+                        <CoverDuration t-esc="d"/>
+                    </t>
                     <CoverDestination t-field="o.country"/>
                     <CPNAME></CPNAME>
                     <CPAddress></CPAddress>
