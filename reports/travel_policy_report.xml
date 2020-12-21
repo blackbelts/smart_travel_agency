@@ -653,7 +653,7 @@
                     <TOTAL_Premium t-esc="o.gross_premium"/>
                     <COVERAREA t-esc="o.geographical_coverage"/>
                     <COVERTYPE>01</COVERTYPE>
-                    <CoverDuration t-field="o.duration"/>
+                    <CoverDuration t-esc="o.duration"/>
                     <CoverDestination t-field="o.country"/>
                     <CPNAME></CPNAME>
                     <CPAddress></CPAddress>
