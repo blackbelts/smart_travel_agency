@@ -648,8 +648,8 @@
                     <CHARGES>0.0</CHARGES>
                     <Policy_Cost t-esc="round(o.issue_fees,2)"/>
                     <Tax t-esc="round(o.policy_approval_fees + o.policy_holder_fees,2)"/>
-                    <Stamps t-esc="round(o.proportional_stamp + o.dimensional_stamp,2)"/>
-                    <Fixed_Stamps t-esc="round(o.supervisory_stamp,2)"/>
+                    <Stamps t-esc="round(o.proportional_stamp ,2)"/>
+                    <Fixed_Stamps t-esc="round(o.dimensional_stamp,2)"/>
                     <TOTAL_Premium t-esc="round(o.gross_premium,2)"/>
                     <COVERAREA t-esc="o.geographical_coverage"/>
                     <COVERTYPE>01</COVERTYPE>
