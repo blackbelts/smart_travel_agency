@@ -658,7 +658,7 @@
                     <CPAddress></CPAddress>
                     <CPPHONE></CPPHONE>
                     <CPMobile></CPMobile>
-                    <NBR_INSUREDS t-esc="num_of_insured" />
+                    <NBR_INSUREDS>1</NBR_INSUREDS>
                     <t t-foreach="o.get_duration() " t-as="d">
                         <CoverDuration t-esc="d"/>
                     </t>
