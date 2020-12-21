@@ -645,23 +645,24 @@
                     <Expiry t-esc="o.coverage_to"/>
                     <Cur_Code>01</Cur_Code>
                     <Net_Premium t-esc="o.net_premium"/>
-                    <CHARGES>0.84</CHARGES>
-                    <Policy_Cost>5</Policy_Cost>
-                    <Tax>3.96</Tax>
-                    <Stamps>2.2</Stamps>
-                    <Fixed_Stamps>3</Fixed_Stamps>
+                    <CHARGES>0.0</CHARGES>
+                    <Policy_Cost t-esc="o.issue_fees"/>
+                    <Tax t-esc="o.policy_approval_fees + o.policy_holder_fees"/>
+                    <Stamps t-esc="o.proportional_stamp + dimensional_stamp"/>
+                    <Fixed_Stamps t-esc="supervisory_stamp"/>
                     <TOTAL_Premium t-esc="o.gross_premium"/>
                     <COVERAREA t-esc="o.geographical_coverage"/>
                     <COVERTYPE>01</COVERTYPE>
-                    <t t-foreach="o.get_duration() " t-as="d">
-                        <CoverDuration t-esc="d"/>
-                    </t>
                     <CoverDestination t-field="o.country"/>
                     <CPNAME></CPNAME>
                     <CPAddress></CPAddress>
                     <CPPHONE></CPPHONE>
                     <CPMobile></CPMobile>
                     <NBR_INSUREDS t-esc="num_of_insured" />
+                    <t t-foreach="o.get_duration() " t-as="d">
+                        <CoverDuration t-esc="d"/>
+                    </t>
+
                 </Policy>
                 <!--           <SALEDETAILS t-foreach="dat" t-as="sales">-->
                 <!--               <NUMBER t-esc="sales['sale_sequence']"/>-->
