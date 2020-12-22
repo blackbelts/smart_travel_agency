@@ -94,7 +94,6 @@
                             <field name="is_egyption" attrs="{'readonly': [('state', '=','approved')]}"/>
                             <field name="address" attrs="{'readonly': [('state', '=','approved')]}"/>
                             <field name="phone" attrs="{'readonly': [('state', '=','approved')]}"/>
-                            <field name="is_egyption" attrs="{'readonly': [('state', '=','approved')]}"/>
                             <field name="national_id"  required="1" attrs="{'readonly': [('state', '=','approved')]}"/>
                             <field name="passport_num" attrs="{'readonly': [('state', '=','approved')]}" required="1"/>
                         </group>
