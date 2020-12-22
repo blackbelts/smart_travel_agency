@@ -618,6 +618,18 @@
         <template id="report_travel_docs">
             <Root>
             <t t-foreach="docs" t-as="o">
+                <Source>
+                    <t t-if="o.source == 'online'">
+                        <SourcePIN>2079022</SourcePIN>
+                    </t>
+                    <t t-if="o.check_soucre()">
+                        <SourcePIN>2079048</SourcePIN>
+                    </t>
+                    <t t-if="o.check_soucre() == False">
+                        <SourcePIN>2079030</SourcePIN>
+                    </t>
+
+                </Source>
                 <Policy>
                    <PIN>123456</PIN>
                     <Gender t-esc="o.gender"/>
@@ -627,7 +639,12 @@
                     <Dob_Day t-esc="o.DOB.day"/>
                     <Dob_Month  t-esc="o.DOB.month"/>
                     <Dob_Year t-esc="o.DOB.year"/>
-                    <Nationality>004</Nationality>
+                    <t t-if="o.is_egyption">
+                        <Nationality>818</Nationality>
+                    </t>
+                    <t t-if="o.is_egyption != True">
+                        <Nationality>115</Nationality>
+                    </t>
                     <PASSPORT t-esc="o.passport_num"/>
                     <Prof_Code></Prof_Code>
                     <Marital></Marital>

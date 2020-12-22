@@ -116,6 +116,7 @@ class TravelPolicy(models.Model):
     price_details = fields.Boolean('Show Price Details In Policy', default=False)
     country = fields.Many2one('res.country', 'Destination')
     num_of_insured = fields.Integer('Number Of Insured')
+    is_egyption = fields.Boolean('is egyption', default=True)
 
     def get_duration(self):
         return ['01']
