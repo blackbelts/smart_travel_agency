@@ -73,9 +73,10 @@ class Travelapi(models.Model):
     def create_travel_ticket(self, data):
         name = 'Travel Group Ticket'
         group_dict = {5: '0-10', 15: '11-18', 25: '19-70'}
+        support_team = self.env['helpdesk_lite.team'].search([('team_support_type', '=', 'travel')],limit=1).id
         ticket_id = self.env['quoate'].create(
             {'name': name, 'contact_name': data.get('name'), 'phone': data.get('phone'),
-             'email_from': data.get('mail'), 'ticket_type':'travel'})
+             'email_from': data.get('mail'), 'ticket_type':'travel', 'support_team': support_team})
         if data.get('group'):
             for rec in data.get('group'):
                 self.env['group.ticket'].create(
