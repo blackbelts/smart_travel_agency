@@ -81,7 +81,7 @@ class Travelapi(models.Model):
             for rec in data.get('group'):
                 self.env['group.ticket'].create(
                     {'size': rec['size'], 'range': group_dict.get(rec['age']), 'group_id': ticket_id.id})
-
+        self.env['quoate'].search([('id', '=', ticket_id.id)]).onchange_support_team()
         return ticket_id.id
 
     @api.model
