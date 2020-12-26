@@ -365,7 +365,7 @@
                                         <li>The above is subject to policy terms and conditions as attached.</li>
                                         <li t-if="o.source != 'Agency'">Policy issued online doesn't need insured signature.</li>
                                     </ul>
-                                    <ul t-if="o.product.product_name != 'TAS'" style="padding-left:15px;font-size: 9px; column-count: 2;">
+                                    <ul t-if="o.product.product_name != 'TAS'" style="padding-left:15px;font-size: 9px; column-count: 2 !important;">
                                         <li  t-if="o.product.product_name != 'TAS'">(*) Excess applies. </li>
                                         <li  t-if="o.product.product_name != 'TAS'">(**) Actual expenses should not exceed the maximum policy limit.</li>
                                     </ul>
