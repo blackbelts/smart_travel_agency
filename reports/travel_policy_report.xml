@@ -364,9 +364,15 @@
                                     <ul style="padding-left:15px;font-size: 9px;">
                                         <li>The above is subject to policy terms and conditions as attached.</li>
                                         <li t-if="o.source != 'Agency'">Policy issued online doesn't need insured signature.</li>
+                                    </ul>
+                                    <ul t-if="o.product.product_name != 'TAS'" style="padding-left:15px;font-size: 9px; column-count: 2;">
                                         <li style="display: inline;" t-if="o.product.product_name != 'TAS'">(*) Excess applies. </li>
                                         <li style="display: inline;" t-if="o.product.product_name != 'TAS'">(**) Actual expenses should not exceed the maximum policy limit.</li>
+                                    </ul>
+                                    <ul t-if="o.product.product_name != 'TAS'" style="padding-left:15px;font-size: 9px;">
                                         <li t-if="o.product.product_name != 'TAS'">(***) Medical expenses and hospitalization abroad, due to covid – 19 as per attached terms.</li>
+                                    </ul>
+                                    <ul t-if="o.product.product_name == 'TAS'" style="padding-left:15px;font-size: 9px;">
                                         <li t-if="o.product.product_name == 'TAS'">(*) Excess applies.</li>
                                         <li t-if="o.product.product_name == 'TAS'">(**) Actual expenses should not exceed the maximum policy limit.</li>
                                     </ul>
