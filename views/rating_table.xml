@@ -129,8 +129,8 @@
                         </group>
                     </group>
 
-                    <notebook attrs="{'invisible': [('state', '=', 'approved')]}">
-                        <page string="Agency Branches">
+                    <notebook >
+                        <page string="Agency Branches" attrs="{'invisible': [('state', '=', 'approved')]}">
                             <field name="branch_ids">
                                 <tree editable="bottom">
                                     <field name="name"/>
