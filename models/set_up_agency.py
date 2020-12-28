@@ -63,6 +63,13 @@ class TravelAgency(models.Model):
     branch_ids=fields.One2many('agency.branch','travel_agency',string='Branches')
     target_bonus_ids=fields.One2many('target.bonus','agency_id',string='Bonus Target')
     settle_ids=fields.One2many('agency.settle','agency_id',string='Settlements')
+    state = fields.Selection([('draft', 'Draft'),
+                               ('approved', 'Approved'),
+                               ],string='State', default='draft')
+
+    def approve_agency(self):
+        self.state = 'approved'
+
     @api.onchange('settle_ids')
     def _get_outstnding(self):
       total=0
