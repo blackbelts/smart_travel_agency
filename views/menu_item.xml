@@ -27,7 +27,7 @@
 
 
         <menuitem id="configuration_view_menu2" name="Configuration"
-                  groups="smart_travel_agency.all_agencies_group,smart_travel_agency.manager"
+                  groups="smart_travel_agency.all_agencies_group"
                   web_icon="smart_travel_agency,static/description/conf.png" parent="travel_policy_view_menu2" />
 
         <menuitem id="benefits_menu" name="Benefits" parent="configuration_view_menu2"
