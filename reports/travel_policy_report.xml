@@ -59,6 +59,14 @@
                             html, body, div, span, h1, h2, h3, h4, h5, h6, p, a,  ol, ul, li, table, tbody, tfoot, thead, tr, th, td, footer, header {
                             font-family: dubai !important;
                             }
+                            #footer {
+                                position:fixed !important;
+                                bottom:0 !important;
+                                left:0 !important;
+                                right:0 !important;
+                                width:100% !important;
+<!--                                height:100px;-->
+                            }
 
 
 
@@ -606,10 +614,9 @@
 
                         </div>
 
-                        <div class="footer" style="float:left; width:100%;">
+                        <div class="footer" id="footer" style="float:left; width:100%;">
                             <img style="width:100% !important; float:left !important;" class="img img-responsive" src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/1.png"/>
                             <span style="float:left;font-size: 8px !important; white-space: nowrap !important; overflow: hidden !important;">AROPE PROPERTIES &amp; LIABILITIES INSURANCE EGYPT - S.A.E</span>
-
 
                         </div>
                     </t>
