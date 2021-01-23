@@ -76,6 +76,8 @@
 
                         <div class="header" style="float:left; width:100%;">
                             <img class="img img-responsive"  style="width: 100%;" src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/3.png"/>
+                            <img class="img img-responsive" style="width:100% !important; "  src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/1.png"/>
+
                             <h4 style="color: #073e89; text-align:center;">Travel Assistance Services (TAS)</h4>
                         </div>
 
@@ -614,7 +616,6 @@
                         </div>
                         <div class="footer" style="float:left; width:100%;">
                             <span style="float:left;font-size: 10px !important; white-space: nowrap !important;">AROPE PROPERTIES &amp; LIABILITIES INSURANCE EGYPT - S.A.E</span>
-                            <img style="width:100% !important; float:left !important;" class="img img-responsive" src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/1.png"/>
                         </div>
 
                     </t>
