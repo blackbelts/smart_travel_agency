@@ -541,7 +541,7 @@
                                 </div>
 
                             </div>
-                                                        <img class="img img-responsive" style="width:100% !important; "  src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/1.png"/>
+
 
                         </div>
                         <div class="page" style="unicode-bidi: bidi-override !important; direction: unset !important;" t-if="o.package == 'family'">
@@ -616,7 +616,11 @@
 
                         </div>
                         <div class="footer" style="float:left; width:100%;">
+                            <img class="img img-responsive" style="width:100% !important; float:left;"  src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/12.png"/>
                             <span style="float:left;font-size: 10px !important; white-space: nowrap !important;">AROPE PROPERTIES &amp; LIABILITIES INSURANCE EGYPT - S.A.E</span>
+                            <img class="img img-responsive" style="width:100% !important; "  src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/22.png"/>
+
+
                         </div>
 
                     </t>
