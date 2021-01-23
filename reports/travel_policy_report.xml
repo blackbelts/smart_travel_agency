@@ -606,9 +606,11 @@
 
                         </div>
 
-                        <div class="footer">
+                        <div class="footer" style="float:left; width:100%;">
                             <img style="width:100% !important; float:left !important;" class="img img-responsive" src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/1.png"/>
                             <span style="float:left;font-size: 8px !important; white-space: nowrap !important; overflow: hidden !important;">AROPE PROPERTIES &amp; LIABILITIES INSURANCE EGYPT - S.A.E</span>
+
+
                         </div>
                     </t>
                 </t>
