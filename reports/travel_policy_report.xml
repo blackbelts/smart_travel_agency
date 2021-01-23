@@ -588,7 +588,7 @@
                                                     <td style="text-transform: uppercase !important;"><t t-esc="f.name"/></td>
                                                     <td><t t-esc="f.gender"/></td>
                                                     <td><t t-esc="f.DOB.strftime('%d-%m-%Y')"/></td>
-                                                    <td><t t-esc="f.age"/></td>
+                                                    <td><t t-esc="int(f.age)"/></td>
                                                     <td><t t-esc="f.pass_num"/></td>
                                                     <td><t t-esc="f.type" /></td>
 
@@ -597,12 +597,17 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <div style="width: 100% !important; float: left; white-space: nowrap !important;">
+                                    <ul style="padding-left:15px;font-size: 11px;">
+                                        <li>Children are covered for 10% of the insured person sum insured.</li>
+                                    </ul>
+                                </div>
                             </div>
 
                         </div>
 
                         <div class="footer" style="float:left; width:100px;">
-                            <img t-if="o.source != 'Agency'" style="width:100% !important;" class="img img-responsive" src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/1.png"/>
+                            <img style="width:100% !important;" class="img img-responsive" src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/1.png"/>
                             <span style="font-size: 10px !important; white-space: nowrap !important; overflow: hidden !important;">AROPE PROPERTIES &amp; LIABILITIES INSURANCE EGYPT - S.A.E</span>
                         </div>
                     </t>

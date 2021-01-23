@@ -76,7 +76,7 @@ class TravelPolicy(models.Model):
     coverage_to = fields.Date('To')
     days = fields.Integer('Day(s)',compute='compute_days',store='True')
     geographical_coverage = fields.Selection([('01', 'Europe'),
-                                              ('02', 'Worldwide excluding USA & CANADA'),
+                                              ('02', 'Worldwide Excluding USA & CANADA'),
                                               ('03', 'Worldwide'), ],
                                              'Zone',
                                              default='01')
