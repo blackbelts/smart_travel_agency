@@ -32,6 +32,7 @@
                                     <field name="policy_approval_fees" readonly="1" force_save="1"/>
                                     <field name="policy_holder_fees" readonly="1" force_save="1"/>
                                     <field name="issue_fees"/>
+                                    <field name="issue_fees_complement" readonly="1" force_save="1"/>
                                     <field name="gross_premium" readonly="1" force_save="1"/>
 
                                 </tree>

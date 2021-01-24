@@ -29,6 +29,7 @@ class PriceTable(models.Model):
     period = fields.Integer('Period')
     dispaly_period = fields.Char('Display Period')
     issue_fees = fields.Float('Issue Fees')
+    issue_fees_complement = fields.Float('Issue Fees Complement')
     net_premium = fields.Float('Net Premium')
     proportional_stamp = fields.Float('Proportional Stamp')
     policy_approval_fees = fields.Float('Policy approval fees ')
@@ -37,6 +38,7 @@ class PriceTable(models.Model):
     supervisory_stamp = fields.Float('Supervisory Stamp')
     gross_premium = fields.Float('Gross Premium')
     price_id=fields.Many2one('travel.price', ondelete='cascade')
+
 
 
     #you Must Delete Gross Prem or make it computed
@@ -56,9 +58,9 @@ class PriceTable(models.Model):
                 f = x - int(x)
                 complement = 1 - f
                 if complement == 1:
-                    rec.write({'issue_fees': rec.issue_fees})
+                    rec.issue_fees_complement =  rec.issue_fees
                 else:
-                    rec.write({'issue_fees' : rec.issue_fees + complement})
+                    rec.issue_fees_complement = rec.issue_fees + complement
                 rec.gross_premium = rec.issue_fees + rec.net_premium + rec.proportional_stamp + rec.policy_approval_fees + \
                     rec.policy_holder_fees + rec.dimensional_stamp + rec.supervisory_stamp
 
