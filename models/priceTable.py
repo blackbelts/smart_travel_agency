@@ -44,22 +44,23 @@ class PriceTable(models.Model):
     @api.onchange('net_premium','issue_fees', 'dimensional_stamp')
     @api.constrains('net_premium','issue_fees', 'dimensional_stamp')
     def compute_fields(self):
-        if self.net_premium:
-            self.proportional_stamp = round(self.net_premium*(.5/100),2)
-            self.supervisory_stamp = round(self.net_premium * (.6 / 100), 2)
-            self.policy_approval_fees = round(self.net_premium * (.1 / 100), 2)
-            self.policy_holder_fees = round(self.net_premium * (.2 / 100), 2)
-            x = self.issue_fees + self.net_premium + self.proportional_stamp + self.policy_approval_fees + \
-                self.policy_holder_fees + self.dimensional_stamp + self.supervisory_stamp
+        for rec in self:
+            if self.net_premium:
+                self.proportional_stamp = round(self.net_premium*(.5/100),2)
+                self.supervisory_stamp = round(self.net_premium * (.6 / 100), 2)
+                self.policy_approval_fees = round(self.net_premium * (.1 / 100), 2)
+                self.policy_holder_fees = round(self.net_premium * (.2 / 100), 2)
+                x = self.issue_fees + self.net_premium + self.proportional_stamp + self.policy_approval_fees + \
+                    self.policy_holder_fees + self.dimensional_stamp + self.supervisory_stamp
 
-            f = x - int(x)
-            complement = 1 - f
-            if complement == 1:
-                self.issue_fees = self.issue_fees
-            else:
-                self.issue_fees = self.issue_fees + complement
-            self.gross_premium = self.issue_fees + self.net_premium + self.proportional_stamp + self.policy_approval_fees + \
-                self.policy_holder_fees + self.dimensional_stamp + self.supervisory_stamp
+                f = x - int(x)
+                complement = 1 - f
+                if complement == 1:
+                    self.issue_fees = self.issue_fees
+                else:
+                    self.issue_fees = self.issue_fees + complement
+                self.gross_premium = self.issue_fees + self.net_premium + self.proportional_stamp + self.policy_approval_fees + \
+                    self.policy_holder_fees + self.dimensional_stamp + self.supervisory_stamp
 
 
 class InsuranceProducts(models.Model):
