@@ -26,14 +26,14 @@
                                     <field name="period"/>
                                     <field name="dispaly_period"/>
                                     <field name="net_premium"/>
-                                    <field name="proportional_stamp" />
+                                    <field name="proportional_stamp" readonly="1" force_save="1"/>
                                     <field name="dimensional_stamp"/>
-                                    <field name="supervisory_stamp" />
-                                    <field name="policy_approval_fees" />
-                                    <field name="policy_holder_fees" />
+                                    <field name="supervisory_stamp" readonly="1" force_save="1"/>
+                                    <field name="policy_approval_fees" readonly="1" force_save="1"/>
+                                    <field name="policy_holder_fees" readonly="1" force_save="1"/>
                                     <field name="issue_fees"/>
-                                    <field name="issue_fees_complement" />
-                                    <field name="gross_prem" />
+                                    <field name="issue_fees_complement" readonly="1" force_save="1"/>
+                                    <field name="gross_premium" readonly="1" force_save="1"/>
 
                                 </tree>
                             </field>
