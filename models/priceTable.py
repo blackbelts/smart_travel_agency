@@ -61,7 +61,7 @@ class PriceTable(models.Model):
                     rec.issue_fees_complement =  rec.issue_fees
                 else:
                     rec.issue_fees_complement = rec.issue_fees + complement
-                rec.gross_premium = rec.issue_fees + rec.net_premium + rec.proportional_stamp + rec.policy_approval_fees + \
+                rec.gross_premium = rec.issue_fees_complement + rec.net_premium + rec.proportional_stamp + rec.policy_approval_fees + \
                     rec.policy_holder_fees + rec.dimensional_stamp + rec.supervisory_stamp
 
 
