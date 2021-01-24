@@ -36,7 +36,7 @@ class PriceTable(models.Model):
     policy_holder_fees = fields.Float('Policyholder’s protection fees ')
     dimensional_stamp = fields.Float('Dimensional Stamp')
     supervisory_stamp = fields.Float('Supervisory Stamp')
-    gross_premium = fields.Float('Gross Premium')
+    gross_prem = fields.Float('Gross Premium')
     price_id=fields.Many2one('travel.price', ondelete='cascade')
 
 
@@ -61,7 +61,7 @@ class PriceTable(models.Model):
                     rec.issue_fees_complement =  rec.issue_fees
                 else:
                     rec.issue_fees_complement = rec.issue_fees + complement
-                rec.gross_premium = rec.issue_fees_complement + rec.net_premium + rec.proportional_stamp + rec.policy_approval_fees + \
+                rec.gross_prem = rec.issue_fees_complement + rec.net_premium + rec.proportional_stamp + rec.policy_approval_fees + \
                     rec.policy_holder_fees + rec.dimensional_stamp + rec.supervisory_stamp
 
 

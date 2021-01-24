@@ -344,7 +344,7 @@ class TravelPolicy(models.Model):
                                     result['policy_holder_fees'] = rec.policy_holder_fees
                                     result['policy_approval_fees'] = rec.policy_approval_fees
                                     # self.issue_fees = record.issue_fees
-                                    fra,result['gross'] = math.modf(rec.gross_premium *(record.currency_id.rate))
+                                    fra,result['gross'] = math.modf(rec.gross_prem *(record.currency_id.rate))
                                     # result['oldgross']=result['gross']
                                     # if s_coverSum !=0.0:
                                     #     fra, result['gross'] = math.modf(result['gross']+(result['gross'] * s_coverSum))
@@ -406,7 +406,7 @@ class TravelPolicy(models.Model):
                             result['policy_holder_fees'] = record.policy_holder_fees
                             result['policy_approval_fees'] = record.policy_approval_fees
                             # self.issue_fees = record.issue_fees
-                            fra,result['gross'] = math.modf(record.gross_premium *(rec.currency_id.rate))
+                            fra,result['gross'] = math.modf(record.gross_prem *(rec.currency_id.rate))
                             result['issue_fees'] = (record.issue_fees * (rec.currency_id.rate)) + (1 - fra)
                             result['oldgross']=result['gross']
                             # if s_coverSum != 0.0:
@@ -467,7 +467,7 @@ class TravelPolicy(models.Model):
                                    result['supervisory_stamp'] += rec.supervisory_stamp * (record.currency_id.rate)*group.get('size')*(1-(discount/100))
                                    result['issue_fees'] += rec.issue_fees * (record.currency_id.rate)*group.get('size')*(1-(discount/100))
                                    # self.issue_fees = record.issue_fees
-                                   result['gross'] += rec.gross_premium * (record.currency_id.rate)*group.get('size')*(1-(discount/100))
+                                   result['gross'] += rec.gross_prem * (record.currency_id.rate)*group.get('size')*(1-(discount/100))
                                    result['oldgross']=result['gross']
                                    # if s_coverSum != 0.0:
                                    #     fra, result['gross'] = math.modf(result['gross'] + (result['gross'] * s_coverSum))
