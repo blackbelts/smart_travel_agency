@@ -28,15 +28,15 @@ class PriceTable(models.Model):
 
     period = fields.Integer('Period')
     dispaly_period = fields.Char('Display Period')
-    issue_fees = fields.Float('Issue Fees')
-    issue_fees_complement = fields.Float('Issue Fees Complement')
+    issue_fees = fields.Float('Issue Fees', store=True)
+    issue_fees_complement = fields.Float('Issue Fees Complement', store=True)
     net_premium = fields.Float('Net Premium')
-    proportional_stamp = fields.Float('Proportional Stamp')
-    policy_approval_fees = fields.Float('Policy approval fees ')
-    policy_holder_fees = fields.Float('Policyholder’s protection fees ')
+    proportional_stamp = fields.Float('Proportional Stamp', store=True)
+    policy_approval_fees = fields.Float('Policy approval fees ', store=True)
+    policy_holder_fees = fields.Float('Policyholder’s protection fees ', store=True)
     dimensional_stamp = fields.Float('Dimensional Stamp')
-    supervisory_stamp = fields.Float('Supervisory Stamp')
-    gross_prem = fields.Float('Gross Premium')
+    supervisory_stamp = fields.Float('Supervisory Stamp', store=True)
+    gross_prem = fields.Float('Gross Premium', store=True)
     price_id=fields.Many2one('travel.price', ondelete='cascade')
 
 
