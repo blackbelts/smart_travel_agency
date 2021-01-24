@@ -52,15 +52,17 @@ class PriceTable(models.Model):
                 rec.policy_holder_fees = round(rec.net_premium * (.2 / 100), 2)
                 x = rec.issue_fees + rec.net_premium + rec.proportional_stamp + rec.policy_approval_fees + \
                     rec.policy_holder_fees + rec.dimensional_stamp + rec.supervisory_stamp
-
-                f = x - int(x)
-                complement = 1 - f
-                if complement == 1:
-                    rec.issue_fees = rec.issue_fees
-                else:
-                    rec.issue_fees = rec.issue_fees + complement
                 rec.gross_premium = rec.issue_fees + rec.net_premium + rec.proportional_stamp + rec.policy_approval_fees + \
-                    rec.policy_holder_fees + rec.dimensional_stamp + rec.supervisory_stamp
+                                    rec.policy_holder_fees + rec.dimensional_stamp + rec.supervisory_stamp
+                # f = x - int(x)
+                # complement = 1 - f
+                # if complement == 1:
+                #     rec.issue_fees = rec.issue_fees
+                #     rec.gross_premium = rec.issue_fees + rec.net_premium + rec.proportional_stamp + rec.policy_approval_fees + \
+                #                         rec.policy_holder_fees + rec.dimensional_stamp + rec.supervisory_stamp
+                # else:
+                #     rec.issue_fees = rec.issue_fees + complement
+                #
 
 
 class InsuranceProducts(models.Model):
