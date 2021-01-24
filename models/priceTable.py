@@ -45,22 +45,22 @@ class PriceTable(models.Model):
     @api.constrains('net_premium','issue_fees', 'dimensional_stamp')
     def compute_fields(self):
         for rec in self:
-            if self.net_premium:
-                self.proportional_stamp = round(self.net_premium*(.5/100),2)
-                self.supervisory_stamp = round(self.net_premium * (.6 / 100), 2)
-                self.policy_approval_fees = round(self.net_premium * (.1 / 100), 2)
-                self.policy_holder_fees = round(self.net_premium * (.2 / 100), 2)
-                x = self.issue_fees + self.net_premium + self.proportional_stamp + self.policy_approval_fees + \
-                    self.policy_holder_fees + self.dimensional_stamp + self.supervisory_stamp
+            if rec.net_premium:
+                rec.proportional_stamp = round(rec.net_premium*(.5/100),2)
+                rec.supervisory_stamp = round(rec.net_premium * (.6 / 100), 2)
+                rec.policy_approval_fees = round(rec.net_premium * (.1 / 100), 2)
+                rec.policy_holder_fees = round(rec.net_premium * (.2 / 100), 2)
+                x = rec.issue_fees + rec.net_premium + rec.proportional_stamp + rec.policy_approval_fees + \
+                    rec.policy_holder_fees + rec.dimensional_stamp + rec.supervisory_stamp
 
                 f = x - int(x)
                 complement = 1 - f
                 if complement == 1:
-                    self.issue_fees = self.issue_fees
+                    rec.issue_fees = rec.issue_fees
                 else:
-                    self.issue_fees = self.issue_fees + complement
-                self.gross_premium = self.issue_fees + self.net_premium + self.proportional_stamp + self.policy_approval_fees + \
-                    self.policy_holder_fees + self.dimensional_stamp + self.supervisory_stamp
+                    rec.issue_fees = rec.issue_fees + complement
+                rec.gross_premium = rec.issue_fees + rec.net_premium + rec.proportional_stamp + rec.policy_approval_fees + \
+                    rec.policy_holder_fees + rec.dimensional_stamp + rec.supervisory_stamp
 
 
 class InsuranceProducts(models.Model):
