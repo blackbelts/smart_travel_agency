@@ -28,19 +28,20 @@ class PriceTable(models.Model):
 
     period = fields.Integer('Period')
     dispaly_period = fields.Char('Display Period')
-    issue_fees = fields.Float('Issue Fees',compute='compute_fields',store=True)
+    issue_fees = fields.Float('Issue Fees')
     net_premium = fields.Float('Net Premium')
-    proportional_stamp = fields.Float('Proportional Stamp', compute='compute_fields',store=True)
-    policy_approval_fees = fields.Float('Policy approval fees',compute='compute_fields',store=True)
-    policy_holder_fees = fields.Float('Policyholder’s protection fees',compute='compute_fields',store=True)
+    proportional_stamp = fields.Float('Proportional Stamp')
+    policy_approval_fees = fields.Float('Policy approval fees ')
+    policy_holder_fees = fields.Float('Policyholder’s protection fees ')
     dimensional_stamp = fields.Float('Dimensional Stamp')
-    supervisory_stamp = fields.Float('Supervisory Stamp',compute='compute_fields',store=True)
-    gross_premium = fields.Float('Gross Premium',compute='compute_fields',store=True)
+    supervisory_stamp = fields.Float('Supervisory Stamp')
+    gross_premium = fields.Float('Gross Premium')
     price_id=fields.Many2one('travel.price', ondelete='cascade')
 
 
     #you Must Delete Gross Prem or make it computed
 
+    @api.onchange('net_premium','issue_fees', 'dimensional_stamp')
     def compute_fields(self):
         if self.net_premium:
             self.proportional_stamp = round(self.net_premium*(.5/100),2)
