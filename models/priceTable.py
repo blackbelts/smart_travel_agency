@@ -42,6 +42,7 @@ class PriceTable(models.Model):
     #you Must Delete Gross Prem or make it computed
 
     @api.onchange('net_premium','issue_fees', 'dimensional_stamp')
+    @api.constrains('net_premium','issue_fees', 'dimensional_stamp')
     def compute_fields(self):
         if self.net_premium:
             self.proportional_stamp = round(self.net_premium*(.5/100),2)
