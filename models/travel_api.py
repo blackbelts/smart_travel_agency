@@ -58,7 +58,7 @@ class Travelapi(models.Model):
         # data = self.env['travel.price.line'].search([('price_id.package', '=', 'individual'),
         #                                              ('price_id.zone', '=', 'zone 1'),
         #                                              ('price_id.from_age', '=', 0.00)])
-        data = self.env['travel.price.line'].search([])
+        data = self.env['travel.price.line'].search([('price_id.product', '=', data.get('product'))])
         for option in data:
             if option.dispaly_period:
                 options.append({'value':option.period, 'display': option.dispaly_period})
