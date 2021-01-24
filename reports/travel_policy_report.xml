@@ -616,9 +616,9 @@
 
                         </div>
                         <div class="footer" style="float:left; width:100%;">
-                            <img class="img img-responsive" style="float:left; width:100px !important; height: 100px !important;"  src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/15.png"/>
-                            <br/>
-                            <span style="float:left;font-size: 10px !important; white-space: nowrap !important;">AROPE PROPERTIES &amp; LIABILITIES INSURANCE EGYPT - S.A.E</span>
+                            <img class="img img-responsive" style="width:100px !important; height: 100px !important;"  src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/15.png"/>
+<!--                            <br/>-->
+                            <span style="font-size: 10px !important; white-space: nowrap !important;">AROPE PROPERTIES &amp; LIABILITIES INSURANCE EGYPT - S.A.E</span>
 <!--                            <img  style="float:right!important;" class="img img-responsive"  src="https://online.aropeegypt.com.eg:8069/smart_travel_agency/static/src/images/22.png"/>-->
 
 
