@@ -339,7 +339,7 @@ class TravelPolicy(models.Model):
                           if rec.period == min_period:
                                     result['net'] = rec.net_premium*(record.currency_id.rate)
                                     result['pro_stamp'] = rec.proportional_stamp *(record.currency_id.rate)
-                                    result['dimensional_stamp'] = rec.dimensional_stamp *(record.currency_id.rate)
+                                    result['dimensional_stamp'] = record.dimensional_stamp *(record.currency_id.rate)
                                     result['supervisory_stamp'] = rec.supervisory_stamp *(record.currency_id.rate)
                                     result['policy_holder_fees'] = rec.policy_holder_fees
                                     result['policy_approval_fees'] = rec.policy_approval_fees
@@ -348,7 +348,7 @@ class TravelPolicy(models.Model):
                                     # result['oldgross']=result['gross']
                                     # if s_coverSum !=0.0:
                                     #     fra, result['gross'] = math.modf(result['gross']+(result['gross'] * s_coverSum))
-                                    result['issue_fees'] = (rec.issue_fees *(record.currency_id.rate))+(1-fra)
+                                    result['issue_fees'] = (rec.issue_fees_complement *(record.currency_id.rate))+(1-fra)
                                     # result['s_coverSum']=s_coverSum
                                     # result['s_covers']=s_covers
                                     print("fraction")
@@ -401,13 +401,13 @@ class TravelPolicy(models.Model):
                         if record.period == min_period:
                             result['net'] = record.net_premium *(rec.currency_id.rate)
                             result['pro_stamp'] = record.proportional_stamp *(rec.currency_id.rate)
-                            result['dimensional_stamp'] = record.dimensional_stamp *(rec.currency_id.rate)
+                            result['dimensional_stamp'] = rec.dimensional_stamp *(rec.currency_id.rate)
                             result['supervisory_stamp'] = record.supervisory_stamp*(rec.currency_id.rate)
                             result['policy_holder_fees'] = record.policy_holder_fees
                             result['policy_approval_fees'] = record.policy_approval_fees
                             # self.issue_fees = record.issue_fees
                             fra,result['gross'] = math.modf(record.gross_premium *(rec.currency_id.rate))
-                            result['issue_fees'] = (record.issue_fees * (rec.currency_id.rate)) + (1 - fra)
+                            result['issue_fees'] = (record.issue_fees_complement * (rec.currency_id.rate)) + (1 - fra)
                             result['oldgross']=result['gross']
                             # if s_coverSum != 0.0:
                             #     fra, result['gross'] = math.modf(result['gross'] + (result['gross'] * s_coverSum))
@@ -463,9 +463,9 @@ class TravelPolicy(models.Model):
                            if rec.period == min_period:
                                    result['net'] +=rec.net_premium * record.currency_id.rate*group.get('size')*(1-(discount/100))
                                    result['pro_stamp'] += rec.proportional_stamp * (record.currency_id.rate)*group.get('size')*(1-(discount/100))
-                                   result['dimensional_stamp'] += rec.dimensional_stamp * (record.currency_id.rate)*group.get('size')*(1-(discount/100))
+                                   result['dimensional_stamp'] += record.dimensional_stamp * (record.currency_id.rate)*group.get('size')*(1-(discount/100))
                                    result['supervisory_stamp'] += rec.supervisory_stamp * (record.currency_id.rate)*group.get('size')*(1-(discount/100))
-                                   result['issue_fees'] += rec.issue_fees * (record.currency_id.rate)*group.get('size')*(1-(discount/100))
+                                   result['issue_fees'] += rec.issue_fees_complement * (record.currency_id.rate)*group.get('size')*(1-(discount/100))
                                    # self.issue_fees = record.issue_fees
                                    result['gross'] += rec.gross_premium * (record.currency_id.rate)*group.get('size')*(1-(discount/100))
                                    result['oldgross']=result['gross']

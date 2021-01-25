@@ -18,6 +18,10 @@
                             <field name="from_age" attrs="{'invisible': [('package', '=', 'family')]}"/>
                             <field name="to_age" attrs="{'invisible': [('package', '=', 'family')]}"/>
                         </group>
+                        <group>
+                            <field name="dimensional_stamp"/>
+                            <field name="issue_fees"/>
+                        </group>
                     </group>
                     <notebook>
                         <page string="Price" >
@@ -27,14 +31,11 @@
                                     <field name="dispaly_period"/>
                                     <field name="net_premium"/>
                                     <field name="proportional_stamp" readonly="1" force_save="1"/>
-                                    <field name="dimensional_stamp"/>
                                     <field name="supervisory_stamp" readonly="1" force_save="1"/>
                                     <field name="policy_approval_fees" readonly="1" force_save="1"/>
                                     <field name="policy_holder_fees" readonly="1" force_save="1"/>
-                                    <field name="issue_fees"/>
                                     <field name="issue_fees_complement" readonly="1" force_save="1"/>
                                     <field name="gross_premium" readonly="1" force_save="1"/>
-
                                 </tree>
                             </field>
                         </page>

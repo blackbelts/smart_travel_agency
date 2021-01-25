@@ -18,23 +18,44 @@ class PriceTable(models.Model):
     currency_id=fields.Many2one('res.currency')
     from_age = fields.Float('From Age')
     to_age = fields.Float('To Age')
+    dimensional_stamp = fields.Float('Dimensional Stamp')
+    issue_fees = fields.Float('Issue Fees')
 
     covers = fields.Many2many('travel.benefits', string='Covers')
 
     price_lines=fields.One2many('travel.price.line','price_id',string='Prices')
+
+    @api.onchange('dimensional_stamp', 'issue_fees','price_lines')
+    @api.constrains('dimensional_stamp', 'issue_fees','price_lines')
+    def compute_fields(self):
+
+        for rec in self.price_lines:
+            x = self.issue_fees + rec.net_premium + rec.proportional_stamp + rec.policy_approval_fees + \
+                rec.policy_holder_fees + self.dimensional_stamp + rec.supervisory_stamp
+
+            f = x - int(x)
+            complement = 1 - f
+            if complement == 1:
+                rec.issue_fees_complement = self.issue_fees
+            else:
+                rec.issue_fees_complement = self.issue_fees + complement
+
+            rec.gross_premium = rec.issue_fees_complement + rec.net_premium + rec.proportional_stamp + rec.policy_approval_fees + \
+                                rec.policy_holder_fees + self.dimensional_stamp + rec.supervisory_stamp
+
 
 class PriceTable(models.Model):
     _name = 'travel.price.line'
 
     period = fields.Integer('Period')
     dispaly_period = fields.Char('Display Period')
-    issue_fees = fields.Float('Issue Fees')
+    # issue_fees = fields.Float('Issue Fees')
     issue_fees_complement = fields.Float('Issue Fees Complement')
     net_premium = fields.Float('Net Premium')
     proportional_stamp = fields.Float('Proportional Stamp')
     policy_approval_fees = fields.Float('Policy approval fees ')
     policy_holder_fees = fields.Float('Policyholder’s protection fees ')
-    dimensional_stamp = fields.Float('Dimensional Stamp')
+    # dimensional_stamp = fields.Float('Dimensional Stamp')
     supervisory_stamp = fields.Float('Supervisory Stamp')
     gross_premium = fields.Float('Gross Premium')
     price_id=fields.Many2one('travel.price', ondelete='cascade')
@@ -52,17 +73,17 @@ class PriceTable(models.Model):
                 rec.supervisory_stamp = round(rec.net_premium * (.6 / 100), 2)
                 rec.policy_approval_fees = round(rec.net_premium * (.1 / 100), 2)
                 rec.policy_holder_fees = round(rec.net_premium * (.2 / 100), 2)
-                x = rec.issue_fees + rec.net_premium + rec.proportional_stamp + rec.policy_approval_fees + \
-                    rec.policy_holder_fees + rec.dimensional_stamp + rec.supervisory_stamp
-
-                f = x - int(x)
-                complement = 1 - f
-                if complement == 1:
-                    rec.issue_fees_complement =  rec.issue_fees
-                else:
-                    rec.issue_fees_complement = rec.issue_fees + complement
-                rec.gross_premium = rec.issue_fees_complement + rec.net_premium + rec.proportional_stamp + rec.policy_approval_fees + \
-                    rec.policy_holder_fees + rec.dimensional_stamp + rec.supervisory_stamp
+                # x = rec.issue_fees + rec.net_premium + rec.proportional_stamp + rec.policy_approval_fees + \
+                #     rec.policy_holder_fees + rec.dimensional_stamp + rec.supervisory_stamp
+                #
+                # f = x - int(x)
+                # complement = 1 - f
+                # if complement == 1:
+                #     rec.issue_fees_complement =  rec.issue_fees
+                # else:
+                #     rec.issue_fees_complement = rec.issue_fees + complement
+                # rec.gross_premium = rec.issue_fees_complement + rec.net_premium + rec.proportional_stamp + rec.policy_approval_fees + \
+                #     rec.policy_holder_fees + rec.dimensional_stamp + rec.supervisory_stamp
 
 
 class InsuranceProducts(models.Model):
